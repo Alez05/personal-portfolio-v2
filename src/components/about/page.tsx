@@ -1,9 +1,9 @@
-import { ContactCTA } from "../shared"
-import { AboutHero } from "./about-hero"
-import { CareerJourney } from "./career-journey"
-import { TechSection } from "./tech-section"
-import { EducationSection } from "./education-section"
-import { Hobbies } from "./hobbies"
+import { ContactCTA } from "../shared";
+import { AboutHero } from "./about-hero";
+import { CareerJourney } from "./career-journey";
+import { TechSection } from "./tech-section";
+import { EducationSection } from "./education-section";
+import { Hobbies } from "./hobbies";
 
 const About = () => {
   return (
@@ -16,7 +16,7 @@ const About = () => {
       <Hobbies />
       <ContactCTA />
     </div>
-  )
-}
+  );
+};
 
-export { About }
+export { About };
