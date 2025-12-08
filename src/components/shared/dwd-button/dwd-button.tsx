@@ -3,7 +3,7 @@ import './dwd-button.css'
 
 import { useState } from 'react'
 import { getDownloadURL, ref } from 'firebase/storage'
-import { storage } from '@util/firebase'
+import { storage } from '../../../util/firebase'
 import { DownloadButtonType } from './dwd-button.type'
 
 const DownloadButton = ({ path, label = 'Download CV' }: DownloadButtonType) => {

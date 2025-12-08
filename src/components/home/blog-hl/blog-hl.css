@@ -1,8 +1,9 @@
 .bh-section {
   padding: 4rem 2rem;
-  background: #f1efec; /* palette background */
+  background: #f1efec;
   text-align: center;
   height: 100vh;
+  box-sizing: border-box;
 }
 
 .bh-container {
@@ -22,34 +23,76 @@
   margin-bottom: 2rem;
 }
 
+/* ------------------------------
+   CAROUSEL
+-------------------------------- */
 .bh-carousel {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;      /* keep slide inside */
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto 2rem;
 }
 
+/* Slide track */
+.bh-carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+  gap: 1.5rem;
+}
+
+/* One slide */
 .bh-blog-card {
-  display: block;
-  width: 280px;
+  flex: 0 0 100%;
   border-radius: 0.75rem;
   overflow: hidden;
-  transition: transform 0.3s ease;
-  background: #d4c9be; /* cream box background */
-}
-
-.bh-blog-card:hover {
-  transform: scale(1.05);
+  background: #d4c9be;
 }
 
 .bh-blog-image {
   width: 100%;
-  height: 180px;
+  height: 220px;
   object-fit: cover;
   display: block;
 }
 
+/* ------------------------------
+   NAV BUTTONS — fully visible
+-------------------------------- */
+.bh-carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  background: #123458;
+  color: #f1efec;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  cursor: pointer;
+  z-index: 15;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ❗ These sit INSIDE the carousel, not outside */
+.bh-carousel-button.prev {
+  left: 10px;
+}
+
+.bh-carousel-button.next {
+  right: 10px;
+}
+
+.bh-carousel-button:hover {
+  background: #030303;
+}
+
+/* CTA */
 .bh-cta {
   margin-top: 1.5rem;
 }
@@ -68,7 +111,45 @@
   background: #030303;
 }
 
-.bh-error {
-  color: red;
-  font-size: 1rem;
+/* ------------------------------
+   RESPONSIVE
+-------------------------------- */
+
+/* Mobile */
+@media (max-width: 767px) {
+  .bh-carousel {
+    max-width: 280px;
+  }
+
+  .bh-carousel-button {
+    width: 30px;
+    height: 30px;
+    font-size: 1.1rem;
+  }
+
+  .bh-carousel-button.prev {
+    left: 6px;
+  }
+
+  .bh-carousel-button.next {
+    right: 6px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .bh-carousel {
+    max-width: 320px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1400px) {
+  .bh-carousel {
+    max-width: 420px;
+  }
+
+  .bh-blog-image {
+    height: 260px;
+  }
 }

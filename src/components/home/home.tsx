@@ -6,7 +6,7 @@ const Home = () => {
     <main>
       <HomeHl />
       <ProjectHl />
-      <BlogHl />
+      {/* <BlogHl /> */}
       <ContactCTA />
     </main>
   );
