@@ -1,87 +1,88 @@
 /* ===== Container ===== */
 .hero-container {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 7rem 8% 5rem;
-  gap: 3rem;
-  min-height: calc(100vh);
+  min-height: 100vh;
   background-color: #ffffff;
   box-sizing: border-box;
-  flex-wrap: wrap;
+  text-align: center;
 }
 
-/* ===== Left side ===== */
+/* ===== Left (content) ===== */
 .hero-left {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 1.2rem;
-  max-width: 600px;
+  width: 100%;
+  max-width: 800px; /* wider for the description */
 }
 
 /* ===== Name & Role ===== */
 .hero-name {
-  font-size: 2.8rem;
-  font-weight: 700;
+  font-size: 3.6rem;          /* bigger name */
+  font-weight: 800;
   background: linear-gradient(90deg, var(--blueish), var(--blackish));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin-bottom: 0;            /* remove default spacing */
 }
 
 .hero-role {
-  font-size: 1.7rem;
+  font-size: 1.9rem;
   font-weight: 600;
   color: var(--blueish);
+  margin-top: -0.5rem;         /* job title sits right under name */
+  margin-bottom: 0.4rem;
 }
 
+/* ===== Description ===== */
 .hero-text {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--blackish);
-  max-width: 520px;
-  line-height: 1.6;
+  max-width: 700px;            /* wider description */
+  line-height: 1.7;
 }
 
-/* ===== Info ===== */
+/* ===== Info (email / phone / location) – now ROW ===== */
 .hero-info {
   margin-top: 0.8rem;
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem; /* gap between rows */
-  width: 100%;
+  flex-direction: row;         /* row instead of column */
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;                   /* spacing between items */
+  flex-wrap: wrap;
 }
 
 .hero-info p {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.5rem;
   margin: 0;
   color: var(--blackish);
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 1.05rem;
 }
 
 .hero-info i {
-  width: 24px; /* fixed width for alignment */
-  min-width: 24px;
-  font-size: 1.2rem;
+  font-size: 0.7rem;
   text-align: center;
-  flex-shrink: 0;
-  color: var(--blackish); /* enforce icon color */
 }
 
 /* ===== Buttons ===== */
 .hero-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.2rem;
-  margin-top: 1.6rem;
+  gap: 2rem;                   /* larger gap between buttons */
+  margin-top: 2rem;
 }
 
 .hero-btn {
-  padding: 0.7rem 1.5rem;
-  border-radius: 8px;
+  padding: 0.8rem 1.8rem;
+  border-radius: 10px;
   border: 2px solid transparent;
   font-weight: 500;
   text-decoration: none;
@@ -106,21 +107,21 @@
 .hero-btn-cv:hover {
   background-color: var(--blueish);
   color: #ffffff;
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
 /* ===== Socials ===== */
 .hero-socials {
   display: flex;
-  gap: 1.4rem;
-  margin-top: 1.8rem;
+  justify-content: center;
+  gap: 1.6rem;
+  margin-top: 2rem;
   flex-wrap: wrap;
-  justify-content: flex-start;
 }
 
 .hero-social-link i {
-  font-size: 1.6rem;
-  color: var(--blackish); /* enforce default color */
+  font-size: 1.7rem;
+  color: var(--blackish);
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -129,139 +130,7 @@
   transform: translateY(-3px);
 }
 
-/* ===== Right side ===== */
+/* ===== Right side removed ===== */
 .hero-right {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start; /* image at top */
-}
-
-.hero-image {
-  width: 100%;
-  max-width: 320px;
-  border-radius: 16px;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
-}
-
-/* ===== Responsive ===== */
-
-/* Tablet / 1024px */
-@media (max-width: 1024px) {
-  .hero-name,
-  .hero-role {
-    display: none; /* hide for smaller screens like footer */
-  }
-}
-
-/* Small tablet / 900px */
-@media (max-width: 900px) {
-  .hero-socials {
-    justify-content: center;
-    width: 100%;
-  }
-
-  .hero-left {
-    order: 2; /* text comes second */
-  }
-  .hero-right {
-    order: 1; /* image comes first */
-  }
-  .hero-container {
-    flex-direction: column; /* image on top */
-    text-align: left;
-    gap: 2rem;
-    align-items: center;
-    padding: 7rem 5% 3rem;
-  }
-
-  .hero-left {
-    width: 100%;
-    align-items: center;
-  }
-
-  .hero-info {
-    align-items: center;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  .hero-right {
-    width: 100%;
-    justify-content: center;
-    margin-bottom: 1rem;
-  }
-
-  .hero-image {
-    max-width: 280px;
-    margin-bottom: 1rem;
-  }
-}
-
-/* Mobile / 600px */
-@media (max-width: 600px) {
-  .hero-container {
-    flex-direction: column;
-    align-items: center;
-    padding: calc(60px + 5rem) 5% 3rem; /* avoid navbar overlap */
-    gap: 1.8rem;
-    text-align: center;
-  }
-
-  .hero-left {
-    width: 100%;
-    max-width: 320px; /* center block */
-    align-items: center;
-    text-align: center;
-  }
-
-  .hero-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* center the whole block */
-    gap: 0.6rem;
-    width: 100%;
-  }
-
-  .hero-info p {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* center icon + text as a block */
-    gap: 0.6rem;
-    margin: 0 auto; /* ensures block is centered */
-  }
-
-  .hero-info i {
-    width: auto; /* let icon size naturally */
-    min-width: 24px;
-    text-align: center;
-    flex-shrink: 0;
-    line-height: 1.5;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .hero-btn {
-    width: 100%;
-    max-width: 280px;
-    text-align: center;
-  }
-
-  .hero-socials {
-    justify-content: center;
-    margin-top: 1.5rem;
-  }
-
-  .hero-image {
-    max-width: 260px;
-    margin-bottom: 1rem;
-  }
+  display: none !important;
 }
