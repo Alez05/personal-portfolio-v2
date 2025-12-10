@@ -71,7 +71,7 @@ const HomeHl = () => {
       </div>
 
       {/* Right side */}
-      <div className="hero-right">
+      {/* <div className="hero-right">
         {hero.profile && (
           <img
             src={hero.profile}
@@ -79,7 +79,7 @@ const HomeHl = () => {
             className="hero-image"
           />
         )}
-      </div>
+      </div> */}
     </section>
   );
 };

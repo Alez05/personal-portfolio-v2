@@ -1,23 +1,61 @@
 .ct-wrapper {
   display: flex;
-  flex-direction: column; /* stack title, description, button vertically */
-  align-items: center; /* horizontal center */
-  justify-content: center; /* vertical center (if parent has height) */
-  gap: 2rem; /* space between elements */
-  padding: 2rem; /* padding around content */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
   text-align: center;
   background-color: #fff;
+
+  /* your new request */
+  margin-bottom: 4rem;
 }
 
+/* NAME */
 .ct-title {
-  font-size: 2.5rem;
+  font-size: 3rem; /* bigger */
+  font-weight: 700;
+  margin-bottom: 0; /* no gap at all */
 }
 
+/* POSITION (directly under name, no spacing) */
+.ct-position {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-top: 0;     /* no gap between name + job */
+  margin-bottom: 1rem;
+}
+
+/* DESCRIPTION wider */
 .ct-description {
-  font-size: 1.1rem;
-  max-width: 600px; /* optional: limit width for nice readability */
+  font-size: 1.15rem;
+  max-width: 850px; /* wider than before */
+  line-height: 1.6;
 }
 
+/* CONTACT INFO — now in a row */
+.ct-contact-row {
+  display: flex;
+  gap: 2rem; /* spacing between email / phone / location */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* safe on mobile */
+}
+
+.ct-contact-item {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* LINK BUTTONS — larger gap */
+.ct-links {
+  display: flex;
+  gap: 2.5rem; /* increased spacing */
+  justify-content: center;
+}
+
+/* BUTTON LOOK */
 .ct-link {
   background: linear-gradient(to left, rgb(79, 123, 255) 50%, rgb(34, 192, 255) 50%);
   background-size: 200% 100%;
@@ -26,9 +64,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 150px;
-  height: 45px;
-  border-radius: 12px;
+  width: 160px;
+  height: 50px;
+  border-radius: 14px;
   font-size: 1rem;
   text-decoration: none;
   cursor: pointer;
