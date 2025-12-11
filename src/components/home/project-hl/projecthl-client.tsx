@@ -79,7 +79,7 @@ export const ProjectHlClient: React.FC<Props> = ({ videos = [] }) => {
             className="ph-project"
           >
             <div className="ph-video-wrap">
-              {p.video ? (
+              {/* {p.video ? (
                 <video
                   src={p.video}
                   className="ph-video"
@@ -88,7 +88,7 @@ export const ProjectHlClient: React.FC<Props> = ({ videos = [] }) => {
                 />
               ) : (
                 <div className="ph-client-placeholder">No video</div>
-              )}
+              )} */}
             </div>
 
             <div className="ph-project-layout">
