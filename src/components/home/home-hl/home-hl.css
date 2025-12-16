@@ -43,7 +43,7 @@
 .hero-text {
   font-size: 1.2rem;
   color: var(--blackish);
-  max-width: 700px;            /* wider description */
+  max-width: 800px;            /* wider description */
   line-height: 1.7;
 }
 
@@ -76,7 +76,7 @@
 .hero-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;                   /* larger gap between buttons */
+  gap: 4rem;                   /* larger gap between buttons */
   margin-top: 2rem;
 }
 
@@ -92,6 +92,7 @@
 .hero-btn-about {
   background-color: var(--blueish);
   color: #fff;
+  width: 200px;
 }
 
 .hero-btn-about:hover {
@@ -102,6 +103,7 @@
   background-color: transparent;
   border: 2px solid var(--blueish);
   color: var(--blueish);
+  width: 200px;
 }
 
 .hero-btn-cv:hover {
@@ -114,8 +116,8 @@
 .hero-socials {
   display: flex;
   justify-content: center;
-  gap: 1.6rem;
-  margin-top: 2rem;
+  gap: 2.5rem;
+  margin-top: 3rem;
   flex-wrap: wrap;
 }
 
