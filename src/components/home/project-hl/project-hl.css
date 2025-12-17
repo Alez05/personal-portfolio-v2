@@ -43,7 +43,7 @@
 }
 
 .ph-counter {
-  font-size: 6.2rem;
+  font-size: 9.2rem;
   font-weight: 700;
   color: #123458;
 }
@@ -55,7 +55,7 @@
 }
 
 .ph-title {
-  font-size: 2.8rem;
+  font-size: 4rem;
   color: #123458;
   font-weight: 700;
   white-space: nowrap;
@@ -73,17 +73,32 @@
 
 /* DESCRIPTION + CTA */
 .ph-text-description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* keeps right alignment */
   font-size: 1.1rem;
   color: #333;
   line-height: 1.6;
-  max-width: 500px;
-  text-align: right;
-  gap: 1rem;
+  width: 700px;
+  gap: 0.75rem;
+}
+
+.ph-label-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.ph-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #123458;
 }
 
 .ph-description {
   text-align: start;
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
 
 .ph-cta {

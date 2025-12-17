@@ -16,7 +16,7 @@ const ProjectHl = async () => {
     );
   }
 
-  const { title, description, videos, cta } = data;
+  const { title, description, videos, cta, label } = data;
 
   return (
     <section className="ph-section">
@@ -29,16 +29,17 @@ const ProjectHl = async () => {
         {/* RIGHT COLUMN */}
         <div className="ph-right">
           <div className="ph-text-description">
+            {/* <div className="ph-label-container">{label && <p className="ph-label">{label}</p>}</div> */}
             {description && <p className="ph-description">{description}</p>}
 
-            {cta &&
+            {/* {cta &&
               cta.map((item, idx) => (
                 <div key={idx} className="ph-cta">
                   <a href={item.href} className="ph-cta-button">
                     {item.label}
                   </a>
                 </div>
-              ))}
+              ))}  Might add this back later*/}
           </div>
 
           <div className="ph-client-column">
