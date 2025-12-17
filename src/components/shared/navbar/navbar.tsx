@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <nav className="navbar" role="navigation" aria-label="Main navigation">
       <a className="nav-logo" href="/">
-        <span className="nav-logo-a">A</span>lexandru Cercel
+        <span className="nav-logo-a">W</span>eb Developer & Designer
       </a>
 
       <ul className="nav-links">
