@@ -1,1 +1,5 @@
-export { AboutHero } from './about-hero'
+// components
+export { AboutHero } from "./about-hero";
+
+// types
+export type { TAboutMe } from "./about-hero.type";

@@ -1,0 +1,1 @@
+export { aboutMeData } from "./aboutme";
