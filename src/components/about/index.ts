@@ -17,3 +17,4 @@ export type { TEducation } from "./education-section";
 export type { TCourses, TOngCourses } from "./education-section";
 export type { THobbies } from "./hobbies/hobbies.type";
 export type { TLanguage } from "./education-section/";
+export type { TAboutMe } from "./about-hero";

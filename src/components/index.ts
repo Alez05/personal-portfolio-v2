@@ -34,6 +34,7 @@ export type { TEducation } from "./about";
 export type { TCourses, TOngCourses } from "./about";
 export type { THobbies } from "./about";
 export type { TLanguage } from "./about";
+export type { TAboutMe } from "./about";
 
 // BLOG FILE
 // components

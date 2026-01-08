@@ -1,49 +1,207 @@
+/* ===== Container ===== */
 .ah-container {
-  background-image: url('../../../../public/image/contact.png');
-  padding: 6rem 2rem 4rem 2rem; /* extra top padding for navbar space */
-  text-align: center;
+  display: flex;
+  flex-direction: row; /* row for left/right split */
+  justify-content: center;
+  align-items: center;
+  padding: 7rem 8% 5rem;
+  min-height: 100vh;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  text-align: left;
+  gap: 5rem;
+  flex-wrap: wrap;
+}
+
+/* ===== Left (content) ===== */
+.ah-left {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  height: 100vh;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.ah-title {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-  background: linear-gradient(90deg, #1676dd, #060606);
-  -webkit-background-clip: text; /* for Safari/Chrome */
-  -webkit-text-fill-color: transparent;
-  background-clip: text; /* standard */
-  color: transparent;
-}
-
-.ah-description {
+  align-items: flex-start;
+  gap: 1.2rem;
+  flex: 1;
+  min-width: 300px;
   max-width: 600px;
-  font-size: 1rem;
-  color: #030303; /* near black */
-  line-height: 1.6;
-  padding-bottom: 2rem;
 }
 
-.ah-button {
-  background-color: #1676dd;
-  color: #fff;
-  border-radius: 10px;
-  width: 180px;
-  height: 45px;
-  align-content: center;
-  flex-wrap: wrap;
+/* ===== Right (profile image) ===== */
+.ah-right {
+  flex: 1;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  min-width: 250px;
 }
 
-.ah-wrapper {
+.ah-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* ===== Name & Role ===== */
+.ah-name {
+  font-size: 3.6rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--blueish), var(--blackish));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0;
+}
+
+.ah-role {
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: var(--blueish);
+  margin-top: -0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+/* ===== Description ===== */
+.ah-text {
+  font-size: 1.2rem;
+  color: var(--blackish);
+  max-width: 800px;
+  line-height: 1.7;
+}
+
+/* ===== Contact Info ===== */
+.ah-contact {
+  margin-top: 0.8rem;
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
   gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.ah-contact p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  color: var(--blackish);
+  font-size: 1.05rem;
+}
+
+.ah-contact i {
+  font-size: 0.7rem;
+}
+
+/* ===== Buttons ===== */
+.ah-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  margin-top: 2rem;
+}
+
+.ah-btn {
+  padding: 0.8rem 1.8rem;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.ah-btn-about {
+  background-color: var(--blueish);
+  color: #fff;
+  width: 200px;
+}
+
+.ah-btn-about:hover {
+  transform: scale(1.05);
+}
+
+.ah-btn-cv {
+  background-color: transparent;
+  border: 2px solid var(--blueish);
+  color: var(--blueish);
+  width: 200px;
+}
+
+.ah-btn-cv:hover {
+  background-color: var(--blueish);
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* ===== Socials ===== */
+.ah-socials {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2.5rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.ah-social-link i {
+  font-size: 1.7rem;
+  color: var(--blackish);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.ah-social-link i:hover {
+  color: var(--blueish);
+  transform: translateY(-3px);
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 1024px) {
+  .ah-name {
+    font-size: 3rem;
+  }
+  .ah-role {
+    font-size: 1.6rem;
+  }
+  .ah-text {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ah-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .ah-left {
+    align-items: center;
+  }
+
+  .ah-contact {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .ah-buttons {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .ah-socials {
+    justify-content: center;
+  }
+
+  .ah-right {
+    display: none; /* hide image on small screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .ah-name {
+    font-size: 2.5rem;
+  }
+  .ah-role {
+    font-size: 1.4rem;
+  }
+  .ah-text {
+    font-size: 1rem;
+  }
 }

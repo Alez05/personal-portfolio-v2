@@ -25,6 +25,7 @@ export { hobbiesData } from "./about";
 export { languageData } from "./about";
 export { ongCoursesData } from "./about";
 export { skillsData } from "./about";
+export { aboutMeData } from "./about";
 
 // Blog Page
 export { blogCardData } from "./blog";
