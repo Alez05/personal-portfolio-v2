@@ -10,51 +10,40 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
-  // Helper to check if link is active
   const isActive = (path: string) => (pathname === path ? "active" : "");
 
   return (
     <nav className="navbar" role="navigation" aria-label="Main navigation">
       <a className="nav-logo" href="/">
-        <span className="nav-logo-a">W</span>eb Developer & Designer
+        <span className="nav-logo-a">W</span>eb Developer
       </a>
 
       <ul className="nav-links">
-        <li>
-          <a href="/" className={isActive("/")}>Home</a>
-        </li>
-        <li>
-          <a href="/about" className={isActive("/about")}>About</a>
-        </li>
-        <li>
-          <a href="/projects" className={isActive("/projects")}>Projects</a>
-        </li>
-        <li>
-          <a href="/blog" className={isActive("/blog")}>Blog</a>
-        </li>
-        <li>
-          <a href="/contact" className={isActive("/contact")}>Hire me</a>
-        </li>
+        <li><a href="/" className={isActive("/")}>Home</a></li>
+        <li><a href="/about" className={isActive("/about")}>About</a></li>
+        <li><a href="/projects" className={isActive("/projects")}>Projects</a></li>
+        <li><a href="/blog" className={isActive("/blog")}>Blog</a></li>
+        <li><a href="/contact" className={isActive("/contact")}>Hire me</a></li>
       </ul>
 
+      {/* Burger button using spans */}
       <button
         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         aria-expanded={isMenuOpen}
-        className="burger"
+        className={`burger ${isMenuOpen ? "open" : ""}`}
         onClick={toggleMenu}
       >
-        <i
-          className={`fa-solid ${isMenuOpen ? "fa-xmark" : "fa-bars"}`}
-          style={{ fontSize: "30px" }}
-        ></i>
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
 
       <div className={`dropdown ${isMenuOpen ? "show" : ""}`}>
-        <a href="/" className={isActive("/")} onClick={() => setIsMenuOpen(false)}>Home</a>
-        <a href="/about" className={isActive("/about")} onClick={() => setIsMenuOpen(false)}>About</a>
-        <a href="/projects" className={isActive("/projects")} onClick={() => setIsMenuOpen(false)}>Projects</a>
-        <a href="/blog" className={isActive("/blog")} onClick={() => setIsMenuOpen(false)}>Blog</a>
-        <a href="/contact" className={isActive("/contact")} onClick={() => setIsMenuOpen(false)}>Hire me</a>
+        <a href="/" className={`nav-dropdown-mobile ${isActive("/")}`} onClick={() => setIsMenuOpen(false)}>Home</a>
+        <a href="/about" className={`nav-dropdown-mobile ${isActive("/about")}`} onClick={() => setIsMenuOpen(false)}>About</a>
+        <a href="/projects" className={`nav-dropdown-mobile ${isActive("/projects")}`} onClick={() => setIsMenuOpen(false)}>Projects</a>
+        <a href="/blog" className={`nav-dropdown-mobile ${isActive("/blog")}`} onClick={() => setIsMenuOpen(false)}>Blog</a>
+        <a href="/contact" className={`nav-dropdown-mobile ${isActive("/contact")}`} onClick={() => setIsMenuOpen(false)}>Hire me</a>
       </div>
     </nav>
   );
