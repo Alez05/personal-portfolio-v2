@@ -4,10 +4,12 @@ import { Footer, Navbar } from "../components/shared/index";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 // Inter for headings
-const inter = Inter({
+
+export const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   weight: ["400", "500", "600", "700", "800", "900"],
+  display: "swap",
 });
 
 // Work Sans for body
@@ -23,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-GB" className={`${inter.variable} ${workSans.variable}`}>
+    <html lang="en-GB" className={inter.variable}>
       <body>
         <Navbar />
          <main className="flex-1 mt-24"> {/* mt-24 to offset fixed navbar */}
