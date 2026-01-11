@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import "./navbar.css";
+import { NavSocials } from "./nav-socials";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -44,6 +45,11 @@ const Navbar = () => {
         <a href="/projects" className={`nav-dropdown-mobile ${isActive("/projects")}`} onClick={() => setIsMenuOpen(false)}>Projects</a>
         <a href="/blog" className={`nav-dropdown-mobile ${isActive("/blog")}`} onClick={() => setIsMenuOpen(false)}>Blog</a>
         <a href="/contact" className={`nav-dropdown-mobile ${isActive("/contact")}`} onClick={() => setIsMenuOpen(false)}>Hire me</a>
+
+        <div className="nav-socials-wrapper">
+          <NavSocials />
+          <p className="nav-rights">© 2025 Alexandru Cercel. All rights reserved.</p>
+        </div>
       </div>
     </nav>
   );

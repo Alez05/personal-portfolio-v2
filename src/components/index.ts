@@ -16,6 +16,7 @@ export { copyToClipboard } from "./helpers";
 
 // types
 export type { TFooter } from "./shared";
+export type { TNavSocial } from "./shared";
 
 // ABOUT FILE
 // components
