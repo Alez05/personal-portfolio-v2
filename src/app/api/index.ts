@@ -33,4 +33,4 @@ export { blogHeroData } from "./blog";
 export { blogSectionData } from "./blog";
 
 // Shared
-export { footerData } from "./shared";
+export { footerData, navSocials } from "./shared";

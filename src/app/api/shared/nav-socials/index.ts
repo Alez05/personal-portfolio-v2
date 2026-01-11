@@ -1,0 +1,1 @@
+export { navSocials } from "./socials";

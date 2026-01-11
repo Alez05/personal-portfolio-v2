@@ -1,0 +1,43 @@
+/* Wrapper */
+.nav-socials {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* Icon button */
+.nav-social {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #fff;
+  color: var(--blackish);
+
+  border: 1px solid rgba(128, 128, 128, 0.35);
+  border-radius: 8px;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Icon size */
+.nav-social i {
+  font-size: 1.1rem;
+}
+
+/* Hide outside mobile */
+@media (min-width: 768px) {
+  .nav-socials {
+    display: none;
+  }
+}

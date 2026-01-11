@@ -152,7 +152,6 @@
   width: 100%;
   padding: 0.5rem 1rem; /* left offset inside border */
   border-bottom: 1px rgb(227, 227, 227) solid;
-  border-radius: 5px;
   box-sizing: border-box;
   color: var(--blackish);
   font-size: clamp(1.2rem, 4vw, 1.5rem);
@@ -171,22 +170,56 @@
   color: var(--redish);
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 767px) {
-  .nav-links {
-    display: none;
-  }
-  .burger {
-    display: flex;
-  }
+/* ===== Dropdown Socials & Rights ===== */
+.nav-socials-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* horizontally center */
+  justify-content: flex-end; /* push to bottom */
+  width: 100%;
+  margin-top: auto; /* ensures it goes to bottom of dropdown */
+  gap: 2rem; /* space between socials and copyright */
+  padding-bottom: 1rem; /* spacing from bottom */
 }
 
+.nav-rights {
+  font-size: 0.85rem;
+  color: rgba(0, 0, 0, 0.55);
+  text-align: center;
+  margin: 0; /* reset default margin */
+}
+
+/* ===== Responsive (Mobile-First) ===== */
+
+/* Mobile only (default) */
+.nav-links {
+  display: none; /* links hidden by default on mobile */
+}
+
+.burger {
+  display: flex;
+}
+
+/* Tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
   .nav-links li a {
     font-size: clamp(0.95rem, 1.5vw, 1rem);
   }
+  .nav-socials-wrapper {
+    padding-bottom: 1.25rem;
+  }
+  .nav-rights {
+    font-size: 0.85rem;
+  }
 }
 
+/* Desktop */
 @media (min-width: 1024px) {
   /* clamp handles sizes */
+  .nav-socials-wrapper {
+    padding-bottom: 1.5rem;
+  }
+  .nav-rights {
+    font-size: 0.9rem;
+  }
 }
