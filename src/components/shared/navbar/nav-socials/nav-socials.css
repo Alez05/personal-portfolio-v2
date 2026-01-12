@@ -35,7 +35,27 @@
   font-size: 1.1rem;
 }
 
-/* Hide outside mobile */
+/* =========================
+   RESPONSIVENESS
+   ========================= */
+
+/* Small phones */
+@media (max-width: 360px) {
+  .nav-social {
+    width: 34px;
+    height: 34px;
+  }
+
+  .nav-social i {
+    font-size: 0.95rem;
+  }
+
+  .nav-socials {
+    gap: 0.5rem;
+  }
+}
+
+/* Tablets & up → hide completely */
 @media (min-width: 768px) {
   .nav-socials {
     display: none;
