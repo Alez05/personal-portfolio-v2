@@ -1,7 +1,6 @@
 "use client";
 
 import { TAboutMe } from "./about-hero.type";
-import { copyToClipboard } from "../../helpers";
 import { DownloadButton } from "../../shared";
 import "./about-hero.css";
 
@@ -12,102 +11,66 @@ type Props = {
 export const AboutHeroClient = ({ about }: Props) => {
   return (
     <section className="ah-container">
+      {/* LEFT CONTENT */}
       <div className="ah-left">
-        {/* NAME / ROLE / TEXT */}
-        {about.name && <h1 className="ah-name">{about.name}</h1>}
-        {about.role && <h2 className="ah-role">{about.role}</h2>}
-        {about.text && <p className="ah-text">{about.text}</p>}
+        {/* TITLE */}
+        <span className="ah-title">{about.title}</span>
 
-        {/* CONTACT */}
-        <div className="ah-contact">
-          {/* EMAIL */}
-          {about.email &&
-            (() => {
-              const email = about.email;
-              return (
-                <p
-                  onClick={() => copyToClipboard(email)}
-                  className="cursor-pointer"
-                >
-                  <i className={about.emailIcon || "fa-solid fa-envelope"} />
-                  <span>{email}</span>
-                </p>
-              );
-            })()}
-
-          {/* PHONE */}
-          {about.phone &&
-            (() => {
-              const phone = about.phone;
-              return (
-                <p
-                  onClick={() => copyToClipboard(phone)}
-                  className="cursor-pointer"
-                >
-                  <i className={about.phoneIcon || "fa-solid fa-phone"} />
-                  <span>{phone}</span>
-                </p>
-              );
-            })()}
-
-          {/* LOCATION */}
-          {about.location && (
-            <p>
-              <i
-                className={
-                  about.locationIcon || "fa-solid fa-location-dot"
-                }
-              />
-              <span>{about.location}</span>
-            </p>
-          )}
+        {/* NAME + ROLE */}
+        <div className="ah-identity">
+          <h1 className="ah-name">{about.name}</h1>
+          <h2 className="ah-role">{about.role}</h2>
         </div>
 
-        {/* BUTTONS */}
+        {/* DESCRIPTION */}
+        <p className="ah-text">{about.description}</p>
+
+        {/* CURRENT FOCUS */}
+        {about.currentFocus && (
+          <p className="ah-focus">
+            <span>Current focus:</span> {about.currentFocus}
+          </p>
+        )}
+
+        {/* ACTIONS */}
         <div className="ah-buttons">
-          {about.aboutLink && (
-            <a href={about.aboutLink} className="ah-btn ah-btn-about">
-              Read more
+          {about.seeMore && (
+            <a href={about.seeMore} className="ah-btn ah-btn-secondary">
+              See my work
             </a>
           )}
-
-          {about.downloadLink && (
-            <DownloadButton path={about.downloadLink} />
-          )}
+          {about.downloadLink && <DownloadButton path={about.downloadLink} />}
         </div>
+      </div>
 
-        {/* SOCIALS */}
+      {/* RIGHT SIDE */}
+      <div className="ah-right">
+        {about.profileImage?.src && (
+          <img
+            src={about.profileImage.src}
+            alt={about.profileImage.alt ?? "Profile image"}
+            className="ah-image"
+          />
+        )}
+
+        {/* SOCIALS UNDER IMAGE */}
         {about.socials && about.socials.length > 0 && (
           <div className="ah-socials">
-            {about.socials.map((s, idx) => (
+            {about.socials.map((s) => (
               <a
-                key={idx}
+                key={s.platform}
                 href={s.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ah-social-link"
                 aria-label={s.platform}
+                className="ah-social-link"
               >
-                <i className={`fa-brands fa-${s.platform}`} />
+                <i className={s.icon} />
               </a>
             ))}
           </div>
         )}
       </div>
-
-      {/* IMAGE */}
-      {about.profileImage?.src && (
-        <div className="ah-right">
-          <img
-            src={about.profileImage.src}
-            alt={
-              about.profileImage.alt ??
-              `${about.name ?? "Profile"} picture`
-            }
-            className="ah-image"
-          />
-        </div>
-      )}
     </section>
   );
 };
