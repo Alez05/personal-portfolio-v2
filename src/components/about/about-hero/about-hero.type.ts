@@ -1,4 +1,8 @@
-export type TSocialPlatform = "facebook" | "github" | "instagram" | "linkedin";
+export type TSocialPlatform =
+  | "email"
+  | "github"
+  | "instagram"
+  | "linkedin";
 
 export type TSocial = {
   platform: TSocialPlatform;
@@ -6,28 +10,26 @@ export type TSocial = {
   icon: string;
 };
 
-export type TContactIcon = {
-  locationIcon?: string;
-  emailIcon?: string;
-  phoneIcon?: string;
-};
-
-export type TImage = {
-  src?: string,
-  alt?: string,
-
-}
-
-export type TAboutMe = TContactIcon & {
-  name?: string;
-  role?: string;
-  text?: string;
+export type TContact = {
   location?: string;
   email?: string;
   phone?: string;
-  profile?: string;
-  aboutLink?: string;
-  downloadLink?: string;
+};
+
+export type TImage = {
+  src?: string;
+  alt?: string;
+};
+
+export type TAboutMe = {
+  title: string;          // "Getting to know me"
+  name: string;           // Alex
+  role: string;           // Fullstack Developer
+  description: string;    // who I am / what I do / what I offer
+  currentFocus?: string;  // optional highlight line
+  downloadLink?: string;  // used by <DownloadButton />
+  seeMore?: string;      // e.g. "/projects"
   socials?: TSocial[];
-  profileImage?: TImage
+  profileImage?: TImage;
+  contact?: TContact;
 };

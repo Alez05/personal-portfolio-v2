@@ -1,44 +1,51 @@
 import { TAboutMe } from "../../../../components";
 
 export const aboutMeData: TAboutMe = {
-  name: "Alexandru Cercel",
-  role: "Fullstack Web Developer",
-  text: "I’m a fullstack developer with a strong passion for building performant, scalable, and user-friendly applications.",
-  location: "London / Amsterdam",
-  email: "cercel.alexandru436@gmail.com",
-  phone: "+44 7770282405",
-  aboutLink: "#",
-  downloadLink: "#",
+  title: "Getting to know me",
 
-  profileImage: {
-    src: "/image/profile.png",
-    alt: "Alexandru Cercel Profile Picture",
+  name: "Alexandru Cercel",
+  role: "Fullstack Developer",
+
+  description:
+    "Hey, I’m Alexandru Cercel a fullstack developer focused on building clean, scalable, and user-focused web applications.I work across the full stack, from structuring frontend architecture and crafting smooth user experiences to designing APIs and handling production-ready deployments. I care deeply about code quality, performance, and building systems that stay maintainable long after launch.My approach is practical and detail-oriented: clear structure, predictable behavior, and thoughtful UX decisions over unnecessary complexity.",
+
+  currentFocus:
+    "refining frontend architecture, improving UX micro-interactions, and shipping polished, production-ready projects with confidence.",
+
+  downloadLink: "/cv/Alex-CV.pdf",
+  seeMore: "/projects",
+
+  contact: {
+    location: "Netherlands",
+    email: "alex@email.com",
+    phone: "+31 6 1234 5678",
   },
 
   socials: [
     {
       platform: "github",
-      url: "https://github.com/alexandru",
+      url: "https://github.com/yourusername",
       icon: "fa-brands fa-github",
     },
     {
       platform: "linkedin",
-      url: "https://linkedin.com/in/alexandru",
+      url: "https://linkedin.com/in/yourusername",
       icon: "fa-brands fa-linkedin",
     },
     {
-      platform: "facebook",
-      url: "https://facebook.com/alexandru",
-      icon: "fa-brands fa-facebook",
+      platform: "instagram",
+      url: "https://instagram.com/yourusername",
+      icon: "fa-brands fa-instagram",
     },
     {
-      platform: "instagram",
-      url: "https://instagram.com/alexandru",
-      icon: "fa-brands fa-instagram",
+      platform: "email",
+      url: "mailto: cercel.alexandru007@gmail.com",
+      icon: "fa-solid fa-envelope",
     },
   ],
 
-  locationIcon: "fa-solid fa-location-dot",
-  emailIcon: "fa-solid fa-envelope",
-  phoneIcon: "fa-solid fa-phone",
+  profileImage: {
+    src: "/image/profileimg.jpg",
+    alt: "Alex profile picture",
+  },
 };
