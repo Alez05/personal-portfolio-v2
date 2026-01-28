@@ -1,3 +1,7 @@
+/* =========================
+   DESKTOP / TABLET HERO
+========================= */
+
 /* ===== Container ===== */
 .ah-container {
   display: flex;
@@ -28,12 +32,6 @@
 }
 
 /* Identity */
-.ah-identity {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
 .ah-name {
   font-size: 3.4rem;
   font-weight: 800;
@@ -116,9 +114,7 @@
 .ah-social-link i {
   font-size: 1.6rem;
   color: var(--blackish);
-  transition:
-    color 0.25s ease,
-    transform 0.25s ease;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
 .ah-social-link i:hover {
@@ -126,44 +122,49 @@
   transform: translateY(-3px);
 }
 
-/* ===== Tablet (≤768px) ===== */
-@media (max-width: 768px) {
+/* =========================
+   TABLET 600px – 1023px
+========================= */
+@media (min-width: 600px) and (max-width: 1023px) {
   .ah-container {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row;       /* keep same as desktop */
+    justify-content: center;
+    align-items: center;
+    text-align: left;
   }
 
   .ah-left {
+    flex: 1.2;
+    align-items: flex-start;
+    max-width: 720px;
+  }
+
+  .ah-right {
+    flex: 0.8;
     align-items: center;
+    gap: 2rem;
+    margin-top: 0;
   }
 
-  .ah-buttons {
-    justify-content: center;
-  }
-}
-
-/* ===== Phone (≤480px) ===== */
-@media (max-width: 480px) {
+  /* Text scaling */
   .ah-name {
-    font-size: 2.4rem;
+    font-size: clamp(2.4rem, 4vw, 3.4rem);
   }
 
   .ah-role {
-    font-size: 1.3rem;
+    font-size: clamp(1.3rem, 2.5vw, 1.7rem);
   }
 
   .ah-text {
-    font-size: 1rem;
-  }
-
-  .ah-container {
-    display: none;
+    font-size: clamp(1rem, 2vw, 1.15rem);
   }
 }
 
-/* ===== Desktop (≥1024px) ===== */
-@media (min-width: 1024px) {
+/* =========================
+   MOBILE ≤599px
+========================= */
+@media (max-width: 599px) {
   .ah-container {
-    gap: 5rem;
+    display: none;
   }
 }
