@@ -1,41 +1,42 @@
+// about-hero-desktop.tsx
 "use client";
 
-import { TAboutMe } from "./about-hero.type";
-import { DownloadButton } from "../../shared";
-import "./about-hero.css";
+import { TAboutMe } from "../aboutme.type";
+import { DownloadButton } from "../../../shared";
+import "./aboutme-d.css";
 
 type Props = {
   about: TAboutMe;
 };
 
-export const AboutHeroClient = ({ about }: Props) => {
+const AboutMeD = ({ about }: Props) => {
   return (
-    <section className="ah-container">
+    <section className="abm-container-d">
       {/* LEFT CONTENT */}
-      <div className="ah-left">
+      <div className="abm-left-d">
         {/* TITLE */}
-        <span className="ah-title">{about.title}</span>
+        <span className="abm-title-d">{about.title}</span>
 
         {/* NAME + ROLE */}
-        <div className="ah-identity">
-          <h1 className="ah-name">{about.name}</h1>
-          <h2 className="ah-role">{about.role}</h2>
+        <div className="abm-identity-d">
+          <h1 className="abm-name-d">{about.name}</h1>
+          <h2 className="abm-role-d">{about.role}</h2>
         </div>
 
         {/* DESCRIPTION */}
-        <p className="ah-text">{about.description}</p>
+        <p className="abm-text-d">{about.description}</p>
 
         {/* CURRENT FOCUS */}
         {about.currentFocus && (
-          <p className="ah-focus">
+          <p className="abm-focus-d">
             <span>Current focus:</span> {about.currentFocus}
           </p>
         )}
 
         {/* ACTIONS */}
-        <div className="ah-buttons">
+        <div className="abm-buttons-d">
           {about.seeMore && (
-            <a href={about.seeMore} className="ah-btn ah-btn-secondary">
+            <a href={about.seeMore} className="abm-btn-secondary-d">
               See my work
             </a>
           )}
@@ -44,18 +45,18 @@ export const AboutHeroClient = ({ about }: Props) => {
       </div>
 
       {/* RIGHT SIDE */}
-      <div className="ah-right">
+      <div className="abm-right-d">
         {about.profileImage?.src && (
           <img
             src={about.profileImage.src}
             alt={about.profileImage.alt ?? "Profile image"}
-            className="ah-image"
+            className="abm-image-d"
           />
         )}
 
         {/* SOCIALS UNDER IMAGE */}
         {about.socials && about.socials.length > 0 && (
-          <div className="ah-socials">
+          <div className="abm-socials-d">
             {about.socials.map((s) => (
               <a
                 key={s.platform}
@@ -63,7 +64,7 @@ export const AboutHeroClient = ({ about }: Props) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={s.platform}
-                className="ah-social-link"
+                className="abm-social-link-d"
               >
                 <i className={s.icon} />
               </a>
@@ -74,3 +75,4 @@ export const AboutHeroClient = ({ about }: Props) => {
     </section>
   );
 };
+export { AboutMeD }

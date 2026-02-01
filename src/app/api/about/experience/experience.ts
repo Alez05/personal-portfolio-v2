@@ -1,0 +1,77 @@
+import { TExperience } from "../../../../components";
+
+export const careerData: TExperience[] = [
+  {
+    jobTitle: "Freelance Front End Developer",
+    company: "Self-employed",
+    companyImg: "/image/wowjob.jpg",
+    location: "London, United Kingdom",
+    locationType: "Remote",
+    employmentType: "Freelance",
+    date: "Jul 2024 – Present",
+    description:
+      "Working independently under my own brand to design, build, and maintain modern web applications with a strong focus on performance, clean UI, and scalable architecture.",
+    responsibilitiesTitle: "Key Responsibilities",
+    responsibilities: [
+      "Design and develop responsive, production-ready web applications using modern front end technologies.",
+      "Work directly with clients to gather requirements, define scope, and propose technical solutions.",
+      "Translate design concepts and business needs into functional, user-friendly interfaces.",
+      "Own the full development lifecycle from planning and implementation to deployment and maintenance.",
+      "Continuously improve performance, accessibility, and cross-browser compatibility.",
+    ],
+    technologiesTitle: "Technologies Used",
+    technologies: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "HTML",
+      "CSS",
+      "Vercel",
+      "Git",
+      "Figma",
+    ],
+    icons: {
+      location: "fa-solid fa-location-dot",
+      date: "fa-solid fa-calendar",
+    },
+  },
+  {
+    jobTitle: "Full stack web Developer",
+    company: "WoW DoP",
+    companyImg: "/image/wowjob.jpg",
+    location: "London, United Kingdom",
+    locationType: "Hybrid",
+    employmentType: "Part-Time",
+    date: "09/2022 – 01/2024",
+    description:
+      "Contributed to high-performance React applications while helping modernize legacy codebases and improve overall user experience across desktop and mobile platforms.",
+    responsibilitiesTitle: "Key Responsibilities",
+    responsibilities: [
+      "Developed and maintained complex React-based interfaces used in live production environments.",
+      "Improved application performance by reducing UI load times and resolving crashes caused by heavy visuals and large datasets.",
+      "Assisted in migrating JavaScript codebases to TypeScript, improving reliability and maintainability.",
+      "Redesigned UI components to enhance usability, accessibility, and consistency across devices.",
+      "Performed cross-browser testing and helped raise accessibility scores from below 30% to over 90%.",
+      "Collaborated closely with senior developers and took ownership of tasks during high-demand periods.",
+    ],
+    technologiesTitle: "Technologies Used",
+    technologies: [
+      "React",
+      "TypeScript",
+      "JavaScript (ES6+)",
+      "styled-components",
+      "HTML",
+      "CSS",
+      "Jest",
+      "Git",
+      "Figma",
+      "Accessibility",
+      "Performance Optimization",
+    ],
+    icons: {
+      location: "fa-solid fa-location-dot",
+      date: "fa-solid fa-calendar",
+    },
+  },
+];
