@@ -164,6 +164,7 @@
 
 .ex-d-card-responsibilities ul {
   padding-left: 1.4rem;
+  list-style-type: disc;
 }
 
 .ex-d-card-responsibilities li {
