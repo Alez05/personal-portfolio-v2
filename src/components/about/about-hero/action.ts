@@ -1,4 +1,4 @@
-import { TAboutMe } from "./about-hero.type";
+import { TAboutMe } from "./aboutme.type";
 
 export const getAboutMeAction = async(): Promise<TAboutMe | null> => {
   try {

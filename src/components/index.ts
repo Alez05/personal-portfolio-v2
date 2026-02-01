@@ -20,9 +20,9 @@ export type { TNavSocial } from "./shared";
 
 // ABOUT FILE
 // components
-export { AboutHero } from "./about";
+export { AboutMeP } from "./about";
 export { Expertise } from "./about";
-export { CareerJourney } from "./about";
+export { ExperienceP } from "./about";
 export { TechSection } from "./about";
 export { EducationSection } from "./about";
 export { Hobbies } from "./about";
@@ -30,7 +30,7 @@ export { Hobbies } from "./about";
 // types
 export type { TSkillSet } from "./about";
 export type { TExpertise } from "./about";
-export type { TCareerJourney } from "./about";
+export type { TExperience } from "./about";
 export type { TEducation } from "./about";
 export type { TCourses, TOngCourses } from "./about";
 export type { THobbies } from "./about";

@@ -1,21 +1,20 @@
 /* =========================
-   DESKTOP / TABLET HERO
+   DESKTOP HERO – ACTIVE ≥769px
 ========================= */
 
-/* ===== Container ===== */
-.ah-container {
+.abm-container-d {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 6rem 8% 4rem;
   min-height: 100vh;
   gap: 4rem;
-  box-sizing: border-box;
   background-color: #fff;
+  box-sizing: border-box;
 }
 
-/* ===== Left ===== */
-.ah-left {
+/* LEFT COLUMN */
+.abm-left-d {
   flex: 1.2;
   max-width: 720px;
   display: flex;
@@ -23,73 +22,72 @@
   gap: 1.4rem;
 }
 
-/* Title */
-.ah-title {
+.abm-title-d {
   font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: rgba(0, 0, 0, 0.5);
+  opacity: 0.6;
 }
 
-/* Identity */
-.ah-name {
+.abm-name-d {
   font-size: 3.4rem;
   font-weight: 800;
+  line-height: 1.05;
   background: linear-gradient(90deg, var(--blueish), var(--blackish));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.ah-role {
+.abm-role-d {
   font-size: 1.7rem;
   font-weight: 600;
   color: var(--blueish);
 }
 
-/* Text */
-.ah-text {
+.abm-text-d {
   font-size: 1.15rem;
   line-height: 1.7;
   color: var(--blackish);
 }
 
-/* Focus */
-.ah-focus {
+.abm-focus-d {
   font-size: 1.05rem;
   color: var(--blackish);
 }
 
-.ah-focus span {
+.abm-focus-d span {
   font-weight: 600;
   color: var(--blueish);
 }
 
-/* Buttons */
-.ah-buttons {
+/* BUTTONS */
+.abm-buttons-d {
   display: flex;
+  flex-direction: row;
   gap: 1.8rem;
   margin-top: 2rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* 🔒 never wrap on tablet/desktop */
 }
 
-.ah-btn-secondary {
+.abm-btn-secondary-d {
   padding: 0.75rem 1.8rem;
   border-radius: 10px;
   border: 2px solid var(--blueish);
   color: var(--blueish);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  white-space: nowrap;
   transition: all 0.25s ease;
 }
 
-.ah-btn-secondary:hover {
+.abm-btn-secondary-d:hover {
   background-color: var(--blueish);
   color: #fff;
   transform: translateY(-2px);
 }
 
-/* ===== Right ===== */
-.ah-right {
+/* RIGHT COLUMN */
+.abm-right-d {
   flex: 0.8;
   display: flex;
   flex-direction: column;
@@ -97,74 +95,79 @@
   gap: 2rem;
 }
 
-/* Image */
-.ah-image {
+.abm-image-d {
   width: 260px;
   max-width: 100%;
   border-radius: 16px;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
-/* Socials */
-.ah-socials {
+.abm-socials-d {
   display: flex;
   gap: 1.8rem;
 }
 
-.ah-social-link i {
+.abm-social-link-d i {
   font-size: 1.6rem;
   color: var(--blackish);
   transition: color 0.25s ease, transform 0.25s ease;
 }
 
-.ah-social-link i:hover {
+.abm-social-link-d i:hover {
   color: var(--blueish);
   transform: translateY(-3px);
 }
 
 /* =========================
-   TABLET 600px – 1023px
+   TABLET HERO – 600px–768px
+   Same layout, scaled down
 ========================= */
-@media (min-width: 600px) and (max-width: 1023px) {
-  .ah-container {
-    flex-direction: row;       /* keep same as desktop */
-    justify-content: center;
-    align-items: center;
-    text-align: left;
+
+@media (min-width: 600px) and (max-width: 768px) {
+  .abm-container-d {
+    padding: 5rem 6% 3.5rem;
+    gap: 3rem;
   }
 
-  .ah-left {
-    flex: 1.2;
-    align-items: flex-start;
-    max-width: 720px;
+  .abm-left-d {
+    max-width: 680px;
   }
 
-  .ah-right {
-    flex: 0.8;
-    align-items: center;
-    gap: 2rem;
-    margin-top: 0;
+  .abm-name-d {
+    font-size: clamp(2.6rem, 5vw, 3.1rem);
   }
 
-  /* Text scaling */
-  .ah-name {
-    font-size: clamp(2.4rem, 4vw, 3.4rem);
+  .abm-role-d {
+    font-size: clamp(1.35rem, 2.5vw, 1.55rem);
   }
 
-  .ah-role {
-    font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+  .abm-text-d {
+    font-size: clamp(1rem, 2.3vw, 1.1rem);
   }
 
-  .ah-text {
-    font-size: clamp(1rem, 2vw, 1.15rem);
+  .abm-focus-d {
+    font-size: 1rem;
   }
-}
 
-/* =========================
-   MOBILE ≤599px
-========================= */
-@media (max-width: 599px) {
-  .ah-container {
-    display: none;
+  .abm-buttons-d {
+    gap: 1.2rem;
+    flex-wrap: nowrap; /* 🔒 stay row */
+  }
+
+  .abm-btn-secondary-d {
+    padding: 0.65rem 1.4rem;
+    font-size: 0.95rem;
+  }
+
+  .abm-right-d {
+    gap: 1.6rem;
+  }
+
+  .abm-image-d {
+    width: clamp(210px, 28vw, 240px);
+  }
+
+  .abm-social-link-d i {
+    font-size: 1.45rem;
   }
 }

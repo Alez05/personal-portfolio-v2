@@ -1,17 +1,17 @@
-export type TCareerJourney = {
+export type TExperience = {
   jobTitle: string
   company: string
+  companyImg: string;
   location: string
+  locationType: string
+  employmentType?: string
   date: string
-  role?: string
   description?: string
   responsibilitiesTitle: string
   responsibilities: string[]
   technologiesTitle: string
   technologies: string[]
   icons: {
-    jobTitle: string
-    company: string
     location: string
     date: string
   }

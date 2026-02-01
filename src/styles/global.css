@@ -6,21 +6,18 @@
 /* ========== ROOT VARIABLES ========== */
 /* LIGHT THEME */
 :root {
-  /* COLORS */
-  --primary-light: #295bf0;   /* main blue */
-  --primary-light-hover: #66B1D3; /* hover state */
-  --accent-light: #D94F4F;    /* accent red */
-  --accent-light-hover: #E05A5A; /* hover state */
-  --bg-light: #F5F9FB;        /* background */
-  --surface-light: #FFFFFF;   /* cards, hero sections */
+  --primary-light: #295bf0;
+  --primary-light-hover: #66B1D3;
+  --accent-light: #D94F4F;
+  --accent-light-hover: #E05A5A;
+  --bg-light: #F5F9FB;
+  --surface-light: #FFFFFF;
   --text-primary-light: #1A1A1A;
   --text-secondary-light: #5A5A5A;
   --border-light: #E0E0E0;
 
-  /* TYPOGRAPHY */
   --font-sans: 'Inter', sans-serif;
 
-  /* ALIASES */
   --blueish: var(--primary-light);
   --redish: var(--accent-light);
   --whiteish: var(--bg-light);
@@ -70,36 +67,11 @@ body {
 }
 
 /* ========== TYPOGRAPHY ========== */
-h1 {
-  letter-spacing: -0.03em;
-  font-weight: 800;
-  font-family: var(--font-sans);
-}
-
-h2 {
-  letter-spacing: -0.02em;
-  font-weight: 700;
-  font-family: var(--font-sans);
-}
-
-h3 {
-  letter-spacing: -0.01em;
-  font-weight: 600;
-  font-family: var(--font-sans);
-}
-
-h4, h5, h6 {
-  letter-spacing: 0;
-  font-weight: 600;
-  font-family: var(--font-sans);
-}
-
-p {
-  font-family: var(--font-sans);
-  line-height: 1.6;
-  color: var(--grayish);
-  max-width: 65ch;
-}
+h1 { letter-spacing: -0.03em; font-weight: 800; font-family: var(--font-sans); }
+h2 { letter-spacing: -0.02em; font-weight: 700; font-family: var(--font-sans); }
+h3 { letter-spacing: -0.01em; font-weight: 600; font-family: var(--font-sans); }
+h4,h5,h6 { letter-spacing: 0; font-weight: 600; font-family: var(--font-sans); }
+p { font-family: var(--font-sans); line-height: 1.6; color: var(--grayish); }
 
 /* ========== LINKS ========== */
 a {
@@ -117,4 +89,15 @@ a {
   opacity: 0 !important;
   pointer-events: none !important;
   z-index: -9999 !important;
+}
+
+/* ========== MEDIA QUERIES FOR HYDRATION SAFE RESPONSIVE COMPONENTS ========== */
+
+/* Mobile only ≤599px */
+.mobile-only { display: block; }
+.desktop-only { display: none; }
+
+@media (min-width: 600px) {
+  .mobile-only { display: none; }
+  .desktop-only { display: block; }
 }

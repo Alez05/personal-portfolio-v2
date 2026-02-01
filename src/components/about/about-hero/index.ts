@@ -1,8 +1,10 @@
 // components
-export { AboutHero } from "./about-hero";
+export { AboutMeP } from "./aboutme-p";
 
-export { AboutMobile } from "./about-mobile";
+export { AboutMeM } from "./aboutme-m";
+export { AboutMeD } from "./aboutme-d";
+
 
 
 // types
-export type { TAboutMe } from "./about-hero.type";
+export type { TAboutMe } from "./aboutme.type";

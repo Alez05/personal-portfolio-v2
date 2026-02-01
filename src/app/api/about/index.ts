@@ -1,6 +1,6 @@
 // Data files
 
-export { careerData } from "./career-journey";
+export { careerData } from "./experience";
 export { coursesData } from "./courses";
 export { expertiseData } from './expertise';
 export { educationData } from "./education";

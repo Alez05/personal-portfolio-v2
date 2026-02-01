@@ -1,42 +1,42 @@
 "use client";
 
 import { useState } from "react";
-import { TAboutMe } from "../about-hero.type";
+import { TAboutMe } from "../aboutme.type";
 import { DownloadButton } from "../../../shared";
-import "./about-mobile.css";
+import "./aboutme-m.css";
 
 type Props = {
   about: TAboutMe;
 };
 
-const AboutMobile = ({ about }: Props) => {
+const AboutMeM = ({ about }: Props) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <section className="ahm-container">
+    <section className="abm-container-m">
       {/* SECTION TITLE */}
-      <span className="ahm-section-title">{about.title}</span>
+      <span className="abm-section-title-m">{about.title}</span>
 
       {/* IMAGE */}
       {about.profileImage?.src && (
-        <div className="ahm-image-wrapper">
+        <div className="abm-image-wrapper-m">
           {/* IDENTITY OVER IMAGE */}
-          <div className="ahm-identity-overlay">
-            <h1 className="ahm-name">{about.name}</h1>
-            <h2 className="ahm-role">{about.role}</h2>
+          <div className="abm-identity-overlay-m">
+            <h1 className="abm-name-m">{about.name}</h1>
+            <h2 className="abm-role-m">{about.role}</h2>
           </div>
 
           <img
             src={about.profileImage.src}
             alt={about.profileImage.alt ?? "Profile image"}
-            className="ahm-image"
+            className="abm-image-m"
           />
         </div>
       )}
 
       {/* SOCIAL ICONS */}
       {about.socials && (
-        <div className="ahm-socials">
+        <div className="abm-socials-m">
           {about.socials.map((s) => (
             <a
               key={s.platform}
@@ -44,7 +44,7 @@ const AboutMobile = ({ about }: Props) => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={s.platform}
-              className="ahm-social-link"
+              className="abm-social-link-m"
             >
               <i className={s.icon} />
             </a>
@@ -53,20 +53,20 @@ const AboutMobile = ({ about }: Props) => {
       )}
 
       {/* DESCRIPTION CARD (EXPANDABLE) */}
-      <div className="ahm-card">
-        <p className={`ahm-text ${expanded ? "expanded" : ""}`}>
+      <div className="abm-card-m">
+        <p className={`abm-text-m ${expanded ? "expanded" : ""}`}>
           {about.description}
         </p>
 
         {/* Show current focus only when expanded */}
         {expanded && about.currentFocus && (
-          <p className="ahm-current-focus">
+          <p className="abm-current-focus-m">
             <span>Current focus:</span> {about.currentFocus}
           </p>
         )}
 
         <button
-          className="ahm-read-more"
+          className="abm-read-more-m"
           onClick={() => setExpanded((v) => !v)}
         >
           {expanded ? "Show less" : "Read more"}
@@ -74,9 +74,9 @@ const AboutMobile = ({ about }: Props) => {
       </div>
 
       {/* BUTTONS (ALWAYS VISIBLE) */}
-      <div className="ahm-buttons">
+      <div className="abm-buttons-m">
         {about.seeMore && (
-          <a href={about.seeMore} className="ahm-btn-primary">
+          <a href={about.seeMore} className="abm-btn-primary-m">
             See my work
           </a>
         )}
@@ -86,4 +86,4 @@ const AboutMobile = ({ about }: Props) => {
   );
 };
 
-export { AboutMobile };
+export { AboutMeM };
