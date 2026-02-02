@@ -149,3 +149,48 @@
   background: #123458;
   border-radius: 50%;
 }
+
+
+/* Mobile: ≤599px */
+@media (max-width: 599px) {
+  .ed-item {
+    padding: 1rem;
+    border-left: 3px solid #123458;
+    flex-direction: column;
+  }
+
+  .ed-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .ed-emblem {
+    width: 50px;
+    height: 50px;
+    margin-left: 0;
+  }
+}
+
+/* Tablet: 600px–767px */
+@media (min-width: 600px) and (max-width: 767px) {
+  .ed-item {
+    padding: 1.5rem;
+  }
+
+  .ed-header {
+    flex-direction: row;
+    gap: 0.8rem;
+  }
+}
+
+/* Desktop: 768px+ */
+@media (min-width: 768px) {
+  .ed-item {
+    padding: 2rem;
+  }
+
+  .ed-header {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}

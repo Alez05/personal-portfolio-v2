@@ -1,0 +1,167 @@
+.ed-d-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 6%;
+  gap: 2rem;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.ed-d-title {
+  font-size: 2.4rem;
+  text-align: center;
+  color: #123458;
+  margin: 0;
+}
+
+.ed-d-description {
+  max-width: 760px;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+.ed-d-cards {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.ed-d-card {
+  padding: 2rem;
+  border-radius: 16px;
+  background-color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ed-d-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.ed-d-left-header {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.ed-d-institution-logo {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  border-radius: 10px;
+  background-color: #f4f6f8;
+}
+
+.ed-d-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.ed-d-card-title {
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #123458;
+  margin: 0;
+}
+
+.ed-d-card-specialization {
+  font-size: 1rem;
+  color: #555;
+}
+
+.ed-d-card-school {
+  font-weight: 600;
+  color: #333;
+}
+
+.ed-d-card-dates {
+  font-size: 0.95rem;
+  color: #444;
+  white-space: nowrap;
+}
+
+.ed-d-card-description {
+  line-height: 1.6;
+  color: #000;
+}
+
+/* Sections */
+.ed-d-card-section {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ed-d-subtitle {
+  font-weight: 600;
+  color: #123458;
+  margin-bottom: 0.5rem;
+}
+
+/* List sections (default) */
+.ed-d-list {
+  padding-left: 1.4rem;
+  list-style-type: disc;
+}
+
+.ed-d-list li {
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
+/* Technologies & Coursework as tags */
+.ed-d-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.ed-d-tech {
+  background-color: #f0f0f0;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+/* Tablet adjustments */
+@media (min-width: 600px) and (max-width: 767px) {
+  .ed-d-container {
+    padding: 2.5rem 4%;
+  }
+  .ed-d-card {
+    padding: 1.8rem;
+  }
+  .ed-d-institution-logo {
+    width: 46px;
+    height: 46px;
+  }
+  .ed-d-card-title {
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile ≤599px: hide desktop */
+@media (max-width: 599px) {
+  .ed-d-container {
+    display: none;
+  }
+}
+
+/* Error */
+.ed-d-error {
+  text-align: center;
+  font-weight: bold;
+  color: red;
+}

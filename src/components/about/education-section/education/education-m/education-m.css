@@ -1,0 +1,159 @@
+/* ==============================
+   MOBILE EDUCATION ≤599px
+============================== */
+
+.ed-m-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+  background-color: #fff;
+}
+
+.ed-m-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #123458;
+  text-align: center;
+}
+
+.ed-m-description {
+  font-size: 1rem;
+  color: #555;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.ed-m-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ed-m-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Header */
+.ed-m-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ed-m-left-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.ed-m-institution-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 6px;
+  background-color: #f4f6f8;
+}
+
+.ed-m-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.ed-m-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #123458;
+  margin: 0;
+}
+
+.ed-m-card-specialization,
+.ed-m-card-school,
+.ed-m-card-dates {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* Description */
+.ed-m-card-description {
+  font-size: 0.9rem;
+  color: #000;
+  line-height: 1.4;
+  margin-top: 0.3rem;
+}
+
+/* Sections */
+.ed-m-card-section {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.ed-m-subtitle {
+  font-weight: bold;
+  color: #123458;
+  margin-bottom: 0.25rem;
+}
+
+/* Default paragraph sections */
+.ed-m-section-items p {
+  font-size: 0.85rem;
+  margin: 0.15rem 0;
+}
+
+/* Technologies & Coursework tags (like desktop) */
+.ed-m-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.2rem;
+}
+
+.ed-m-tech {
+  background-color: #f0f0f0;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #333;
+  margin: 0;
+}
+
+/* Expand effect for all sections */
+.ed-m-all-sections {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.ed-m-all-sections.expanded {
+  max-height: 2000px; /* enough to fit all sections */
+}
+
+/* Read More Button */
+.ed-m-read-more {
+  margin-top: 1rem; /* slightly higher visually */
+  background: none;
+  border: none;
+  color: #123458;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+}
+
+/* Error */
+.ed-m-error {
+  text-align: center;
+  font-weight: bold;
+  color: red;
+}

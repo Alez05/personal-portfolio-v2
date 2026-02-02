@@ -1,21 +1,38 @@
+export type EducationLevel = "highschool" | "bachelor" | "bootcamp" | "certificate";
+
+export type EducationType = "formal" | "bootcamp" | "self-paced";
+
+// Generic section structure for highlights, coursework, technologies, etc.
+export type SectionContent = {
+  title: string;   // Section title (e.g., "Highlights", "Coursework")
+  items: string[]; // List of items in the section
+};
+
 export type TEducation = {
-  id?: string;
-  degree?: string; // e.g. "Fullstack Bootcamp" or "High School Diploma"
-  degreeIcon?: string;
-  lewagonIcon?: string;
-  specialization?: string;
-  school?: string; // e.g. "Ironhack", "XYZ High School"
-  emblem?: string; // path or url to logo/emblem
-
-  startDate?: string;
-  endDate?: string;
-
-  description?: string;
-  keyContentTitle?: string; // e.g. "Highlights", "Focus Areas"
-  keyContent?: string[];
-
-  icons?: {
-    school?: string;
-    startDate?: string;
+  id: string;
+  institution: {
+    name: string;
+    emblem?: string;
+    location?: {
+      city?: string;
+      country?: string;
+    };
   };
+  credential: {
+    title: string;
+    level: EducationLevel;
+  };
+  program?: {
+    specialization?: string;
+    academicFocus?: string[];
+    researchInterest?: string;
+    coreAreas?: string[];
+  };
+  timeline?: {
+    startDate: string;
+    endDate?: string;
+    status?: string;
+  };
+  description?: string;
+  sections?: SectionContent[]; // All highlights, coursework, technologies, etc. go here
 };
