@@ -2,7 +2,7 @@ import { ContactCTA } from "../shared";
 import { AboutMeP } from "./about-hero";
 import { ExperienceP } from "./experience";
 import { TechSection } from "./tech-section";
-import { EducationSection } from "./education-section";
+import { EducationP } from "./education-section";
 import { Hobbies } from "./hobbies";
 
 const About = () => {
@@ -11,8 +11,8 @@ const About = () => {
       <AboutMeP />
       {/* <DownloadSection /> */}
       <ExperienceP />
+      <EducationP />
       <TechSection />
-      <EducationSection />
       <Hobbies />
       <ContactCTA />
     </div>
