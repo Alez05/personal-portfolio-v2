@@ -1,5 +1,6 @@
 export type TCourses = {
   id?: string;
+  sectionTitle?:string;
   name?: string;
   nameIcon?: string;
   provider?: string;

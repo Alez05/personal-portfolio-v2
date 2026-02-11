@@ -1,196 +1,302 @@
+/* =====================================
+   EDUCATION – MOBILE FIRST (≤599px)
+===================================== */
+
 .ed-container {
-  padding: 2rem;
-}
-
-.ed-title-wrapper {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
   gap: 1rem;
+  background-color: #fff;
 }
 
-.ed-title-edu {
-  font-size: 2rem;
-  margin-bottom: 3rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
+/* Title */
 .ed-title {
   font-size: 1.8rem;
-  margin-bottom: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #123458;
+  text-align: center;
 }
 
-.ed-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+.ed-description-text {
+  font-size: 1rem;
+  color: #555;
 }
 
-.ed-item {
+/* Cards wrapper */
+.ed-cards {
   display: flex;
   flex-direction: column;
-  position: relative;
-  padding: 2rem;
   gap: 1rem;
-  border-left: 3px solid #123458;
+}
+
+/* Card */
+.ed-card {
   background: #fff;
-  border-radius: 8px;
+  border-radius: 12px;
+  padding: 1rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.ed-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.ed-header {
   display: flex;
-  align-items: flex-start;
-  gap: 1rem; /* gap between icons and degree block */
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-.ed-icons-wrapper {
-  display: flex;
-  gap: 0.5rem; /* small gap between degree and lewagon icons */
-  align-items: center;
-}
-
-.ed-main-icon {
-  font-size: 1.5rem;
-  color: #000000;
-}
-
-.ed-degree-block {
+/* Card header */
+.ed-card-header {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.ed-degree {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin: 0;
-}
-
-.ed-specialization {
-  margin: 0;
-  font-size: 1rem;
-  color: #555;
-}
-
-.ed-school-row {
+/* Left header: logo + text */
+.ed-left-header {
   display: flex;
-  align-items: center;
-  gap: 0.5rem; /* space between school icon, school, and dates */
-  font-size: 0.95rem;
-  color: #444;
-  margin-top: 0.2rem;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 
-.ed-school-icon {
-  font-size: 1rem;
-  color: #000000;
-}
-
-.ed-school {
-  font-weight: 500;
-}
-
-.ed-dates i {
-  margin-right: 0.3rem;
-  color: #000000;
-}
-
-.ed-emblem-wrapper {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.ed-emblem {
-  width: 70px;
-  height: 70px;
+/* Logo */
+.ed-logo {
+  width: 36px;
+  height: 36px;
   object-fit: contain;
-  margin-left: auto;
+  border-radius: 6px;
+  background-color: #f4f6f8;
+  flex-shrink: 0;
 }
 
-.ed-description {
-  margin-top: 0.6rem;
-  color: #555;
-  line-height: 1.4;
+/* Text column next to logo */
+.ed-text-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
 }
 
-.ed-keycontent-title {
-  margin-top: 0.8rem;
-  margin-bottom: 0.3rem;
-  font-weight: bold;
+/* Title group */
+.ed-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.ed-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
   color: #123458;
+  margin: 0;
 }
 
-.ed-keycontent {
-  margin-top: 0.2rem;
+.ed-specialization,
+.ed-school,
+.ed-dates {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* Date wrapper stacked under school on mobile */
+.ed-date-wrapper {
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* Sections */
+.ed-section {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.ed-subtitle {
+  font-weight: 600;
+  color: #123458;
+  margin-bottom: 0.25rem;
+}
+
+/* List sections */
+.ed-list {
   padding-left: 1.2rem;
-  list-style-type: none;
+  list-style-type: disc;
 }
 
-.ed-keycontent li {
-  position: relative;
-  margin-bottom: 0.4rem;
+.ed-list li {
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
 }
 
-.ed-keycontent li::before {
-  content: "";
-  position: absolute;
-  left: -1rem;
-  top: 0.5rem;
-  width: 6px;
-  height: 6px;
-  background: #123458;
-  border-radius: 50%;
+/* Tech / Coursework tags */
+.ed-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
 }
 
-
-/* Mobile: ≤599px */
-@media (max-width: 599px) {
-  .ed-item {
-    padding: 1rem;
-    border-left: 3px solid #123458;
-    flex-direction: column;
-  }
-
-  .ed-header {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .ed-emblem {
-    width: 50px;
-    height: 50px;
-    margin-left: 0;
-  }
+.ed-tech {
+  background-color: #f0f0f0;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #333;
 }
 
-/* Tablet: 600px–767px */
-@media (min-width: 600px) and (max-width: 767px) {
-  .ed-item {
-    padding: 1.5rem;
-  }
-
-  .ed-header {
-    flex-direction: row;
-    gap: 0.8rem;
-  }
+/* Expand animation */
+.ed-sections {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
 }
 
-/* Desktop: 768px+ */
+.ed-sections.expanded {
+  max-height: 2000px;
+}
+
+/* Read More button */
+.ed-read-more {
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  color: #123458;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+}
+
+/* Error */
+.ed-error {
+  text-align: center;
+  font-weight: bold;
+  color: red;
+}
+
+/* =====================================
+   DESKTOP / TABLET (≥768px)
+===================================== */
+
 @media (min-width: 768px) {
-  .ed-item {
-    padding: 2rem;
+  .ed-container {
+    align-items: center;
+    padding: 4rem 8%;
+    gap: 2.5rem;
   }
 
-  .ed-header {
-    flex-direction: row;
+  .ed-title {
+    font-size: 2.4rem;
+    text-align: center;
+    color: #123458;
+  }
+
+  .ed-description-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+  }
+
+  .ed-cards {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .ed-card {
+    padding: 2.5rem;
+    border-radius: 16px;
+    background-color: #fff;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .ed-card-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
     gap: 1rem;
+  }
+
+  .ed-left-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    flex: 1;
+    width: 100%;
+  }
+
+  .ed-logo {
+    width: 54px;
+    height: 54px;
+    object-fit: contain;
+    border-radius: 10px;
+    background-color: #f4f6f8;
+  }
+
+  .ed-text-column {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .ed-title-group {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .ed-date-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    margin-top: 0;
+    flex-shrink: 0;
+  }
+
+  .ed-card-title {
+    font-size: 1.45rem;
+  }
+
+  .ed-specialization,
+  .ed-school {
+    font-size: 1rem;
+  }
+
+  .ed-dates {
+    font-size: 0.95rem;
+    color: #444;
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  .ed-description-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .ed-section {
+    margin-top: 1rem;
+  }
+
+  .ed-subtitle {
+    margin-bottom: 0.5rem;
+  }
+
+  .ed-list li {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .ed-read-more {
+    display: none;
+  }
+
+  .ed-sections {
+    max-height: none;
+    overflow: visible;
   }
 }

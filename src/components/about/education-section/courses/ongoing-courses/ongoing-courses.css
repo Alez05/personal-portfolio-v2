@@ -1,98 +1,225 @@
-/* ====== Ongoing Courses Section ====== */
+/* =========================
+   Ongoing Courses Section
+   Mobile First
+========================= */
+
 .ong-section {
-  padding: 2rem;
+  padding: 2.5rem 1.2rem;
+  box-sizing: border-box;
 }
 
+/* ===== Title ===== */
+
 .ong-title-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
   margin-bottom: 2rem;
 }
 
 .ong-title {
-  font-size: 2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
 }
 
 .ong-title-icon {
-  font-size: 2.2rem;
-  color: #2563eb; /* blue accent */
+  width: 40px;
+  height: 40px;
+  background: #2563eb;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
 }
 
-/* ====== Cards Container ====== */
+/* =========================
+   Cards Container
+========================= */
+
 .ong-cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-  gap: 2rem;
+  grid-template-columns: 1fr; /* single column on mobile */
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-/* ====== Card ====== */
+/* =========================
+   Card
+========================= */
+
 .ong-card {
   background: #ffffff;
   border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  border-radius: 14px;
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
   transition: box-shadow 0.2s ease-in-out;
 }
 
 .ong-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
 }
 
-/* ====== Card Header ====== */
+/* =========================
+   Card Header
+========================= */
+
 .ong-card-header {
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  align-items: flex-start;
+  gap: 0.9rem;
 }
 
+/* Icon */
+
 .ong-name-icon-wrapper {
-  width: 50px;
-  height: 50px;
+  min-width: 45px;
+  height: 45px;
   background: #65c7ff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: #ffffff;
+}
+
+/* Card Text Wrapper */
+.ong-card-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
 }
 
 .ong-card-title {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.35rem;
 }
 
 .ong-name {
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: #111827;
 }
 
 .ong-provider {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #2563eb;
 }
 
-.ong-date {
-  font-size: 0.9rem;
-  color: #374151;
-  gap: 1rem;
+/* =========================
+   Meta (date + status)
+========================= */
+
+.ong-meta {
   display: flex;
+  flex-direction: column; /* stacked on mobile */
+  gap: 0.3rem;
+  margin-top: 0.25rem;
+}
+
+.ong-date {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  color: #374151;
+  width: 75px;
+}
+
+.ong-date i {
+  margin-right: 0.3rem;
 }
 
 .ong-status {
-  padding: 0.25rem 0.6rem;
+  padding: 0.25rem 0.7rem;
   border-radius: 9999px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  background-color: #13a129;
-  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+/* =========================
+   Desktop ≥ 768px
+========================= */
+
+@media (min-width: 768px) {
+  .ong-section {
+    padding: 4rem 8%;
+  }
+
+  /* Align title with container edges */
+  .ong-title-wrapper {
+    max-width: 1100px;
+    margin: 0 auto 2rem auto;
+  }
+
+  .ong-title {
+    font-size: 2rem;
+  }
+
+  .ong-title-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+
+  /* Grid for desktop */
+  .ong-cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .ong-card {
+    padding: 1.5rem;
+    gap: 0.5rem;
+  }
+
+  .ong-name {
+    font-size: 1.15rem;
+  }
+
+  .ong-provider {
+    font-size: 0.95rem;
+  }
+
+  /* Meta: date + status in row */
+  .ong-card-title-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .ong-meta {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .ong-date {
+    margin-top: 0;
+    flex-shrink: 0; /* don't shrink, take natural width */
+  }
+}
+
+/* =========================
+   Large Desktop ≥ 1200px
+========================= */
+
+@media (min-width: 1200px) {
+  .ong-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

@@ -1,22 +1,16 @@
-import { EducationM } from "./education-m/education-m";
-import { EducationD } from "./education-d/education-d";
-import { educationData } from "../../../../app/api";
+// education.tsx
+import { getEducationAction } from "./action";
+import { EducationClient } from "./education.client";
+import "./education.css";
 
-const EducationP = async () => {
-  // later: await getEducationAction()
-  const eduList = educationData ?? [];
+const Education = async () => {
+  const educationList = await getEducationAction();
 
-  return (
-    <>
-      <div className="block md:hidden">
-        <EducationM educationList={eduList} />
-      </div>
+  if (!educationList || educationList.length === 0) {
+    return <p className="ed-error">No education data available</p>;
+  }
 
-      <div className="hidden md:block">
-        <EducationD educationList={eduList} />
-      </div>
-    </>
-  );
+  return <EducationClient educationList={educationList} />;
 };
 
-export { EducationP };
+export { Education };
