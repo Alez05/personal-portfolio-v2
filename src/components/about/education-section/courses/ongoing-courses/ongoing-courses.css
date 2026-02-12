@@ -120,9 +120,10 @@
 
 .ong-meta {
   display: flex;
-  flex-direction: column; /* stacked on mobile */
-  gap: 0.3rem;
+  flex-direction: row; /* stacked on mobile */
+  gap: 1rem;
   margin-top: 0.25rem;
+  width: 100%;
 }
 
 .ong-date {
@@ -131,7 +132,7 @@
   gap: 0.3rem;
   font-size: 0.85rem;
   color: #374151;
-  width: 75px;
+  width: 100px;
 }
 
 .ong-date i {
@@ -145,6 +146,7 @@
   font-weight: 600;
   background-color: #dbeafe;
   color: #1d4ed8;
+  width: 75px;
 }
 
 /* =========================
@@ -154,6 +156,7 @@
 @media (min-width: 768px) {
   .ong-section {
     padding: 4rem 8%;
+    padding-bottom: 0;
   }
 
   /* Align title with container edges */

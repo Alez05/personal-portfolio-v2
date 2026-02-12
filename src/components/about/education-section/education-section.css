@@ -1,28 +1,62 @@
-.education-section {
+/* =====================================
+   EDUCATION SECTION – MOBILE FIRST
+===================================== */
+
+.edu-section {
   background-color: #fff;
-  padding: 3rem 0;
+  padding: 3rem 0; /* keep parent padding intact */
 }
 
-.education-inner {
+/* Header stays same width as children, no extra padding */
+.edu-header {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 6%;
+  padding: 0 1rem; /* small padding for mobile edges */
+}
+
+/* ===== Title ===== */
+.edu-title {
+  font-size: 1.9rem; /* smaller for mobile */
+  font-weight: 700;
+  color: #123458;
+  text-align: left;  /* align with container edges */
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* ===== Description ===== */
+.edu-description {
+  margin-top: 0.75rem;  /* space below title */
+  font-size: 0.95rem;    /* smaller on mobile */
+  line-height: 1.6;
+  color: #555;
+  text-align: left;      /* align with container edges */
+  max-width: 100%;       /* allow full width on mobile */
+}
+
+/* Keep content alignment as-is */
+.edu-content {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
 }
 
-.edu-title {
-  font-size: 2.6rem;
-  color: #123458;
-  text-align: center;
-  /* margin: 0; */
-}
+/* =====================================
+   DESKTOP / TABLET ≥768px
+===================================== */
 
-.edu-description {
-  max-width: 760px;
-  margin: 0 auto;
-  text-align: center;
-  color: #555;
-  line-height: 1.6;
+@media (min-width: 768px) {
+  .edu-title {
+    font-size: 2.6rem;   /* original desktop size */
+  }
+
+  .edu-description {
+    font-size: 1rem;     /* slightly larger on desktop */
+    max-width: 1100px;   /* match container widths */
+    margin-top: 1rem;    /* spacing from title */
+  }
+
+  .edu-header {
+    padding: 0;
+  }
 }

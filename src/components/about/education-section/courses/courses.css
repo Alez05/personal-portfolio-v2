@@ -141,6 +141,10 @@
   gap: 0.5rem;
 }
 
+.co-wrapper-desc {
+  margin-top: 0.5rem;
+}
+
 .co-content-item {
   background: #f3f4f6;
   padding: 0.35rem 0.7rem;
@@ -152,9 +156,10 @@
 /* ===== Footer ===== */
 .co-card-footer {
   display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
+  flex-direction: row;
+  justify-content: space-between;
   margin-top: 0.8rem;
+  align-items: baseline;
 }
 
 .co-course-id {
@@ -186,6 +191,7 @@
 @media (min-width: 768px) {
   .co-section {
     padding: 4rem 8%;
+    padding-bottom: 0;
   }
 
   /* Title aligned with container edges */

@@ -14,9 +14,7 @@ const Courses = async () => {
   return (
     <section className="co-section">
       <div className="co-title-wrapper">
-        <h1 className="co-title">
-          Completed Courses
-        </h1>
+        <h1 className="co-title">Completed Courses</h1>
       </div>
 
       <div className="co-container">
@@ -38,24 +36,22 @@ const Courses = async () => {
                 <div className="co-date-status">
                   {course.date && (
                     <span className="co-date">
-                      {course.icons?.date && (
-                        <i className={course.icons.date} />
-                      )}
                       {course.date}
                     </span>
                   )}
-
-                  {course.status && (
-                    <span className={`co-status co-status-${course.status}`}>
-                      {course.status}
-                    </span>
-                  )}
                 </div>
-
-                {course.description && (
-                  <p className="co-description">{course.description}</p>
-                )}
               </div>
+              {course.status && (
+                <span className={`co-status co-status-${course.status}`}>
+                  {course.status}
+                </span>
+              )}
+            </div>
+
+            <div className="co-wrapper-desc">
+              {course.description && (
+                <p className="co-description">{course.description}</p>
+              )}
             </div>
 
             {/* Body */}

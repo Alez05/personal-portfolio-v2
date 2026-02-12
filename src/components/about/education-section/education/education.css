@@ -180,6 +180,7 @@
   .ed-container {
     align-items: center;
     padding: 4rem 8%;
+    padding-bottom: 0;
     gap: 2.5rem;
   }
 
