@@ -9,7 +9,7 @@ const Expertise = async () => {
 
   return (
     <section className="ex-container">
-      <h1 className="ex-title">Domain Expertise</h1>
+      <h1 className="ex-title">Area of Focus</h1>
       <div className="ex-wrapper">
         {expertiseList.map((expertise, i) => (
           <div className="ex-card" key={i}>

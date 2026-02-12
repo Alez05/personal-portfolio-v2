@@ -7,7 +7,7 @@ const TechSection = () => {
     <section className="th-container">
       <div className="th-wrapper">
         <h1 className="th-title">
-          Technical <span className="th-color">Expertise</span>
+          Technical <span className="th-color">Skills</span>
         </h1>
         <p className="th-description">
           A comprehensive skill set spanning programming languages, frameworks,
