@@ -1,98 +1,105 @@
-/* ====== Courses Section ====== */
+/* =====================================
+   COURSES – MOBILE FIRST
+===================================== */
+
 .co-section {
-  padding: 2rem;
+  padding: 2.5rem 1.2rem;
+  box-sizing: border-box;
 }
 
+/* ===== Title ===== */
 .co-title-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .co-title {
-  font-size: 2rem;
-  margin-bottom: 3rem;
+  font-size: 1.6rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
 }
 
 .co-title-icon {
-  width: 50px;
-  height: 50px;
+  width: 36px;
+  height: 36px;
   background: #5cef5a;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  font-size: 0.9rem;
 }
 
+/* ===== Container (mobile = single column) ===== */
 .co-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-/* ====== Card ====== */
+/* ===== Card ===== */
 .co-card {
   background: #ffffff;
   border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  border-radius: 14px;
+  padding: 1.2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  transition: box-shadow 0.2s ease-in-out;
+  gap: 0.8rem;
 }
 
-.co-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-/* ====== Header ====== */
+/* ===== Header ===== */
 .co-card-header {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.8rem;
+  align-items: flex-start;
 }
 
-.co-card-title {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
+.co-name-icon-wrapper {
+  flex-shrink: 0;
 }
 
 .co-name-icon {
-  font-size: 1.5rem;
-  width: 50px;
-  height: 50px;
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
   background: #65c7ff;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  margin-top: 0.3rem;
+}
+
+/* Title column */
+.co-card-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
 }
 
 .co-name {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #111827;
 }
 
 .co-provider {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: #2563eb;
-  cursor: pointer;
 }
 
+/* Date + status stacked on mobile */
 .co-date-status {
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 0.9rem;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.8rem;
   color: #374151;
 }
 
@@ -101,9 +108,10 @@
 }
 
 .co-status {
+  width: fit-content;
   padding: 0.25rem 0.6rem;
   border-radius: 9999px;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 500;
   background-color: #13a129;
   color: #fff;
@@ -115,70 +123,123 @@
 }
 
 .co-description {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #4b5563;
   line-height: 1.4;
-  margin-top: 0.25rem;
 }
 
-/* ====== Body (Key Topics) ====== */
+/* ===== Body ===== */
 .co-content-title {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: #111827;
-  margin-top: 1rem;
-  margin-bottom: 0.75rem;
+  margin-top: 0.8rem;
 }
 
 .co-content-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #e5e7eb;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+  gap: 0.5rem;
+}
+
+.co-wrapper-desc {
+  margin-top: 0.5rem;
 }
 
 .co-content-item {
   background: #f3f4f6;
-  padding: 0.4rem 0.8rem;
+  padding: 0.35rem 0.7rem;
   border-radius: 8px;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 500;
-  color: #374151;
 }
 
-/* ====== Footer ====== */
+/* ===== Footer ===== */
 .co-card-footer {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  margin-top: 1rem;
-  font-size: 0.85rem;
+  margin-top: 0.8rem;
+  align-items: baseline;
 }
 
 .co-course-id {
+  font-size: 0.75rem;
   color: #6b7280;
-  font-weight: 500;
 }
 
 .co-link-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.85rem;
-  padding: 0.5rem 0.9rem;
+  width: fit-content;
+  font-size: 0.8rem;
+  padding: 0.45rem 0.8rem;
   border: 1.5px solid #2563eb;
   border-radius: 8px;
   color: #2563eb;
   text-decoration: none;
   font-weight: 500;
-  transition: all 0.2s ease-in-out;
 }
 
-.co-link-btn:hover {
-  background-color: #2563eb;
-  color: #ffffff;
+.co-error {
+  text-align: center;
+  font-weight: 600;
+  color: #b91c1c;
+  margin: 2rem 0;
+}
+/* =====================================
+   DESKTOP ≥768px
+===================================== */
+
+@media (min-width: 768px) {
+  .co-section {
+    padding: 4rem 8%;
+    padding-bottom: 0;
+  }
+
+  /* Title aligned with container edges */
+  .co-title-wrapper {
+    max-width: 1100px; /* same as .co-container */
+    margin: 0 auto 2rem auto; /* center horizontally, preserve bottom margin */
+  }
+
+  .co-title {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .co-title-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* Grid returns on desktop */
+  .co-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 2rem;
+    max-width: 1100px; /* ensure container matches title width */
+    margin: 0 auto;
+  }
+
+  .co-card {
+    padding: 1.8rem;
+    transition: box-shadow 0.2s ease-in-out;
+  }
+
+  .co-card:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Date + status inline on desktop */
+  .co-date-status {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .co-card-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

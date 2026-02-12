@@ -6,15 +6,16 @@ const OngoingCourses = async () => {
   const coursesList: TOngCourses[] | null = await getOngoingCAction();
 
   if (!coursesList)
-    return (
-      <p className="ong-warning">Failed to load the Ongoing Courses data.</p>
-    );
+    return <p className="ong-warning">Loading ongoing courses...</p>;
+
+  if (coursesList.length === 0)
+    return <p className="ong-warning">No ongoing courses available.</p>;
 
   return (
     <section className="ong-section">
       <div className="ong-title-wrapper">
         <h1 className="ong-title">
-          <i className="fa-solid fa-spinner ong-title-icon"></i> Ongoing Courses
+          Ongoing Courses
         </h1>
       </div>
 
@@ -27,17 +28,23 @@ const OngoingCourses = async () => {
                   <i className={`ong-name-icon ${course.nameIcon}`} />
                 </div>
               )}
+
               <div className="ong-card-title">
                 <h3 className="ong-name">{course.name}</h3>
-                <p className="ong-provider">{course.provider}</p>
-                {course.date && (
-                  <span className="ong-date">
-                    <i
-                      className={`fa-solid fa-calendar${
-                        course.icons?.date ? ` ${course.icons.date}` : ""
-                      }`}
-                    />{" "}
-                    {course.date}
+
+                {course.provider && (
+                  <p className="ong-provider">{course.provider}</p>
+                )}
+
+                {(course.date || course.status) && (
+                  <div className="ong-meta">
+                    {course.date && (
+                      <span className="ong-date">
+                        <i className="fa-solid fa-calendar" />
+                        {course.date}
+                      </span>
+                    )}
+
                     {course.status && (
                       <span
                         className={`ong-status ong-status-${course.status.toLowerCase()}`}
@@ -45,7 +52,7 @@ const OngoingCourses = async () => {
                         {course.status}
                       </span>
                     )}
-                  </span>
+                  </div>
                 )}
               </div>
             </div>

@@ -1,52 +1,81 @@
+/* =========================
+   Languages Section
+   Mobile First
+========================= */
+
 .lang-section {
-  padding: 3rem 2rem;
-  background-color: #f9f9f9;
+  padding: 2.5rem 1.2rem;
+  box-sizing: border-box;
 }
 
+/* ===== Title ===== */
+
 .lang-title {
-  font-size: 2rem;
-  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
   margin-bottom: 2rem;
-  color: #333;
 }
+
+/* ===== Grid ===== */
 
 .lang-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
   justify-items: center;
 }
 
+/* ===== Card ===== */
+
 .lang-card {
-  background-color: #fff;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  text-align: center;
-  width: 200px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+
+  width: 180px;
+  height: 45px;
+
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+
+  padding: 0 0.8rem;
+  box-sizing: border-box;
 }
+
+/* Icon */
 
 .lang-icon {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  flex-shrink: 0;
 }
+
+/* Name */
 
 .lang-name {
-  font-size: 1.2rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  margin-bottom: 0.3rem;
+  margin: 0;
+  flex: 1;
+  text-align: center;
 }
 
+/* Level */
+
 .lang-level {
-  font-size: 0.9rem;
-  font-weight: 500;
-  padding: 0.3rem 0.6rem;
-  border-radius: 8px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
   text-transform: uppercase;
+  white-space: nowrap;
 }
+
+/* Level Variants */
 
 .lang-native {
   background-color: #e8f5e9;
@@ -68,8 +97,36 @@
   color: #c62828;
 }
 
+/* ===== Error State ===== */
+
 .lang-warning {
   text-align: center;
-  color: red;
-  margin-top: 2rem;
+  font-weight: 600;
+  color: #b91c1c;
+  margin: 2rem 0;
+}
+
+/* =========================
+   Desktop ≥ 768px
+========================= */
+
+@media (min-width: 768px) {
+  .lang-section {
+    padding: 4rem 8%;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+
+  /* Align title with grid container */
+  .lang-title {
+    max-width: 1100px;
+    margin: 0 auto 2rem auto;
+    font-size: 1.5rem;
+  }
+
+  .lang-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 180px));
+    justify-content: center;
+    gap: 7.2rem;
+  }
 }

@@ -1,5 +1,5 @@
 // components
-export { EducationP } from "./education/education";
+export { Education } from "./education/education";
 export { Courses } from "./courses/courses";
 
 // parent component
