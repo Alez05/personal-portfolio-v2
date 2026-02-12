@@ -1,34 +1,67 @@
+/* =====================================
+   TECH SECTION – MOBILE FIRST
+===================================== */
+
 .th-container {
   background-color: #fff;
 }
 
+/* Wrapper behaves like edu-header */
 .th-wrapper {
-  gap: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* centers children horizontally */
-  justify-content: center; /* optional if you want vertical centering too */
-  text-align: center; /* ensures text stays centered */
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem; /* small padding for mobile edges */
 }
 
+/* ===== Title ===== */
 .th-title {
-  font-size: 3rem;
+  font-size: 1.9rem;   /* smaller on mobile */
+  font-weight: 700;
   color: black;
-  font-weight: bold;
-  text-align: center;
+  text-align: left;    /* align with container edges */
+  line-height: 1.2;
+  margin: 0;
 }
 
+/* ===== Gradient word stays untouched */
 .th-color {
   background: linear-gradient(90deg, #1676dd, #060606);
-  -webkit-background-clip: text; /* for Safari/Chrome */
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text; /* standard */
+  background-clip: text;
   color: transparent;
 }
 
+/* ===== Description ===== */
 .th-description {
-  font-size: 1rem;
-  text-align: center;
-  max-width: 600px; /* updated */
-  margin: 0 auto; /* centers description block */
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+  text-align: left;
+  max-width: 100%;
+}
+
+/* =====================================
+   DESKTOP / TABLET ≥768px
+===================================== */
+
+@media (min-width: 768px) {
+
+  .th-title {
+    font-size: 3rem;   /* your original desktop size */
+  }
+
+  .th-description {
+    font-size: 1rem;
+    max-width: 1100px;  /* your original width */
+    margin-top: 1rem;
+  }
+
+  .th-wrapper {
+    padding: 0;        /* remove mobile side padding */
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
 }
