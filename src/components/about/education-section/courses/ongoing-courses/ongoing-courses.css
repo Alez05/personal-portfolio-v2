@@ -211,6 +211,7 @@
   .ong-date {
     margin-top: 0;
     flex-shrink: 0; /* don't shrink, take natural width */
+    width: 100px;
   }
 }
 
