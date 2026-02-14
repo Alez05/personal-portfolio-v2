@@ -14,11 +14,11 @@ const SkillSet = async () => {
 
   return (
     <section className="as-container">
+      <h1 className="as-cotitle">Skills</h1>
       <div className="as-wrapper">
         {skillsData.map((set, idx) => (
           <div key={idx} className="as-group">
             <h2 className="as-title">{set.category}</h2>
-            {set.description && <p className="as-subtitle">{set.description}</p>}
 
             <div className="as-grid">
               {set.skills.map((skill, i) => (
