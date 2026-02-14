@@ -1,24 +1,11 @@
 import { getExperienceAction } from "./action";
-import { ExperienceM } from "./experience-m/experience-m";
-import { ExperienceD } from "./experience-d";
 import { TExperience } from "./experience.type";
+import { ExperienceClient } from "./experience.client";
 
-const ExperienceP = async () => {
+const Experience = async () => {
   const careerList: TExperience[] = (await getExperienceAction()) ?? [];
 
-  return (
-    <>
-      {/* Mobile */}
-      <div className="block md:hidden">
-        <ExperienceM careerList={careerList} />
-      </div>
-
-      {/* Desktop */}
-      <div className="hidden md:block">
-        <ExperienceD careerList={careerList} />
-      </div>
-    </>
-  );
+  return <ExperienceClient careerList={careerList} />;
 };
 
-export { ExperienceP };
+export { Experience };

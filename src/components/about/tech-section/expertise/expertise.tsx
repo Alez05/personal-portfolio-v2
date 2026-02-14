@@ -8,10 +8,8 @@ const Expertise = async () => {
   // ❌ Failed request
   if (!expertiseList) {
     return (
-      <section className="ex-container">
-        <p className="ex-error">
-          Failed to load expertise data.
-        </p>
+      <section className="exp-container">
+        <p className="exp-error">Failed to load expertise data.</p>
       </section>
     );
   }
@@ -19,26 +17,27 @@ const Expertise = async () => {
   // ⚠️ No data returned
   if (expertiseList.length === 0) {
     return (
-      <section className="ex-container">
-        <p className="ex-error">
-          No expertise data available.
-        </p>
+      <section className="exp-container">
+        <p className="exp-error">No expertise data available.</p>
       </section>
     );
   }
 
   return (
-    <section className="ex-container">
-      <h1 className="ex-title">Area of Focus</h1>
-      <div className="ex-wrapper">
+    <section className="exp-container">
+      <h1 className="exp-title">Area of Focus</h1>
+
+      <div className="exp-wrapper">
         {expertiseList.map((expertise, i) => (
-          <div className="ex-card" key={i}>
-            <div className="ex-card-header">
+          <div className="exp-card" key={i}>
+            <div className="exp-card-header">
               <i className={expertise.icon}></i>
-              <h2 className="ex-card-title">{expertise.title}</h2>
+              <h2 className="exp-card-title">{expertise.title}</h2>
             </div>
-            <p className="ex-card-subtitle">{expertise.subtitle}</p>
-            <div className="ex-card-content">
+
+            <p className="exp-card-subtitle">{expertise.subtitle}</p>
+
+            <div className="exp-card-content">
               {expertise.content.map((item, index) => (
                 <p key={index}>{item}</p>
               ))}
