@@ -1,6 +1,6 @@
 import { ContactCTA } from "../shared";
 import { AboutMeP } from "./about-hero";
-import { ExperienceP } from "./experience";
+import { Experience } from "./experience";
 import { TechSection } from "./tech-section";
 import { EducationSection } from "./education-section";
 import { Hobbies } from "./hobbies";
@@ -10,7 +10,7 @@ const About = () => {
     <>
       <AboutMeP />
       {/* <DownloadSection /> */}
-      <ExperienceP />
+      <Experience />
       <TechSection />
       <EducationSection/>
       <Hobbies />

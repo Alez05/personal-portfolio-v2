@@ -3,7 +3,7 @@
 =============================== */
 
 /* ===== Container ===== */
-.ex-container {
+.exp-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* left aligned title */
@@ -14,7 +14,7 @@
 }
 
 /* ===== Title ===== */
-.ex-title {
+.exp-title {
   font-size: 2rem;
   font-weight: bold;
   margin: 0;
@@ -28,7 +28,7 @@
 }
 
 /* ===== Cards Wrapper ===== */
-.ex-wrapper {
+.exp-wrapper {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -37,7 +37,7 @@
 }
 
 /* ===== Card ===== */
-.ex-card {
+.exp-card {
   flex: 1 1 calc(25% - 1.125rem); /* 4 per row */
   background-color: #fff;
   padding: 1.5rem;
@@ -52,10 +52,10 @@
 }
 
 /* Animation delays */
-.ex-card:nth-child(1) { animation-delay: 0.1s; }
-.ex-card:nth-child(2) { animation-delay: 0.3s; }
-.ex-card:nth-child(3) { animation-delay: 0.5s; }
-.ex-card:nth-child(4) { animation-delay: 0.7s; }
+.exp-card:nth-child(1) { animation-delay: 0.1s; }
+.exp-card:nth-child(2) { animation-delay: 0.3s; }
+.exp-card:nth-child(3) { animation-delay: 0.5s; }
+.exp-card:nth-child(4) { animation-delay: 0.7s; }
 
 @keyframes fadeInUp {
   to {
@@ -65,28 +65,28 @@
 }
 
 /* ===== Header ===== */
-.ex-card-header {
+.exp-card-header {
   display: flex;
   align-items: center;
   gap: 1rem;
   margin-bottom: 0.5rem;
 }
 
-.ex-card-header i {
+.exp-card-header i {
   color: #007bff;
   font-size: 1.5rem;
 }
 
-/* ===== Title ===== */
-.ex-card-title {
+/* ===== Card Title ===== */
+.exp-card-title {
   color: #007bff;
   font-size: 1.25rem;
   font-weight: 600;
   margin: 0;
-  text-align: left;
+  text-align: center;
 }
 
-.ex-card-title::after {
+.exp-card-title::after {
   content: "";
   display: block;
   width: 50px;
@@ -97,7 +97,7 @@
 }
 
 /* ===== Subtitle ===== */
-.ex-card-subtitle {
+.exp-card-subtitle {
   color: #555;
   font-size: 0.9rem;
   margin-bottom: 1rem;
@@ -105,7 +105,7 @@
 }
 
 /* ===== Content ===== */
-.ex-card-content p {
+.exp-card-content p {
   position: relative;
   padding-left: 1.25rem;
   margin-bottom: 0.5rem;
@@ -114,7 +114,7 @@
   text-align: left;
 }
 
-.ex-card-content p::before {
+.exp-card-content p::before {
   content: "";
   position: absolute;
   left: 0;
@@ -127,34 +127,41 @@
 }
 
 /* ===== Hover ===== */
-.ex-card:hover {
+.exp-card:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
 
+/* ===== Error ===== */
+.exp-error {
+  text-align: center;
+  font-weight: bold;
+  color: red;
+}
+
 /* ===== Tablet 600–767px ===== */
 @media (min-width: 600px) and (max-width: 767px) {
-  .ex-container {
+  .exp-container {
     padding: 3rem 6%;
   }
 
-  .ex-card {
+  .exp-card {
     flex: 1 1 calc(50% - 0.75rem);
   }
 }
 
 /* ===== Mobile ≤599px ===== */
 @media (max-width: 599px) {
-  .ex-container {
+  .exp-container {
     padding: 3rem 1.5rem;
   }
 
-  .ex-wrapper {
+  .exp-wrapper {
     flex-direction: column;
   }
 
-  .ex-card {
+  .exp-card {
     flex: 1 1 100%;
   }
 }

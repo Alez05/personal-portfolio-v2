@@ -1,5 +1,5 @@
 // component
-export { ExperienceP } from './experience'
+export { Experience } from './experience'
 
 // type
 export type { TExperience } from './experience.type'

@@ -19,7 +19,7 @@
   font-size: 1.9rem; /* smaller for mobile */
   font-weight: 700;
   color: #123458;
-  text-align: left;  /* align with container edges */
+  text-align: center;  /* align with container edges */
   line-height: 1.2;
   margin: 0;
 }
@@ -30,7 +30,7 @@
   font-size: 0.95rem;    /* smaller on mobile */
   line-height: 1.6;
   color: #555;
-  text-align: left;      /* align with container edges */
+  text-align: center;      /* align with container edges */
   max-width: 100%;       /* allow full width on mobile */
 }
 
@@ -38,7 +38,7 @@
 .edu-content {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  /* gap: 2.5rem; */
 }
 
 /* =====================================
