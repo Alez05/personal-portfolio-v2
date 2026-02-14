@@ -4,8 +4,28 @@ import "./expertise.css";
 
 const Expertise = async () => {
   const expertiseList: TExpertise[] | null = await getExpertiseAction();
-  if (!expertiseList)
-    return <p className="ex-error">Failed to load the expertise data</p>;
+
+  // ❌ Failed request
+  if (!expertiseList) {
+    return (
+      <section className="ex-container">
+        <p className="ex-error">
+          Failed to load expertise data.
+        </p>
+      </section>
+    );
+  }
+
+  // ⚠️ No data returned
+  if (expertiseList.length === 0) {
+    return (
+      <section className="ex-container">
+        <p className="ex-error">
+          No expertise data available.
+        </p>
+      </section>
+    );
+  }
 
   return (
     <section className="ex-container">

@@ -11,8 +11,8 @@ const About = () => {
       <AboutMeP />
       {/* <DownloadSection /> */}
       <ExperienceP />
-      <EducationSection/>
       <TechSection />
+      <EducationSection/>
       <Hobbies />
       <ContactCTA />
     </>
