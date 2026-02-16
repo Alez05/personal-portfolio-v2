@@ -14,7 +14,9 @@ const SkillSet = async () => {
 
   return (
     <section className="as-container">
-      <h1 className="as-cotitle">Skills</h1>
+      <div className="as-cotitle-wrapper">
+        <h1 className="as-cotitle">Skills</h1>
+      </div>
       <div className="as-wrapper">
         {skillsData.map((set, idx) => (
           <div key={idx} className="as-group">

@@ -4,7 +4,7 @@ export { About } from "./page";
 // components
 export { AboutMeP } from "./about-hero";
 export { Expertise } from "./tech-section/expertise";
-export { ExperienceP } from "./experience";
+export { Experience } from "./experience";
 export { TechSection } from "./tech-section";
 export { EducationSection } from "./education-section";
 export { Hobbies } from "./hobbies";

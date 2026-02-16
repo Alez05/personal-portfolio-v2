@@ -3,12 +3,6 @@ import type { THobbies } from "../../../../components";
 
 export const hobbiesData: THobbies[] = [
   {
-    category: "Manga",
-    categoryIcon: "fa-solid fa-book",
-    description:
-      "Capturing authentic moments and experimenting with visual storytelling",
-  },
-  {
     category: "Gaming",
     categoryIcon: "fa-solid fa-gamepad",
     description:

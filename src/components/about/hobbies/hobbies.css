@@ -1,29 +1,38 @@
 /* ============================================
-   HOBBIES.CSS
-   Mobile First Default (≤599px)
+   HOBBIES SECTION
+   Mobile First Default
    Desktop Override ≥768px
 ============================================ */
-
 
 /* ============================================
    MOBILE DEFAULT
 ============================================ */
 
 .ho-container {
-  padding: 3rem 1.5rem;
-  background-color: var(--whiteish);
+  padding: 3rem 1.5rem 2.5rem;
+  background-color: #ffffff;
 }
 
-/* Title centered on mobile */
+/* ✅ Inner wrapper for perfect alignment */
+.ho-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Title */
 .ho-title {
   font-size: 2rem;
   font-weight: 700;
-  text-align: center;
-  margin-bottom: 2rem;
   color: #123458;
+  margin: 0;
+  text-align: left;
 }
 
-/* Grid stacked on mobile */
+/* Grid stacked mobile */
 .ho-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -34,32 +43,31 @@
 .ho-card {
   background-color: #fff;
   padding: 1.6rem;
-  border-radius: 14px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
 
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-/* Wrapper: icon + title stacked on mobile */
+/* Icon + title */
 .ho-card-wrapper {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-  text-align: center;
+  gap: 0.75rem;
 }
 
 /* Icon */
 .ho-icon {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #f7c948;
 }
 
 /* Category title */
 .ho-card-title {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 700;
   margin: 0;
   color: #123458;
@@ -70,10 +78,11 @@
   font-size: 0.95rem;
   color: #555;
   line-height: 1.6;
-  text-align: center;
+  margin: 0;
+  text-align: left;
 }
 
-/* Books list */
+/* Books */
 .ho-books {
   display: flex;
   flex-direction: column;
@@ -81,12 +90,11 @@
   margin-top: 0.5rem;
 }
 
-/* Single book row */
+/* Book row */
 .ho-book {
   display: flex;
   gap: 0.75rem;
   align-items: flex-start;
-  text-align: left;
 }
 
 /* Book image */
@@ -94,7 +102,8 @@
   width: 52px;
   height: 72px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 10px;
+
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
@@ -122,6 +131,12 @@
   color: #666;
 }
 
+/* Warning */
+.ho-warning {
+  text-align: center;
+  font-weight: bold;
+  color: red;
+}
 
 /* ============================================
    TABLET ≥600px
@@ -133,31 +148,26 @@
   }
 }
 
-
 /* ============================================
-   DESKTOP OVERRIDE ≥768px
+   DESKTOP ≥768px
 ============================================ */
 
 @media (min-width: 768px) {
-
   .ho-container {
-    padding: 5rem 8%;
+    padding: 6rem 8% 4rem;
   }
 
-  /* ✅ Title aligned LEFT */
   .ho-title {
-    text-align: left;
-    font-size: 2.5rem;
-    margin-bottom: 2.8rem;
+    font-size: 2.6rem;
   }
 
-  /* Grid: 4 in a row */
+  /* ✅ Perfect desktop layout: 3 per row */
   .ho-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
   }
 
-  /* Card polish */
+  /* Hover polish */
   .ho-card {
     padding: 2rem;
     border-radius: 18px;
@@ -167,28 +177,5 @@
   .ho-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
-  }
-
-  /* ✅ Icon + title in a ROW */
-  .ho-card-wrapper {
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 0.75rem;
-    text-align: left;
-  }
-
-  .ho-icon {
-    font-size: 1.8rem;
-  }
-
-  .ho-card-title {
-    font-size: 1.15rem;
-  }
-
-  /* Description left aligned */
-  .ho-description {
-    text-align: left;
-    font-size: 0.95rem;
   }
 }

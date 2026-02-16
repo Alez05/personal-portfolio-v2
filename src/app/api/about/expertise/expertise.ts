@@ -1,48 +1,37 @@
-import type {  TExpertise } from "../../../../components"
+import type { TExpertise } from "../../../../components";
 
 export const expertiseData: TExpertise[] = [
   {
-    title: "Front-End",
-    icon: "fa-solid fa-paintbrush",
-    subtitle: "Engaging & Responsive UI's",
+    title: "Web Development",
+    icon: "fa-solid fa-laptop-code",
+    subtitle: "Building modern, scalable applications",
     content: [
-      "HTML, CSS, JavaScript (ES6+)",
       "React, Next.js, TypeScript",
-      "Responsive & accessible UI design",
-      "Clean UX & performant interfaces"
+      "Responsive & accessible UI systems",
+      "Clean component-driven architecture",
+      "Performance-focused front-end development"
     ]
   },
   {
-    title: "Back-End",
+    title: "Backend & APIs",
     icon: "fa-solid fa-server",
-    subtitle: "Reliable server solutions",
+    subtitle: "Reliable systems & data-driven solutions",
     content: [
       "Node.js, Express, Nest.js",
-      "PostgreSQL & MongoDB",
-      "REST & GraphQL APIs",
-      "Authentication, authorization & server-side rendering"
+      "PostgreSQL & MongoDB databases",
+      "REST & GraphQL API development",
+      "Authentication, security & server-side logic"
     ]
   },
   {
-    title: "Architecture",
-    icon: "fa-solid fa-code-branch",
-    subtitle: "Clean & maintainable code",
+    title: "Engineering Practices",
+    icon: "fa-solid fa-diagram-project",
+    subtitle: "Maintainable code & collaborative delivery",
     content: [
-      "Modular & clean code principles",
-      "Testing & debugging",
-      "CI/CD pipelines & deployment",
-      "Performance optimization & SEO basics"
-    ]
-  },
-  {
-    title: "Collaboration",
-    icon: "fa-solid fa-tools",
-    subtitle: "Efficient team workflows",
-    content: [
-      "VS Code, GitHub/GitLab",
-      "Docker & containerization",
-      "Agile workflows, Jira & Trello",
-      "Code reviews & documentation"
+      "Clean code, modular design principles",
+      "Testing, debugging & optimization",
+      "CI/CD pipelines & deployment workflows",
+      "Git-based collaboration & documentation"
     ]
   }
-]
+];
