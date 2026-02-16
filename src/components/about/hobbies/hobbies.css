@@ -1,74 +1,104 @@
+/* ============================================
+   HOBBIES.CSS
+   Mobile First Default (≤599px)
+   Desktop Override ≥768px
+============================================ */
+
+
+/* ============================================
+   MOBILE DEFAULT
+============================================ */
+
 .ho-container {
-  padding: 3rem 2rem;
-  background-color: #f9f9f9;
-  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  background-color: var(--whiteish);
 }
 
+/* Title centered on mobile */
 .ho-title {
   font-size: 2rem;
+  font-weight: 700;
   text-align: center;
   margin-bottom: 2rem;
-  color: #333;
+  color: #123458;
 }
 
+/* Grid stacked on mobile */
 .ho-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* ✅ 4 in a row */
+  grid-template-columns: 1fr;
   gap: 1.5rem;
 }
 
+/* Card */
 .ho-card {
   background-color: #fff;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  text-align: center;
+  padding: 1.6rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Wrapper: icon + title stacked on mobile */
+.ho-card-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.5rem;
+  text-align: center;
 }
 
+/* Icon */
 .ho-icon {
   font-size: 2rem;
   color: #f7c948;
-  margin-bottom: 1rem;
 }
 
+/* Category title */
 .ho-card-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  color: #123458;
 }
 
+/* Description */
 .ho-description {
   font-size: 0.95rem;
   color: #555;
-  margin-bottom: 1rem;
+  line-height: 1.6;
+  text-align: center;
 }
 
+/* Books list */
 .ho-books {
   display: flex;
-  flex-direction: column; /* ✅ books stacked inside */
+  flex-direction: column;
   gap: 1rem;
-  margin-top: 1rem;
-  width: 100%;
+  margin-top: 0.5rem;
 }
 
+/* Single book row */
 .ho-book {
   display: flex;
-  align-items: flex-start;
   gap: 0.75rem;
+  align-items: flex-start;
   text-align: left;
 }
 
+/* Book image */
 .ho-book-img {
-  width: 50px;
-  height: 70px;
+  width: 52px;
+  height: 72px;
   object-fit: cover;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
+/* Book details */
 .ho-book-details {
   display: flex;
   flex-direction: column;
@@ -77,14 +107,14 @@
 
 .ho-book-status {
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
   color: #00796b;
 }
 
 .ho-book-title {
   font-size: 0.95rem;
-  font-weight: 600;
-  color: #333;
+  font-weight: 700;
+  color: #222;
 }
 
 .ho-book-author {
@@ -92,8 +122,73 @@
   color: #666;
 }
 
-.ho-warning {
-  color: red;
-  text-align: center;
-  margin-top: 2rem;
+
+/* ============================================
+   TABLET ≥600px
+============================================ */
+
+@media (min-width: 600px) {
+  .ho-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ============================================
+   DESKTOP OVERRIDE ≥768px
+============================================ */
+
+@media (min-width: 768px) {
+
+  .ho-container {
+    padding: 5rem 8%;
+  }
+
+  /* ✅ Title aligned LEFT */
+  .ho-title {
+    text-align: left;
+    font-size: 2.5rem;
+    margin-bottom: 2.8rem;
+  }
+
+  /* Grid: 4 in a row */
+  .ho-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  /* Card polish */
+  .ho-card {
+    padding: 2rem;
+    border-radius: 18px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .ho-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+  }
+
+  /* ✅ Icon + title in a ROW */
+  .ho-card-wrapper {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: left;
+  }
+
+  .ho-icon {
+    font-size: 1.8rem;
+  }
+
+  .ho-card-title {
+    font-size: 1.15rem;
+  }
+
+  /* Description left aligned */
+  .ho-description {
+    text-align: left;
+    font-size: 0.95rem;
+  }
 }

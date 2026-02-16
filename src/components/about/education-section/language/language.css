@@ -114,7 +114,7 @@
   .lang-section {
     padding: 4rem 8%;
     padding-bottom: 0;
-    padding-top: 0;
+    /* padding-top: 0; */
   }
 
   /* Align title with grid container */
