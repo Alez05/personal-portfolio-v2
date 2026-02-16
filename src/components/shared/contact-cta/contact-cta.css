@@ -1,79 +1,120 @@
+/* ============================================
+   CONTACT CTA
+   Mobile First Default
+   Desktop Override ≥768px
+============================================ */
+
+/* ============================================
+   SECTION BACKGROUND
+============================================ */
+
+.ct-section {
+  padding: 3rem 8%;
+  background-color: #ffffff;
+}
+
+/* ============================================
+   CTA CARD (Mobile Default)
+============================================ */
+
 .ct-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  /* ✅ Soft gradient card background */
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+
+  border-radius: 18px;
+  padding: 2.5rem 1.8rem;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  padding: 2rem;
   text-align: center;
-  background-color: #fff;
+  gap: 1.5rem;
 
-  /* your new request */
-  margin-bottom: 4rem;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
+/* ============================================
+   TITLE
+============================================ */
 
-/* NAME */
 .ct-title {
-  font-size: 3rem; /* bigger */
+  font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 0; /* no gap at all */
+  margin: 0;
+  color: #123458;
 }
 
-/* POSITION (directly under name, no spacing) */
-.ct-position {
-  font-size: 1.4rem;
-  font-weight: 500;
-  margin-top: 0;     /* no gap between name + job */
-  margin-bottom: 1rem;
-}
+/* ============================================
+   DESCRIPTION
+============================================ */
 
-/* DESCRIPTION wider */
 .ct-description {
-  font-size: 1.15rem;
-  max-width: 850px; /* wider than before */
-  line-height: 1.6;
-}
-
-/* CONTACT INFO — now in a row */
-.ct-contact-row {
-  display: flex;
-  gap: 2rem; /* spacing between email / phone / location */
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap; /* safe on mobile */
-}
-
-.ct-contact-item {
   font-size: 1rem;
-  font-weight: 500;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+  max-width: 600px;
 }
 
-/* LINK BUTTONS — larger gap */
-.ct-links {
-  display: flex;
-  gap: 2.5rem; /* increased spacing */
-  justify-content: center;
-}
+/* ============================================
+   BUTTON LINK (Mobile Simple)
+============================================ */
 
-/* BUTTON LOOK */
 .ct-link {
-  background: linear-gradient(to left, rgb(79, 123, 255) 50%, rgb(34, 192, 255) 50%);
-  background-size: 200% 100%;
-  background-position: right bottom;
-  color: white;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 160px;
-  height: 50px;
+
+  padding: 0.85rem 1.8rem;
   border-radius: 14px;
+
   font-size: 1rem;
+  font-weight: 600;
   text-decoration: none;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-position 0.4s ease-out;
+
+  /* Base color */
+  background: linear-gradient(to right, #ff0000 50%, #007bff 50%);
+
+  background-size: 200% 100%;
+  background-position: right bottom;
+
+  color: #ffffff;
+
+  transition: background-position 0.65s ease-in-out;
 }
 
-.ct-link:hover {
-  background-position: left bottom;
+/* ============================================
+   DESKTOP OVERRIDE ≥768px
+============================================ */
+
+@media (min-width: 768px) {
+  .ct-section {
+    padding: 5rem 8%;
+  }
+
+  .ct-wrapper {
+    padding: 3.5rem 3rem;
+    gap: 2rem;
+    border-radius: 22px;
+  }
+
+  .ct-title {
+    font-size: 2.6rem;
+  }
+
+  .ct-description {
+    font-size: 1.15rem;
+    max-width: 720px;
+  }
+
+  /* ✅ Desktop Hover Effect */
+  .ct-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(18, 52, 88, 0.25);
+    background-color: #0d2a45;
+    background-position: left bottom;
+  }
 }
