@@ -1,18 +1,41 @@
-/* ===============================
+/* ============================================
    TECHNICAL SKILLS SECTION
-=============================== */
+   Mobile First Default
+   Desktop Override ≥768px
+============================================ */
 
-/* ===== Container ===== */
+/* ============================================
+   MOBILE DEFAULT
+============================================ */
+
 .as-container {
+  padding: 3rem 1.5rem 2.5rem;
+  background-color: #ffffff;
+
   display: flex;
   flex-direction: column;
-  padding: 4rem 6%;
-  gap: 2rem;
-  background-color: #ffffff;
+  gap: 2.5rem;
+
   box-sizing: border-box;
 }
 
-/* ===== Wrapper ===== */
+/* ============================================
+   MAIN TITLE (Skills)
+============================================ */
+
+.as-cotitle-wrapper {
+  width: 100%;
+}
+
+.as-cotitle {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin: 0;
+  color: #123458;
+  text-align: left;
+}
+
+/* Wrapper keeps groups stacked */
 .as-wrapper {
   width: 100%;
   display: flex;
@@ -20,48 +43,51 @@
   gap: 2rem;
 }
 
-/* ===== Group (Category Card) ===== */
+/* ============================================
+   GROUP CARD (CATEGORY)
+============================================ */
+
 .as-group {
   width: 100%;
-  padding: 1.5rem;
-  border-radius: 1rem;
+  padding: 1.6rem;
+  border-radius: 1.2rem;
+
   background-color: #ffffff;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
 
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.4rem;
 }
 
-/* ===== Category Title ===== */
+/* Category Title */
 .as-title {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: #123458;
   margin: 0;
-  text-align: center;
+  text-align: left;
 }
 
-/* ===== Skills Grid (MOBILE FIRST) ===== */
+/* ============================================
+   SKILLS GRID (3 PER ROW ALWAYS)
+============================================ */
+
 .as-grid {
   display: grid;
-  grid-template-columns: repeat(3, 85px);
-  justify-content: center;
-  gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
 }
 
-.as-cotitle {
-  font-size: 1.55rem;
-  color: var(--grayish);
-}
+/* ============================================
+   SKILL CARD
+============================================ */
 
-/* ===== Individual Skill ===== */
 .as-card {
-  width: 85px;
-  height: 78px;
+  background-color: #f9fafb;
+  border-radius: 12px;
 
-  background-color: var(--whiteish);
-  border-radius: 10px;
+  height: 74px;
 
   display: flex;
   flex-direction: column;
@@ -73,57 +99,106 @@
 
   text-align: center;
 
-  transition: transform 0.15s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .as-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
 }
 
-/* ===== Icon ===== */
+/* Icon */
 .as-icon {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   object-fit: contain;
 }
 
-/* ===== Skill Name ===== */
+/* Skill Name */
 .as-name {
   font-size: 0.7rem;
-  font-weight: 500;
-  color: #111;
+  font-weight: 600;
+  color: #222;
   line-height: 1.1;
 }
 
-/* ===== Error ===== */
+/* ============================================
+   ERROR MESSAGE
+============================================ */
+
 .as-error {
+  text-align: center;
   color: #b00020;
   font-weight: bold;
 }
 
-/* ===============================
+/* ============================================
    TABLET ≥600px
-=============================== */
+============================================ */
+
 @media (min-width: 600px) {
-  .as-grid {
-    grid-template-columns: repeat(4, 85px);
+  .as-container {
+    padding: 4rem 6% 3rem;
+  }
+
+  .as-card {
+    height: 78px;
+  }
+
+  .as-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .as-name {
+    font-size: 0.72rem;
   }
 }
 
-/* ===============================
+/* ============================================
    DESKTOP ≥768px
-=============================== */
+============================================ */
+
 @media (min-width: 768px) {
+  .as-container {
+    padding: 6rem 8% 4rem;
+    gap: 3rem;
+  }
+
+  /* Center everything nicely */
+  .as-cotitle-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
   .as-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+
     flex-direction: row;
-    gap: 2rem;
+    gap: 2.5rem;
   }
 
   .as-group {
     flex: 1;
+    padding: 2rem;
   }
 
+  .as-title {
+    font-size: 1.5rem;
+  }
+
+  /* Still only 3 icons per row */
   .as-grid {
-    grid-template-columns: repeat(3, 85px);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.9rem;
+  }
+
+  .as-card {
+    height: 80px;
+  }
+
+  .as-name {
+    font-size: 0.75rem;
   }
 }

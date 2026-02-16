@@ -1,4 +1,3 @@
-// Hobbies.tsx
 import "./hobbies.css";
 import { getHobbiesAction } from "./action";
 import type { THobbies } from "./hobbies.type";
@@ -10,45 +9,51 @@ const Hobbies = async () => {
 
   return (
     <section className="ho-container">
-      <h1 className="ho-title">Hobbies & Interests</h1>
+      {/* ✅ INNER ALIGNMENT WRAPPER */}
+      <div className="ho-inner">
+        <h1 className="ho-title">Hobbies & Interests</h1>
 
-      <div className="ho-grid">
-        {hobbies.map((hobby, i) => (
-          <article key={i} className="ho-card">
-            <div className="ho-card-wrapper">
-              {/* Icon */}
-              <i className={`${hobby.categoryIcon} ho-icon`} />
-              {/* Category */}
-              <h2 className="ho-card-title">{hobby.category}</h2>
-            </div>
+        <div className="ho-grid">
+          {hobbies.map((hobby, i) => (
+            <article key={i} className="ho-card">
+              <div className="ho-card-wrapper">
+                {/* Icon */}
+                <i className={`${hobby.categoryIcon} ho-icon`} />
 
-            {/* Description */}
-            {hobby.description && (
-              <p className="ho-description">{hobby.description}</p>
-            )}
-
-            {/* Books */}
-            {hobby.books && hobby.books.length > 0 && (
-              <div className="ho-books">
-                {hobby.books.map((book, idx) => (
-                  <div key={idx} className="ho-book">
-                    <img
-                      src={book.bookImage}
-                      alt={book.booktitle}
-                      className="ho-book-img"
-                    />
-
-                    <div className="ho-book-details">
-                      <p className="ho-book-status">{book.status}</p>
-                      <p className="ho-book-title">{book.booktitle}</p>
-                      <p className="ho-book-author">by {book.bookAuthor}</p>
-                    </div>
-                  </div>
-                ))}
+                {/* Category */}
+                <h2 className="ho-card-title">{hobby.category}</h2>
               </div>
-            )}
-          </article>
-        ))}
+
+              {/* Description */}
+              {hobby.description && (
+                <p className="ho-description">{hobby.description}</p>
+              )}
+
+              {/* Books */}
+              {hobby.books && hobby.books.length > 0 && (
+                <div className="ho-books">
+                  {hobby.books.map((book, idx) => (
+                    <div key={idx} className="ho-book">
+                      <img
+                        src={book.bookImage}
+                        alt={book.booktitle}
+                        className="ho-book-img"
+                      />
+
+                      <div className="ho-book-details">
+                        <p className="ho-book-status">{book.status}</p>
+                        <p className="ho-book-title">{book.booktitle}</p>
+                        <p className="ho-book-author">
+                          by {book.bookAuthor}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

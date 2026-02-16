@@ -25,7 +25,9 @@ const Expertise = async () => {
 
   return (
     <section className="exp-container">
-      <h1 className="exp-title">Area of Focus</h1>
+      <div className="exp-title-wrapper">
+        <h1 className="exp-title">Area of Focus</h1>
+      </div>
 
       <div className="exp-wrapper">
         {expertiseList.map((expertise, i) => (
