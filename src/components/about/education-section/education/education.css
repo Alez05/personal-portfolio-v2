@@ -179,7 +179,7 @@
 @media (min-width: 768px) {
   .ed-container {
     align-items: center;
-    padding: 6rem 8% 4rem;
+    padding: 3rem 8% 4rem;
     padding-bottom: 0;
     gap: 2.5rem;
   }

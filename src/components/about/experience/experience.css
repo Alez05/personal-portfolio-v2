@@ -41,7 +41,7 @@
   line-height: 1.75;
   margin: 0;
   text-align: left;
-  max-width: 760px;
+  /* max-width: 760px; */
 
   letter-spacing: 0.4px;
 }
