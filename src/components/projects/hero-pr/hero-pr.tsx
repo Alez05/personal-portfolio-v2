@@ -1,29 +1,34 @@
-import { getHeroPrAction } from "./action";
+import { heroprojectsData } from "../../../app/api"; // adjust path
 import "./hero-pr.css";
 
-const HeroPr = async () => {
-  const data = await getHeroPrAction();
-
-  if (!data) {
-    return (
-      <section className="prh-container">
-        <p className="prh-error">Failed to load hero data</p>
-      </section>
-    );
-  }
-
+const HeroPr = () => {
   return (
-    <section className="prh-container">
-      {/* {data.image && <img src={data.image} alt={data.title} className="prh-image" />} */}
-      <div className="prh-content">
-        {data.title && <h1 className="prh-title">{data.title}</h1>}
-        {data.description && <p className="prh-description">{data.description}</p>}
-        {data.cta?.label && data.cta?.link && (
-          <a href={data.cta.link} className="prh-button">
-            {data.cta.label}
-          </a>
+    <section className="pro-hero">
+      <div className="pro-hero-content">
+        {heroprojectsData.title && (
+          <h1 className="pro-hero-title">{heroprojectsData.title}</h1>
         )}
+        {heroprojectsData.description && (
+          <p className="pro-hero-description">{heroprojectsData.description}</p>
+        )}
+        <div className="pro-hero-buttons">
+          {heroprojectsData.ctaPrimary?.label && heroprojectsData.ctaPrimary?.link && (
+            <a href={heroprojectsData.ctaPrimary.link} className="pro-btn pro-btn-primary">
+              {heroprojectsData.ctaPrimary.label}
+            </a>
+          )}
+          {heroprojectsData.ctaSecondary?.label && heroprojectsData.ctaSecondary?.link && (
+            <a href={heroprojectsData.ctaSecondary.link} className="pro-btn pro-btn-secondary">
+              {heroprojectsData.ctaSecondary.label}
+            </a>
+          )}
+        </div>
       </div>
+      {heroprojectsData.image && (
+        <div className="pro-hero-image">
+          <img src={heroprojectsData.image} alt="Projects hero" />
+        </div>
+      )}
     </section>
   );
 };

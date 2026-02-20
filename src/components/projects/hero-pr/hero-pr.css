@@ -1,59 +1,150 @@
-.prh-container {
-  padding: 6rem 2rem 4rem 2rem;
-  background-image: url('../../../../public/image/contact.png');
-  text-align: center;
+/* =========================
+   DESKTOP HERO – ACTIVE ≥769px
+================================= */
+
+.pro-hero {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-sizing: border-box;
+  padding: 6rem 10% 4rem;
   min-height: 100vh;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  background-size: cover;
-  background-position: center;
+  gap: 4rem;
+  background-color: #fff;
+  box-sizing: border-box;
 }
 
-.prh-content {
+/* LEFT COLUMN */
+.pro-hero-content {
+  flex: 1.2;
+  max-width: 720px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
+  gap: 1.4rem;
 }
 
-.prh-title {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-  background: linear-gradient(90deg, #1676dd, #060606);
+.pro-hero-pretitle {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.6;
+}
+
+.pro-hero-title {
+  font-size: 3.4rem;
+  font-weight: 800;
+  line-height: 1.05;
+  background: linear-gradient(90deg, var(--blueish), var(--blackish));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
 }
 
-.prh-description {
-  max-width: 600px;
-  font-size: 1rem;
-  color: #030303;
-  line-height: 1.6;
-  padding-bottom: 2rem;
-}
-
-.prh-button {
-  background-color: #1676dd;
-  color: #fff;
-  border-radius: 10px;
-  width: 180px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-}
-
-.prh-error {
-  color: red;
+.pro-hero-subtitle {
+  font-size: 1.7rem;
   font-weight: 600;
+  color: var(--blueish);
+}
+
+.pro-hero-description {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--blackish);
+}
+
+.pro-hero-focus {
+  font-size: 1.05rem;
+  color: var(--blackish);
+}
+
+.pro-hero-focus span {
+  font-weight: 600;
+  color: var(--blueish);
+}
+
+/* BUTTONS */
+.pro-hero-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1.8rem;
+  margin-top: 2rem;
+  flex-wrap: nowrap; /* never wrap */
+}
+
+.pro-btn-secondary {
+  padding: 0.75rem 1.8rem;
+  border-radius: 10px;
+  border: 2px solid var(--blueish);
+  color: var(--blueish);
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+}
+
+.pro-btn-secondary:hover {
+  background-color: var(--blueish);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* RIGHT COLUMN */
+.pro-hero-image-wrapper {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.pro-hero-image {
+  width: 260px;
+  max-width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   TABLET HERO – 600px–768px
+========================= */
+@media (min-width: 600px) and (max-width: 768px) {
+  .pro-hero {
+    padding: 5rem 6% 3.5rem;
+    gap: 3rem;
+  }
+
+  .pro-hero-content {
+    max-width: 680px;
+  }
+
+  .pro-hero-title {
+    font-size: clamp(2.6rem, 5vw, 3.1rem);
+  }
+
+  .pro-hero-subtitle {
+    font-size: clamp(1.35rem, 2.5vw, 1.55rem);
+  }
+
+  .pro-hero-description {
+    font-size: clamp(1rem, 2.3vw, 1.1rem);
+  }
+
+  .pro-hero-focus {
+    font-size: 1rem;
+  }
+
+  .pro-hero-buttons {
+    gap: 1.2rem;
+  }
+
+  .pro-btn-secondary {
+    padding: 0.65rem 1.4rem;
+    font-size: 0.95rem;
+  }
+
+  .pro-hero-image-wrapper {
+    gap: 1.6rem;
+  }
+
+  .pro-hero-image {
+    width: clamp(210px, 28vw, 240px);
+  }
 }
