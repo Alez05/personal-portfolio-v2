@@ -1,5 +1,5 @@
 // components
-export { AboutMeP } from "./aboutme-p";
+export { AboutMeP } from "./aboutme";
 
 export { AboutMeM } from "./aboutme-m";
 export { AboutMeD } from "./aboutme-d";

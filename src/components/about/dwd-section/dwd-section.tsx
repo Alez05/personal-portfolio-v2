@@ -1,4 +1,4 @@
-import { DownloadButton } from '@components/shared';
+import { DownloadButton } from '../../shared';
 
 const DownloadSection = () => {
   return (
