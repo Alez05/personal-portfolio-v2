@@ -1,4 +1,5 @@
 export type THeroPr = {
+  eyebrow?: string;   // small text above title
   title?: string;
   description?: string;
   ctaPrimary?: {
@@ -9,5 +10,5 @@ export type THeroPr = {
     label?: string;
     link?: string;
   };
-  image?: string;  // main hero image representing stacked projects
+  image?: string;
 };

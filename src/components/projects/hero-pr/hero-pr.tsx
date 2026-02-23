@@ -1,34 +1,85 @@
-import { heroprojectsData } from "../../../app/api"; // adjust path
+// src/components/projects/projects-hero/HeroPr.tsx
+import type { THeroPr } from "./hero-pr.type";
+import { getHeroPrAction } from "./action";
 import "./hero-pr.css";
 
-const HeroPr = () => {
+const HeroPr = async () => {
+  const heroData: THeroPr | null = await getHeroPrAction();
+
+  // Failed fetch
+  if (!heroData) {
+    return (
+      <section className="prh-hero">
+        <p className="prh-error">Failed to load hero data.</p>
+      </section>
+    );
+  }
+
+  // No data
+  if (Object.keys(heroData).length === 0) {
+    return (
+      <section className="prh-hero">
+        <p className="prh-error">No hero data available.</p>
+      </section>
+    );
+  }
+
   return (
-    <section className="pro-hero">
-      <div className="pro-hero-content">
-        {heroprojectsData.title && (
-          <h1 className="pro-hero-title">{heroprojectsData.title}</h1>
+    <section
+      className="prh-hero"
+      // style={
+      //   !heroData.image
+      //     ? {}
+      //     : {
+      //         backgroundImage: `url(${heroData.image})`,
+      //         backgroundSize: "cover",
+      //         backgroundPosition: "center",
+      //         backgroundRepeat: "no-repeat",
+      //       }
+      // }
+    >
+
+      <div className="prh-content">
+        {heroData.eyebrow && (
+          <h2 className="prh-pretitle">{heroData.eyebrow}</h2>
         )}
-        {heroprojectsData.description && (
-          <p className="pro-hero-description">{heroprojectsData.description}</p>
+
+        {heroData.image && (
+        <div className="prh-i-wrapper">
+          <img
+            src={heroData.image}
+            className="prh-image"
+            alt="Projects hero"
+          />
+        </div>
+      )}
+
+        {heroData.title && (
+          <h1 className="prh-title">{heroData.title}</h1>
         )}
-        <div className="pro-hero-buttons">
-          {heroprojectsData.ctaPrimary?.label && heroprojectsData.ctaPrimary?.link && (
-            <a href={heroprojectsData.ctaPrimary.link} className="pro-btn pro-btn-primary">
-              {heroprojectsData.ctaPrimary.label}
+        {heroData.description && (
+          <p className="prh-description">{heroData.description}</p>
+        )}
+        <div className="prh-buttons">
+          {heroData.ctaPrimary?.label && heroData.ctaPrimary?.link && (
+            <a
+              href={heroData.ctaPrimary.link}
+              className="prh-btn-primary"
+            >
+              {heroData.ctaPrimary.label}
             </a>
           )}
-          {heroprojectsData.ctaSecondary?.label && heroprojectsData.ctaSecondary?.link && (
-            <a href={heroprojectsData.ctaSecondary.link} className="pro-btn pro-btn-secondary">
-              {heroprojectsData.ctaSecondary.label}
+          {heroData.ctaSecondary?.label && heroData.ctaSecondary?.link && (
+            <a
+              href={heroData.ctaSecondary.link}
+              className="prh-btn-secondary"
+            >
+              {heroData.ctaSecondary.label}
             </a>
           )}
         </div>
       </div>
-      {heroprojectsData.image && (
-        <div className="pro-hero-image">
-          <img src={heroprojectsData.image} alt="Projects hero" />
-        </div>
-      )}
+
     </section>
   );
 };
