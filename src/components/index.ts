@@ -22,7 +22,7 @@ export type { TNavSocial } from "./shared";
 // components
 export { AboutMeP } from "./about";
 export { Expertise } from "./about";
-export { ExperienceP } from "./about";
+export { Experience } from "./about";
 export { TechSection } from "./about";
 export { EducationSection } from "./about";
 export { Hobbies } from "./about";

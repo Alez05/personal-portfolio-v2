@@ -1,6 +1,7 @@
 import type { THeroPr } from "../../../../components";
 
 export const heroprojectsData: THeroPr = {
+  eyebrow: "Selected Works",
   title: "Projects",
   description:
     "Example projects such as e-commerce, business websites, real-time administration apps, and more. Web design, web development, logo design.",
@@ -12,5 +13,5 @@ export const heroprojectsData: THeroPr = {
     label: "Contact Me",
     link: "#contact", // link to contact section
   },
-  image: "/image/profile.png", // your custom hero image
+  image: "/image/pr-banner.png", // your custom hero image
 };
