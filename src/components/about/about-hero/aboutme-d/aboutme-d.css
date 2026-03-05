@@ -5,12 +5,18 @@
 .abm-container-d {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 6rem 10% 4rem 6rem;
+  justify-content: space-between;
+
+  padding: 6rem 6% 4rem;   /* ✅ balanced horizontal padding */
   min-height: 100vh;
   gap: 4rem;
+
   background-color: #fff;
   box-sizing: border-box;
+
+  max-width: 1400px;       /* ✅ prevents stretching on 27" monitors */
+  margin: 0 auto;          /* ✅ true horizontal centering */
+  margin-top: 0.5rem;
 }
 
 /* LEFT COLUMN */

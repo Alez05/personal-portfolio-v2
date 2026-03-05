@@ -1,62 +1,51 @@
 /* =========================
-   MOBILE HERO – ≤599px
+   MOBILE – ≤599px
 ========================= */
+
 .prh-hero {
   display: flex;
   flex-direction: column;
-  align-items: center;           /* center content horizontally */
-  justify-content: flex-start;
+  align-items: center;
   padding: 4rem 6% 3rem;
+  gap: 2rem;
   min-height: 100vh;
-  margin-top: 2rem;
-  gap: 1rem;
   box-sizing: border-box;
-  background-color: transparent; /* transparent background */
 }
 
-/* IMAGE ABOVE TEXT ON MOBILE */
+/* IMAGE ON TOP */
 .prh-i-wrapper {
   width: 100%;
   display: flex;
-  justify-content: center;       /* center the image inside the wrapper */
-  margin-bottom: 1.5rem;        /* space between image and text */
+  justify-content: center;
+  background: transparent;
 }
 
 .prh-image {
-  width: 100%;                   /* full width of wrapper */
-  max-width: 500px;              /* optional: limit max size */
+  width: 100%;
+  max-width: 480px;
   height: auto;
-  border-radius: 16px;
-  object-fit: cover;             /* maintain aspect ratio */
+  object-fit: cover;
 }
 
-/* LEFT COLUMN (text) */
+/* TEXT */
 .prh-content {
+  width: 100%;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
-  align-items: center;           /* center text horizontally */
+  align-items: center;
+  text-align: center;
   gap: 1.5rem;
-  width: 100%;
-  transform: translateY(0);
-  text-align: center;            /* center text content */
 }
 
-/* EYEBROW / PRETITLE */
 .prh-pretitle {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #888888;
-  opacity: 0.7;
-  margin-bottom: 0.3rem;
-  position: relative;
-  top: 0;
-  align-self: flex-start;        /* keep eyebrow left-aligned */
-  text-align: left;
+  color: #888;
 }
 
-/* MAIN TITLE */
 .prh-title {
   font-size: 2rem;
   font-weight: 800;
@@ -64,37 +53,15 @@
   background: linear-gradient(90deg, var(--blueish), var(--blackish));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 0.8rem;
 }
 
-/* SUBTITLE */
-.prh-subtitle {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--blueish);
-  margin-bottom: 0.8rem;
-}
-
-/* DESCRIPTION */
 .prh-description {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--blackish);
-  margin-bottom: 1.5rem;
 }
 
-/* FOCUS HIGHLIGHT */
-.prh-focus {
-  font-size: 0.95rem;
-  color: var(--blackish);
-}
-
-.prh-focus span {
-  font-weight: 600;
-  color: var(--blueish);
-}
-
-/* BUTTONS */
+/* BUTTONS STACKED */
 .prh-buttons {
   display: flex;
   flex-direction: column;
@@ -105,134 +72,169 @@
 
 .prh-btn-primary,
 .prh-btn-secondary {
-  width: 200px;
-  padding: 0.65rem 1.4rem;
+  width: 220px;
+  padding: 0.7rem 1.5rem;
   border-radius: 10px;
   font-weight: 600;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.25s ease;
+  transition: 0.25s ease;
 }
 
 .prh-btn-primary {
-  border: none;
-  background-color: var(--blueish);
+  background: var(--blueish);
   color: #fff;
-}
-
-.prh-btn-primary:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
+  border: none;
 }
 
 .prh-btn-secondary {
+  background: transparent;
   border: 2px solid var(--blueish);
-  background-color: transparent;
   color: var(--blueish);
 }
 
+.prh-btn-primary:hover,
 .prh-btn-secondary:hover {
-  background-color: var(--blueish);
-  color: #fff;
   transform: translateY(-2px);
 }
 
 /* =========================
-   TABLET HERO – 600px–768px
+   TABLET – 600px–768px
 ========================= */
+
 @media (min-width: 600px) and (max-width: 768px) {
   .prh-hero {
-    flex-direction: row;           /* side-by-side content */
-    padding: 4rem 6% 3.5rem;
-    gap: 1rem;
-    justify-content: flex-start;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
   }
 
   .prh-i-wrapper {
-    flex: 0.9;
-    height: auto;
-    background-image: none;        /* hide mobile bg image on tablet */
-    display: flex;
-    justify-content: flex-end;
+    flex: 1;
+    justify-content: flex-start;
   }
 
   .prh-content {
-    max-width: 680px;
-    gap: 1.8rem;
-    transform: translateY(-2rem);
+    flex: 1;
+    align-items: flex-start;
+    text-align: left;
   }
 
-  .prh-pretitle { font-size: 0.85rem; top: -1.5rem; }
-  .prh-title { font-size: clamp(2.6rem, 5vw, 3.1rem); margin-bottom: 0.8rem; }
-  .prh-subtitle { font-size: clamp(1.35rem, 2.5vw, 1.55rem); margin-bottom: 0.8rem; }
-  .prh-description { font-size: clamp(1rem, 2.3vw, 1.1rem); margin-bottom: 1.5rem; }
+  .prh-buttons {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
 
-  .prh-buttons { flex-direction: row; gap: 1.2rem; }
-  .prh-btn-primary, .prh-btn-secondary { width: auto; }
-
-  .prh-image {
-    width: clamp(280px, 50vw, 400px);
-    height: auto;
+  .prh-btn-primary,
+  .prh-btn-secondary {
+    width: auto;
   }
 }
 
 /* =========================
-   DESKTOP HERO – ≥769px
+   DESKTOP – ≥769px
 ========================= */
+
 @media (min-width: 769px) {
   .prh-hero {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: row-reverse;
+    align-items: flex-start; /* 🔥 not center anymore */
     justify-content: space-between;
-    padding: 6rem 8% 4rem 6rem;
+    padding: 6rem 8%;
     gap: 4rem;
-    min-height: 100vh;
-    box-sizing: border-box;
-    background-color: transparent;
+    margin-top: 0.5rem;
   }
 
-  /* LEFT COLUMN (text) */
   .prh-content {
     flex: 1;
-    max-width: 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    transform: translateY(-3rem);
+    max-width: 520px;
+    align-items: flex-start;
+    text-align: left;
+    margin-top: 0.5rem;
+    gap: 3rem;
   }
 
-  .prh-pretitle { font-size: 0.95rem; top: -2rem; }
-  .prh-title { font-size: 3.4rem; margin-bottom: 1rem; position: relative; bottom: 50px; }
-  .prh-subtitle { font-size: 1.7rem; margin-bottom: 1rem; }
-  .prh-description { font-size: 1.15rem; margin-bottom: 2rem; position: relative; bottom: 10px; }
+  .prh-title {
+    font-size: 3rem;
+  }
+
+  .prh-pretitle {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.6;
+  }
+
+  .prh-description {
+    font-size: 1.1rem;
+  }
 
   .prh-buttons {
-    display: flex;
     flex-direction: row;
-    gap: 1.8rem;
-    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding-top: 50px;
   }
 
-  .prh-btn-primary, .prh-btn-secondary { width: auto; }
-
-  /* RIGHT COLUMN (image) */
+  /* IMAGE RIGHT */
   .prh-i-wrapper {
     flex: 1;
     display: flex;
     justify-content: flex-end;
-    background-image: none;        /* remove bg image for desktop */
   }
 
   .prh-image {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    border-radius: 16px;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
-    background-color: transparent;
+    max-width: 520px;
+    /* box-shadow: 0 12px 28px rgba(0,0,0,0.12); */
+    padding-top: 100px;
+  }
+}
+
+/* =========================
+   LARGE DESKTOP – ≥1200px
+========================= */
+
+@media (min-width: 1200px) {
+  .prh-hero {
+    max-width: 1400px; /* keeps content from stretching too wide */
+    margin: 0 auto; /* center the whole hero */
+    padding: 6rem 6%; /* slightly bigger breathing space */
+    gap: 6rem; /* more space between text & image */
+    margin-top: 0.5rem;
+  }
+
+  .prh-content {
+    max-width: 600px; /* slightly wider text column */
+  }
+
+  .prh-title {
+    font-size: 3.6rem; /* upscale title */
+  }
+
+  .prh-description {
+    font-size: 1.2rem;
+  }
+
+  .prh-image {
+    max-width: 600px; /* upscale image slightly */
+    padding-top: 100px;
+  }
+
+  .prh-buttons {
+    padding-top: 50px;
+  }
+
+  .prh-btn-primary,
+  .prh-btn-secondary {
+    height: 60px;
+    align-content: center;
+  }
+
+  .prh-btn-primary {
+    width: 200px;
+  }
+
+  .prh-btn-secondary {
+    width: 220px;
   }
 }

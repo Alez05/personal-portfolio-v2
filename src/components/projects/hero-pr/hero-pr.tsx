@@ -6,7 +6,6 @@ import "./hero-pr.css";
 const HeroPr = async () => {
   const heroData: THeroPr | null = await getHeroPrAction();
 
-  // Failed fetch
   if (!heroData) {
     return (
       <section className="prh-hero">
@@ -15,7 +14,6 @@ const HeroPr = async () => {
     );
   }
 
-  // No data
   if (Object.keys(heroData).length === 0) {
     return (
       <section className="prh-hero">
@@ -25,26 +23,9 @@ const HeroPr = async () => {
   }
 
   return (
-    <section
-      className="prh-hero"
-      // style={
-      //   !heroData.image
-      //     ? {}
-      //     : {
-      //         backgroundImage: `url(${heroData.image})`,
-      //         backgroundSize: "cover",
-      //         backgroundPosition: "center",
-      //         backgroundRepeat: "no-repeat",
-      //       }
-      // }
-    >
+    <section className="prh-hero">
 
-      <div className="prh-content">
-        {heroData.eyebrow && (
-          <h2 className="prh-pretitle">{heroData.eyebrow}</h2>
-        )}
-
-        {heroData.image && (
+      {heroData.image && (
         <div className="prh-i-wrapper">
           <img
             src={heroData.image}
@@ -54,12 +35,19 @@ const HeroPr = async () => {
         </div>
       )}
 
+      <div className="prh-content">
+        {heroData.eyebrow && (
+          <h2 className="prh-pretitle">{heroData.eyebrow}</h2>
+        )}
+
         {heroData.title && (
           <h1 className="prh-title">{heroData.title}</h1>
         )}
+
         {heroData.description && (
           <p className="prh-description">{heroData.description}</p>
         )}
+
         <div className="prh-buttons">
           {heroData.ctaPrimary?.label && heroData.ctaPrimary?.link && (
             <a
@@ -69,6 +57,7 @@ const HeroPr = async () => {
               {heroData.ctaPrimary.label}
             </a>
           )}
+
           {heroData.ctaSecondary?.label && heroData.ctaSecondary?.link && (
             <a
               href={heroData.ctaSecondary.link}
