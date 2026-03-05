@@ -4,7 +4,7 @@ export const heroprojectsData: THeroPr = {
   eyebrow: "Selected Works",
   title: "Projects",
   description:
-    "Example projects such as e-commerce, business websites, real-time administration apps, and more. Web design, web development, logo design.",
+    "Example projects such as e-commerce, business websites, real-time administration apps, and more. Web design, web development, logo design. LoremIpsu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   ctaPrimary: {
     label: "View Projects",
     link: "#projects", // link to your projects section
