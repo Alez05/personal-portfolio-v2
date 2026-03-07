@@ -13,7 +13,7 @@ const BlogCard = async () => {
   }
 
   return (
-    <section className="bcs-container">
+    <section id="blog-overview" className="bcs-container">
       {data.map((blog, index) => (
         <article className="bcs-card" key={index}>
           {blog.image && (

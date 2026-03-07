@@ -1,23 +1,23 @@
 /* =========================
-   MOBILE – ≤599px
+   BASE – MOBILE (0–599)
 ========================= */
 
 .prh-hero {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 4rem 6% 3rem;
+  /* align-items: center; mobile pretitle left-aligned */
+  padding: 6rem 6% 4rem;
   gap: 2rem;
   min-height: 100vh;
   box-sizing: border-box;
 }
 
-/* IMAGE ON TOP */
+/* IMAGE */
+
 .prh-i-wrapper {
   width: 100%;
   display: flex;
   justify-content: center;
-  background: transparent;
 }
 
 .prh-image {
@@ -28,6 +28,7 @@
 }
 
 /* TEXT */
+
 .prh-content {
   width: 100%;
   max-width: 600px;
@@ -38,16 +39,28 @@
   gap: 1.5rem;
 }
 
-.prh-pretitle {
+/* PreTitle MOBILE */
+.prh-pretitle-mobile {
+  display: block;
   font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: #888;
+  text-align: left;
+  width: 100%;
+}
+
+/* PreTitle DESKTOP */
+.prh-pretitle-desktop {
+  display: none;
+  font-size: 0.95rem;
+  opacity: 0.6;
+  margin-bottom: 0.5rem;
 }
 
 .prh-title {
-  font-size: 2rem;
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
   line-height: 1.2;
   background: linear-gradient(90deg, var(--blueish), var(--blackish));
@@ -56,12 +69,13 @@
 }
 
 .prh-description {
-  font-size: 1rem;
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
   line-height: 1.6;
   color: var(--blackish);
 }
 
-/* BUTTONS STACKED */
+/* BUTTONS */
+
 .prh-buttons {
   display: flex;
   flex-direction: column;
@@ -72,10 +86,13 @@
 
 .prh-btn-primary,
 .prh-btn-secondary {
-  width: 220px;
-  padding: 0.7rem 1.5rem;
+  width: 260px;
+  height: 60px;
   border-radius: 10px;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   transition: 0.25s ease;
 }
@@ -98,12 +115,13 @@
 }
 
 /* =========================
-   TABLET – 600px–768px
+   TABLET – ≥600px
 ========================= */
 
 @media (min-width: 600px) and (max-width: 768px) {
+
   .prh-hero {
-    flex-direction: row;
+    flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
     gap: 3rem;
@@ -111,39 +129,52 @@
 
   .prh-i-wrapper {
     flex: 1;
-    justify-content: flex-start;
+    display: flex;
+    justify-content: flex-end;
+    max-width: 480px;
   }
 
   .prh-content {
     flex: 1;
     align-items: flex-start;
     text-align: left;
+    max-width: 480px;
+    gap: 3rem;
+  }
+
+  /* PreTitle switch */
+  .prh-pretitle-mobile {
+    display: none;
+  }
+  .prh-pretitle-desktop {
+    display: block;
   }
 
   .prh-buttons {
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
+    gap: 1rem;
   }
 
   .prh-btn-primary,
   .prh-btn-secondary {
-    width: auto;
+    width: 260px;
+    height: 60px;
   }
 }
 
 /* =========================
-   DESKTOP – ≥769px
+   LAPTOP / DESKTOP – ≥769px
 ========================= */
 
 @media (min-width: 769px) {
+
   .prh-hero {
-    display: flex;
     flex-direction: row-reverse;
-    align-items: flex-start; /* 🔥 not center anymore */
+    align-items: flex-start;
     justify-content: space-between;
-    padding: 6rem 8%;
+    padding: 6rem 6% 4rem;
     gap: 4rem;
-    margin-top: 0.5rem;
   }
 
   .prh-content {
@@ -151,32 +182,18 @@
     max-width: 520px;
     align-items: flex-start;
     text-align: left;
-    margin-top: 0.5rem;
     gap: 3rem;
   }
 
-  .prh-title {
-    font-size: 3rem;
-  }
+  .prh-pretitle-mobile { display: none; }
+  .prh-pretitle-desktop { display: block; }
 
-  .prh-pretitle {
-    font-size: 0.95rem;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    opacity: 0.6;
-  }
+  .prh-title { font-size: 3rem; }
 
-  .prh-description {
-    font-size: 1.1rem;
-  }
+  .prh-description { font-size: 1.1rem; }
 
-  .prh-buttons {
-    flex-direction: row;
-    justify-content: flex-start;
-    padding-top: 50px;
-  }
+  .prh-buttons { padding-top: 50px; flex-direction: row;}
 
-  /* IMAGE RIGHT */
   .prh-i-wrapper {
     flex: 1;
     display: flex;
@@ -185,9 +202,11 @@
 
   .prh-image {
     max-width: 520px;
-    /* box-shadow: 0 12px 28px rgba(0,0,0,0.12); */
     padding-top: 100px;
   }
+
+  .prh-btn-primary { width: 200px; height: 60px; }
+  .prh-btn-secondary { width: 220px; height: 60px; }
 }
 
 /* =========================
@@ -195,46 +214,30 @@
 ========================= */
 
 @media (min-width: 1200px) {
+
   .prh-hero {
-    max-width: 1400px; /* keeps content from stretching too wide */
-    margin: 0 auto; /* center the whole hero */
-    padding: 6rem 6%; /* slightly bigger breathing space */
-    gap: 6rem; /* more space between text & image */
-    margin-top: 0.5rem;
+    padding: 6rem 6% 4rem;
+    gap: 6rem;
   }
 
-  .prh-content {
-    max-width: 600px; /* slightly wider text column */
-  }
+  .prh-content { max-width: 600px; }
 
-  .prh-title {
-    font-size: 3.6rem; /* upscale title */
-  }
+  .prh-title { font-size: 3.6rem; }
 
-  .prh-description {
-    font-size: 1.2rem;
-  }
+  .prh-description { font-size: 1.2rem; }
 
-  .prh-image {
-    max-width: 600px; /* upscale image slightly */
-    padding-top: 100px;
-  }
+  .prh-image { max-width: 600px; }
 
-  .prh-buttons {
-    padding-top: 50px;
-  }
+  .prh-btn-primary { width: 200px; height: 60px; }
+  .prh-btn-secondary { width: 220px; height: 60px; }
+}
 
-  .prh-btn-primary,
-  .prh-btn-secondary {
-    height: 60px;
-    align-content: center;
-  }
+/* =========================
+   WIDE SCREENS – ≥1600px
+========================= */
 
-  .prh-btn-primary {
-    width: 200px;
-  }
-
-  .prh-btn-secondary {
-    width: 220px;
+@media (min-width: 1600px) {
+  .prh-hero {
+    padding: 6rem 16rem 4rem;
   }
 }

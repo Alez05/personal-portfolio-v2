@@ -1,6 +1,7 @@
 export type TContactHr = {
-  name?: string;
-  description?: string;
+  preTitle?: string;
+  title?: string;
+  subTitle?: string;
   cta?: {
     label?: string;
     link?:  string;

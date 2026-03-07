@@ -1,7 +1,7 @@
 export type THeroPr = {
-  eyebrow?: string;   // small text above title
+  preTitle?: string;   // small text above title
   title?: string;
-  description?: string;
+  subTitle?: string;
   ctaPrimary?: {
     label?: string;
     link?: string;
