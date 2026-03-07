@@ -2,8 +2,9 @@
 import { TContactHr } from "../../../../components";
 
 export const contactHeroData: TContactHr = {
-  name: "Let's Build Something Together",
-  description:
+  preTitle: "Let's connnect",
+  title: "Let's Build Something Together",
+  subTitle:
     "Freelance or full-time, I bring ideas to life through thoughtful design and code.",
   cta: {
     label: "Contact Me",

@@ -1,55 +1,95 @@
 // components/contact-hero.tsx
+
 import "./contact-hero.css";
-import Image from "next/image";
 import { getContactHrAction } from "./action";
 
 const ContactHero = async () => {
   const data = await getContactHrAction();
 
+  // ❌ Failed to load
   if (!data) {
     return (
-      <section className="hmh-container">
-        <div className="hmh-content">
-          <p className="hmh-subtitle">Failed to load hero content.</p>
-        </div>
+      <section className="hm-hero">
+        <p className="hm-error">Failed to load hero data.</p>
       </section>
     );
   }
 
-  const { name, description, cta, image } = data;
+  // ⚠️ No data
+  if (Object.keys(data).length === 0) {
+    return (
+      <section className="hm-hero">
+        <p className="hm-error">No hero data available.</p>
+      </section>
+    );
+  }
 
-  // Optional: split name for highlighting if it contains "Build Something Together"
+  const { title, subTitle, cta, image, preTitle } = data;
+
+  // Optional highlight logic
   const highlightText = "Build Something Together";
-  const nameParts = name?.split(highlightText) || [name || ""];
+  const titleParts = title?.split(highlightText) || [title || ""];
 
   return (
-    <section className="hmh-container">
-      <div className="hmh-content">
-        {name && (
-          <h1 className="hmh-title">
-            {nameParts[0]}
-            <span className="hmh-color">{highlightText}</span>
-            {nameParts[1]}
-          </h1>
-        )}
-        {description && <p className="hmh-subtitle">{description}</p>}
-        {cta && (
-          <a href={cta.link} className="hmh-button">
-            {cta.label}
-          </a>
-        )}
-      </div>
+    <section className="hm-hero">
+
+      {/* Pretitle for MOBILE (above image) */}
+      {preTitle && (
+        <p className="hm-pretitle-mobile">
+          {preTitle}
+        </p>
+      )}
+
+      {/* Image */}
       {image && (
-        <div className="hmh-image">
-          <Image
+        <div className="hm-image-wrapper">
+          <img
             src={image}
-            alt="Profile Illustration"
-            width={400}
-            height={400}
-            priority
+            alt={title ?? "Contact hero image"}
+            className="hm-image"
           />
         </div>
       )}
+
+      {/* Content */}
+      <div className="hm-content">
+
+        {/* Pretitle for DESKTOP */}
+        {preTitle && (
+          <p className="hm-pretitle-desktop">
+            {preTitle}
+          </p>
+        )}
+
+        {/* Title */}
+        {title && (
+          <h1 className="hm-title">
+            {titleParts[0]}
+            {titleParts.length > 1 && (
+              <span className="hm-color">{highlightText}</span>
+            )}
+            {titleParts[1]}
+          </h1>
+        )}
+
+        {/* Subtitle */}
+        {subTitle && (
+          <p className="hm-subtitle">
+            {subTitle}
+          </p>
+        )}
+
+        {/* CTA */}
+        {cta?.label && cta?.link && (
+          <div className="hm-button-wrapper">
+            <a href={cta.link} className="hm-button">
+              {cta.label}
+            </a>
+          </div>
+        )}
+
+      </div>
+
     </section>
   );
 };

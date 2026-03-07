@@ -1,156 +1,307 @@
-/* ===== Hero Container ===== */
-.hmh-container {
+/* =========================
+   CONTACT HERO – MOBILE FIRST
+========================= */
+
+/* Base styles (Mobile 0–599px) */
+
+.hm-hero {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+
+  padding: 6rem 6% 4rem;
   gap: 2rem;
 
-  width: 90%; /* same as navbar */
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 6rem 2rem 2rem; /* top padding = navbar offset */
-
-  min-height: 100vh; /* full viewport height */
+  min-height: 100vh;
   box-sizing: border-box;
-
-  flex-wrap: wrap;
+  text-align: center;
 }
 
-/* ===== Text Content ===== */
-.hmh-content {
-  flex: 1;
-  min-width: 280px;
+/* IMAGE */
+
+.hm-image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  order: 0;
 }
 
-.hmh-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+.hm-image {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* CONTENT */
+
+.hm-content {
+  width: 100%;
+  max-width: 600px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  order: 1;
+}
+
+/* PRETITLE */
+
+.hm-pretitle-mobile {
+  display: block;
+
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+
+  color: #888;
+  text-align: left;
+}
+
+.hm-pretitle-desktop {
+  display: none;
+}
+
+/* TITLE */
+
+.hm-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
   line-height: 1.2;
 }
 
-.hmh-color {
+.hm-color {
   color: var(--blueish);
 }
 
-.hmh-subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: var(--grayish);
-  max-width: 500px;
+/* SUBTITLE */
+
+.hm-subtitle {
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  line-height: 1.6;
+  color: var(--blackish);
 }
 
-.hmh-button {
-  display: inline-block;
-  padding: 0.75rem 2rem;
-  background-color: var(--blueish);
-  color: var(--whiteish);
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
+/* =========================
+   BUTTON (IDENTICAL TO BLOG HERO)
+========================= */
 
-.hmh-button:hover {
-  background-color: var(--primary-light-hover);
-}
-
-/* ===== Image Wrapper ===== */
-.hmh-image {
-  flex: 1;
+.hm-button-wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-width: 280px;
-  max-height: 80vh;
-  overflow: hidden;
 }
 
-/* ===== Responsive ===== */
+.hm-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-/* Mobile (phones) */
-@media (max-width: 767px) {
-  .hmh-container {
-    flex-direction: column-reverse;
-    text-align: center;
-    padding-top: 5rem;
-    min-height: auto; /* allow content to expand naturally */
+  width: 260px;
+  height: 60px;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  color: var(--dark);
+  background-color: rgb(255 70 84);
+
+  border: 2px solid var(--dark);
+  border-radius: 10px;
+
+  overflow: hidden;
+  z-index: 1;
+
+  transition: all 0.25s ease-in-out;
+}
+
+/* Hover overlay */
+
+.hm-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: var(--theme);
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition: transform 0.25s ease-in-out;
+  z-index: -1;
+}
+
+.hm-button:hover::before {
+  transform: scaleX(1);
+}
+
+.hm-button:hover {
+  color: #fff;
+  box-shadow: none;
+}
+
+/* =========================
+   TABLET – 600px–768px
+========================= */
+
+@media (min-width: 600px) and (max-width: 768px) {
+
+  .hm-hero {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 3rem;
   }
 
-  .hmh-title {
-    font-size: 2rem;
+  .hm-image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    max-width: 420px;
   }
 
-  .hmh-subtitle {
+  .hm-content {
+    flex: 1;
+    align-items: flex-start;
+    text-align: left;
+
+    max-width: 480px;
+    gap: 3rem;
+  }
+
+  /* switch pretitle */
+
+  .hm-pretitle-mobile {
+    display: none;
+  }
+
+  .hm-pretitle-desktop {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.6;
+    margin-bottom: 0.5rem;
+  }
+
+  .hm-button-wrapper {
+    justify-content: flex-start;
+  }
+
+  .hm-button {
+    width: 260px;
+    height: 60px;
     font-size: 1rem;
   }
 
-  .hmh-image {
-    margin-bottom: 2rem;
-    max-height: 50vh;
-  }
 }
 
-/* Tablet */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .hmh-container {
-    flex-direction: column-reverse;
-    text-align: center;
-    padding-top: 5rem;
-    min-height: auto;
+/* =========================
+   LAPTOP / SMALL DESKTOP – 769px–1199px
+========================= */
+
+@media (min-width: 769px) {
+
+  .hm-hero {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    padding: 6rem 6% 4rem;
+    gap: 4rem;
   }
 
-  .hmh-title {
-    font-size: 2.25rem;
+  .hm-content {
+    flex: 1;
+    max-width: 520px;
+
+    align-items: flex-start;
+    text-align: left;
+
+    gap: 4rem;
   }
 
-  .hmh-subtitle {
-    font-size: 1.05rem;
+  .hm-pretitle-mobile {
+    display: none;
   }
 
-  .hmh-image {
-    margin-bottom: 2rem;
-    max-height: 55vh;
-  }
-}
-
-/* Laptop / Small Desktop */
-@media (min-width: 1024px) and (max-width: 1399px) {
-  .hmh-title {
-    font-size: 2.5rem;
+  .hm-pretitle-desktop {
+    display: block;
+    font-size: 0.95rem;
+    opacity: 0.6;
+    margin-bottom: 0.5rem;
   }
 
-  .hmh-subtitle {
-    font-size: 1.2rem;
-  }
-}
-
-/* Large Desktop */
-@media (min-width: 1400px) {
-  .hmh-container {
-    gap: 3rem;
-    padding: 6rem 5% 2rem;
-  }
-
-  .hmh-title {
+  .hm-title {
     font-size: 3rem;
   }
 
-  .hmh-subtitle {
-    font-size: 1.3rem;
+  .hm-subtitle {
+    font-size: 1.1rem;
   }
+
+  .hm-image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    max-width: 500px;
+  }
+
+  .hm-button {
+    width: 220px;
+    height: 60px;
+    font-size: 1rem;
+  }
+
 }
 
-/* Ultra-wide screens */
-@media (min-width: 1920px) {
-  .hmh-container {
-    padding: 6rem 8% 2rem;
+/* =========================
+   LARGE DESKTOP – 1200px–1599px
+========================= */
+
+@media (min-width: 1200px) {
+
+  .hm-hero {
+    padding: 6rem 6% 4rem;
+    gap: 6rem;
   }
 
-  .hmh-title {
-    font-size: 3.25rem;
+  .hm-content {
+    max-width: 620px;
   }
 
-  .hmh-subtitle {
-    font-size: 1.35rem;
+  .hm-title {
+    font-size: 3.6rem;
   }
+
+  .hm-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hm-image-wrapper {
+    max-width: 500px;
+    height: 400px;
+    margin-top: 4rem;
+  }
+
+  .hm-button {
+    height: 60px;
+    width: 220px;
+    padding: 0 2rem;
+  }
+
+}
+
+/* =========================
+   WIDE SCREENS – 1600px+
+========================= */
+
+@media (min-width: 1600px) {
+
+  .hm-hero {
+    padding: 6rem 16rem 4rem;
+  }
+
 }

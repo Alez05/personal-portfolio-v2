@@ -1,6 +1,7 @@
 export type THeroBl = {
+  preTitle?: string;
   title?: string;
-  description?: string;
+  subTitle?: string;
   cta?: {
     label?: string;
     link?: string;
