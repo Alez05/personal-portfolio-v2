@@ -22,7 +22,7 @@ export type TImage = {
 };
 
 export type TAboutMe = {
-  title: string;          // "Getting to know me"
+  preTitle: string;          // "Getting to know me"
   name: string;           // Alex
   role: string;           // Fullstack Developer
   description: string;    // who I am / what I do / what I offer

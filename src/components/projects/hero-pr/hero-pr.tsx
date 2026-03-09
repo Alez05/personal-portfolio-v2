@@ -26,80 +26,70 @@ const HeroPr = async () => {
 
   return (
     <section className="prh-hero" aria-label="Projects hero section">
-
-      {/* PreTitle for MOBILE (above image) */}
-      {heroData.preTitle && (
-        <p
-          className="prh-pretitle-mobile"
-          aria-hidden="true"
-        >
-          {heroData.preTitle}
-        </p>
-      )}
-
-      {/* IMAGE */}
-      {heroData.image && (
-        <div className="prh-i-wrapper">
-          <img
-            src={heroData.image}
-            className="prh-image"
-            alt={heroData.title ?? "Projects hero illustration"}
-          />
-        </div>
-      )}
-
-      {/* CONTENT */}
-      <div className="prh-content">
-
-        {/* PreTitle for DESKTOP (above title) */}
+      <div className="prh-hero-wrapper">
+        {/* PreTitle for MOBILE (above image) */}
         {heroData.preTitle && (
-          <p
-            className="prh-pretitle-desktop"
-            aria-hidden="true"
-          >
+          <p className="prh-pretitle-mobile" aria-hidden="true">
             {heroData.preTitle}
           </p>
         )}
 
-        {/* TITLE */}
-        {heroData.title && (
-          <h1 className="prh-title">{heroData.title}</h1>
+        {/* IMAGE */}
+        {heroData.image && (
+          <div className="prh-i-wrapper">
+            <img
+              src={heroData.image}
+              className="prh-image"
+              alt={heroData.title ?? "Projects hero illustration"}
+            />
+          </div>
         )}
 
-        {/* SUBTITLE / DESCRIPTION */}
-        {heroData.subTitle && (
-          <p className="prh-description">{heroData.subTitle}</p>
-        )}
-
-        {/* BUTTONS */}
-        <div className="prh-buttons">
-
-          {/* Primary CTA */}
-          {heroData.ctaPrimary?.label && heroData.ctaPrimary?.link && (
-            <a
-              href={heroData.ctaPrimary.link}
-              className="prh-btn-primary"
-              role="button"
-              aria-label={heroData.ctaPrimary.label}
-              title={`Go to: ${heroData.ctaPrimary.label}`}
-            >
-              {heroData.ctaPrimary.label}
-            </a>
+        {/* CONTENT */}
+        <div className="prh-content">
+          {/* PreTitle for DESKTOP (above title) */}
+          {heroData.preTitle && (
+            <p className="prh-pretitle-desktop" aria-hidden="true">
+              {heroData.preTitle}
+            </p>
           )}
 
-          {/* Secondary CTA */}
-          {heroData.ctaSecondary?.label && heroData.ctaSecondary?.link && (
-            <a
-              href={heroData.ctaSecondary.link}
-              className="prh-btn-secondary"
-              role="button"
-              aria-label={heroData.ctaSecondary.label}
-              title={`Go to: ${heroData.ctaSecondary.label}`}
-            >
-              {heroData.ctaSecondary.label}
-            </a>
+          {/* TITLE */}
+          {heroData.title && <h1 className="prh-title">{heroData.title}</h1>}
+
+          {/* SUBTITLE / DESCRIPTION */}
+          {heroData.subTitle && (
+            <p className="prh-description">{heroData.subTitle}</p>
           )}
 
+          {/* BUTTONS */}
+          <div className="prh-buttons">
+            {/* Primary CTA */}
+            {heroData.ctaPrimary?.label && heroData.ctaPrimary?.link && (
+              <a
+                href={heroData.ctaPrimary.link}
+                className="prh-btn-primary"
+                role="button"
+                aria-label={heroData.ctaPrimary.label}
+                title={`Go to: ${heroData.ctaPrimary.label}`}
+              >
+                {heroData.ctaPrimary.label}
+              </a>
+            )}
+
+            {/* Secondary CTA */}
+            {heroData.ctaSecondary?.label && heroData.ctaSecondary?.link && (
+              <a
+                href={heroData.ctaSecondary.link}
+                className="prh-btn-secondary"
+                role="button"
+                aria-label={heroData.ctaSecondary.label}
+                title={`Go to: ${heroData.ctaSecondary.label}`}
+              >
+                {heroData.ctaSecondary.label}
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </section>

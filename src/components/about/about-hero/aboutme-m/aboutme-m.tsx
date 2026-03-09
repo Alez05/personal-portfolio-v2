@@ -15,7 +15,7 @@ const AboutMeM = ({ about }: Props) => {
   return (
     <section className="abm-container-m">
       {/* SECTION TITLE */}
-      <span className="abm-section-title-m">{about.title}</span>
+      <span className="abm-section-title-m">{about.preTitle}</span>
 
       {/* IMAGE */}
       {about.profileImage?.src && (
