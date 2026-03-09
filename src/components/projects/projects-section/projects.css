@@ -1,16 +1,32 @@
+/* =========================
+   PROJECT SECTION CSS – MOBILE FIRST
+========================= */
+
+/* Container */
 .prs-container {
-  padding: 4rem 2rem;
+  padding: 4rem 1.5rem 0 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.prs-header {
-  text-align: center;
+/* Wrapper for content */
+.prs-wrapper {
+  text-align: center; /* Mobile: title centered */
   margin-bottom: 2rem;
 }
 
+/* Pretitle (optional) */
+.prs-pretitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+  text-align: left; /* Always left aligned */
+}
+
+/* Main title */
 .prs-title {
-  font-size: 2rem;
+  font-size: 2.25rem; /* Slightly smaller on mobile */
   font-weight: 700;
   margin-bottom: 0.5rem;
   background: linear-gradient(90deg, #1676dd, #060606);
@@ -18,20 +34,81 @@
   -webkit-text-fill-color: transparent;
 }
 
+/* Description */
 .prs-description {
-  max-width: 700px;
-  margin: 0 auto;
+  /* max-width: 1000px; */
   font-size: 1rem;
   color: #4b5563;
   line-height: 1.6;
+  text-align: center; /* Mobile: center aligned */
+  margin: 0 auto;
 }
 
+/* Content wrapper (if needed for spacing) */
 .prs-content {
   margin-top: 2rem;
 }
 
+/* Error / fallback */
 .prs-error {
   text-align: center;
   color: red;
   font-weight: 600;
+}
+
+/* =========================
+   RESPONSIVE BREAKPOINTS
+========================= */
+
+/* Tablet: 600px – 768px */
+@media (min-width: 600px) {
+  .prs-title {
+    font-size: 2.75rem;
+    text-align: left; /* left aligned on tablet+ */
+  }
+
+  .prs-description {
+    text-align: left;
+    font-size: 1.05rem;
+  }
+}
+
+/* Laptop / Small Desktop: 769px – 1199px */
+@media (min-width: 769px) {
+  .prs-container {
+    padding: 4rem 0 0 0;
+  }
+  .prs-title {
+    font-size: 3rem;
+  }
+
+  .prs-description {
+    font-size: 1.1rem;
+  }
+}
+
+/* Large Desktop: 1200px – 1599px */
+@media (min-width: 1200px) {
+  .prs-title {
+    font-size: 3.25rem;
+  }
+
+  .prs-pretitle {
+    font-size: 1.3rem;
+  }
+
+  .prs-description {
+    font-size: 1.15rem;
+  }
+}
+
+/* Wide Screens: 1600px+ */
+@media (min-width: 1600px) {
+  .prs-title {
+    font-size: 3.5rem;
+  }
+
+  .prs-description {
+    font-size: 1.2rem;
+  }
 }

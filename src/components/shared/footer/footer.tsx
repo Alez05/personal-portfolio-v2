@@ -30,6 +30,25 @@ const Footer = async () => {
           {tagline && <p className="foo-tagline">{tagline}</p>}
         </div>
 
+          {contact && (
+            <div className="foo-col foo-col-contact">
+              <h2 className="foo-section-title">Get in touch</h2>
+              {contact.email && (
+                <p className="foo-contact-item">
+                  <i className="fa-solid fa-envelope foo-icon-contact"></i>
+                  <a href={`mailto:${contact.email}`} className="foo-contact-link">
+                    {contact.email}
+                  </a>
+                </p>
+              )}
+              {contact.location && (
+                <p className="foo-contact-item">
+                  <i className="fa-solid fa-location-dot foo-icon-contact"></i>
+                  {contact.location}
+                </p>
+              )}
+            </div>
+          )}
         {/* Socials + Quick Links Row */}
         <div className="foo-links-socials-row">
           {/* Social Links */}
@@ -70,25 +89,6 @@ const Footer = async () => {
         </div>
 
         {/* Column 4 — Contact */}
-        {contact && (
-          <div className="foo-col foo-col-contact">
-            <h2 className="foo-section-title">Get in touch</h2>
-            {contact.email && (
-              <p className="foo-contact-item">
-                <i className="fa-solid fa-envelope foo-icon-contact"></i>
-                <a href={`mailto:${contact.email}`} className="foo-contact-link">
-                  {contact.email}
-                </a>
-              </p>
-            )}
-            {contact.location && (
-              <p className="foo-contact-item">
-                <i className="fa-solid fa-location-dot foo-icon-contact"></i>
-                {contact.location}
-              </p>
-            )}
-          </div>
-        )}
       </div>
 
       {rights && (
