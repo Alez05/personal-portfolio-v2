@@ -1,8 +1,9 @@
 import "./projects.css";
 import { getProjectSectionAction } from "./action";
 import { TProjectSection } from "./projects.type";
+import { ProjectCard } from "../project-card";
 
-const ProjectSection = async ({ children }:TProjectSection) => {
+const ProjectSection = async ({ children }: TProjectSection) => {
   const data = await getProjectSectionAction();
 
   if (!data) {
@@ -15,14 +16,15 @@ const ProjectSection = async ({ children }:TProjectSection) => {
 
   return (
     <section className="prs-container">
-      <div className="prs-header">
-        {data.title && <h2 className="prs-title">{data.title}</h2>}
+      <div className="prs-wrapper">
+        {data.preTitle && <h2 className="prs-pretitle">{data.preTitle}</h2>}
+        {data.title && <h1 className="prs-title">{data.title}</h1>}
         {data.description && (
           <p className="prs-description">{data.description}</p>
         )}
       </div>
 
-      <div className="prs-content">{children}</div>
+      <ProjectCard />
     </section>
   );
 };

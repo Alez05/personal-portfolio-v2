@@ -1,58 +1,67 @@
+/* =========================
+   PROJECT CARD CSS – MOBILE FIRST
+========================= */
+
+/* Container */
 .prj-container {
   padding: 3rem 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* Error / empty state */
 .prj-error {
   text-align: center;
   color: #c00;
   font-weight: 600;
 }
 
-/* Grid layout: 3 columns max, responsive */
+/* Grid layout */
 .prj-grid {
   display: grid;
-  gap: 2rem;
+  gap: 4rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-/* Card style */
+/* Card */
 .prj-card {
   background: #ffffff;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  padding: 1.5rem;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  /* padding: 1.5rem; */
+  border-radius: 10px;
 }
 
 .prj-card:hover {
   transform: translateY(-3px);
 }
 
-/* Top image */
+/* Image */
 .prj-image {
   width: 100%;
   height: 280px;
   border-radius: 10px;
-  /* no object-fit, show image as-is */
 }
 
-/* Content */
+/* Content wrapper (if needed) */
 .prj-content {
-  padding: 1rem 1.25rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  padding: 0; /* already handled in card */
 }
 
-/* Header: name + domain */
+/* Header: title + tools */
 .prj-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0.5rem;
 }
 
 .prj-name {
@@ -60,25 +69,44 @@
   font-weight: 700;
   color: #0b2b4a;
   margin: 0;
+  line-height: 1.2;
 }
 
+/* Domain tag */
 .prj-domain {
   font-size: 0.8rem;
   font-weight: 600;
-  color: #ef4444; /* red tag */
+  color: #ef4444;
   background-color: #fee2e2;
   padding: 0.15rem 0.5rem;
   border-radius: 8px;
   text-transform: uppercase;
   max-width: fit-content;
+  white-space: nowrap;
 }
 
 /* Description */
 .prj-description {
   font-size: 0.95rem;
   line-height: 1.5;
-  color: #4b5563; /* grayish text */
+  color: #4b5563;
   margin: 0.5rem 0;
+}
+
+/* Case Study link under description */
+.prj-case-study-wrapper {
+  margin-top: 0.3rem;
+}
+
+.prj-case-study {
+  font-size: 0.85rem;
+  color: #b91c1c;
+  text-decoration: none;
+  transition: text-decoration 0.2s;
+}
+
+.prj-case-study:hover {
+  text-decoration: underline;
 }
 
 /* Tools icons */
@@ -95,7 +123,14 @@
   object-fit: contain;
 }
 
-/* CTA link */
+/* CTA links row */
+.prj-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
 .prj-cta {
   display: inline-flex;
   align-items: center;
@@ -104,7 +139,7 @@
   font-weight: 600;
   color: #b91c1c;
   text-decoration: none;
-  margin-top: 0.5rem;
+  margin-top: 0;
 }
 
 .prj-cta:hover {
@@ -114,4 +149,71 @@
 .prj-cta-icon {
   width: 14px;
   height: 14px;
+}
+
+/* =========================
+   RESPONSIVE BREAKPOINTS
+========================= */
+
+/* Tablet: 600px – 768px */
+@media (min-width: 600px) {
+  .prj-container {
+    border-left: 2px solid #e5e7eb;
+    border-right: 2px solid #e5e7eb;
+  }
+  .prj-card {
+    /* padding: 1.75rem; */
+  }
+
+  .prj-description {
+    font-size: 0.97rem;
+  }
+
+  .prj-cta {
+    font-size: 0.92rem;
+  }
+}
+
+/* Laptop / Small Desktop: 769px – 1199px */
+@media (min-width: 769px) {
+  .prj-card {
+    /* padding: 2rem; */
+  }
+
+  .prj-description {
+    font-size: 1rem;
+  }
+
+  .prj-actions {
+    gap: 1rem;
+  }
+}
+
+/* Large Desktop: 1200px – 1599px */
+@media (min-width: 1200px) {
+  .prj-card {
+    /* padding: 2.25rem; */
+  }
+
+  .prj-description {
+    font-size: 1.02rem;
+  }
+  .prj-actions {
+    gap: 2rem;
+  }
+}
+
+/* Wide Screens: 1600px+ */
+@media (min-width: 1600px) {
+  .prj-card {
+    padding: 2.5rem;
+  }
+
+  .prj-description {
+    font-size: 1.05rem;
+  }
+
+  .prj-actions {
+    gap: 1.2rem;
+  }
 }

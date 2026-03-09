@@ -8,7 +8,7 @@ const Projects = () => {
     <main>
       <HeroPr />
       <ProjectSection />
-      <ProjectCard />
+      {/* <ProjectCard /> */}
       <ContactCTA />
     </main>
   )
