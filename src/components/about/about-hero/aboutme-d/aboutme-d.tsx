@@ -15,7 +15,7 @@ const AboutMeD = ({ about }: Props) => {
       {/* LEFT CONTENT */}
       <div className="abm-left-d">
         {/* TITLE */}
-        <span className="abm-title-d">{about.title}</span>
+        <span className="abm-title-d">{about.preTitle}</span>
 
         {/* NAME + ROLE */}
         <div className="abm-identity-d">
@@ -36,7 +36,7 @@ const AboutMeD = ({ about }: Props) => {
         {/* ACTIONS */}
         <div className="abm-buttons-d">
           {about.seeMore && (
-            <a href={about.seeMore} className="abm-btn-secondary-d">
+            <a href={about.seeMore} className="abm-btn-primary-d">
               See my work
             </a>
           )}

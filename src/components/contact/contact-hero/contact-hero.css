@@ -45,22 +45,28 @@
   order: 1;
 }
 
-/* PRETITLE */
+/* PRETITLE – updated to match About Me / Projects hero exactly */
 
 .hm-pretitle-mobile {
   display: block;
 
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-
+  opacity: 0.6;
   color: #888;
   text-align: left;
 }
 
 .hm-pretitle-desktop {
   display: none;
+
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.6;
+  margin-bottom: 0.5rem;
+  color: #888;
 }
 
 /* TITLE */
@@ -181,9 +187,6 @@
 
   .hm-pretitle-desktop {
     display: block;
-    font-size: 0.9rem;
-    opacity: 0.6;
-    margin-bottom: 0.5rem;
   }
 
   .hm-button-wrapper {
@@ -195,7 +198,6 @@
     height: 60px;
     font-size: 1rem;
   }
-
 }
 
 /* =========================
@@ -211,6 +213,7 @@
 
     padding: 6rem 6% 4rem;
     gap: 4rem;
+    margin-top: 1rem; /* desktop top margin */
   }
 
   .hm-content {
@@ -229,9 +232,6 @@
 
   .hm-pretitle-desktop {
     display: block;
-    font-size: 0.95rem;
-    opacity: 0.6;
-    margin-bottom: 0.5rem;
   }
 
   .hm-title {
@@ -254,7 +254,6 @@
     height: 60px;
     font-size: 1rem;
   }
-
 }
 
 /* =========================
@@ -291,7 +290,6 @@
     width: 220px;
     padding: 0 2rem;
   }
-
 }
 
 /* =========================
@@ -303,5 +301,4 @@
   .hm-hero {
     padding: 6rem 16rem 4rem;
   }
-
 }

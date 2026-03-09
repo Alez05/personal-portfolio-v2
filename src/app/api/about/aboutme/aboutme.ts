@@ -1,7 +1,7 @@
 import { TAboutMe } from "../../../../components";
 
 export const aboutMeData: TAboutMe = {
-  title: "Getting to know me",
+  preTitle: "Getting to know me",
 
   name: "Alexandru Cercel",
   role: "Fullstack Developer",
