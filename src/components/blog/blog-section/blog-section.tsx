@@ -1,8 +1,9 @@
 import "./blog-section.css";
 import { getBlogSectionAction } from "./action";
 import { TBlogSection } from "./blog-section.type";
+import { BlogCard } from "../blog-card";
 
-const BlogSection = async ({ children }:TBlogSection) => {
+const BlogSection = async ({}:TBlogSection) => {
   const data = await getBlogSectionAction();
 
   if (!data) {
@@ -21,8 +22,7 @@ const BlogSection = async ({ children }:TBlogSection) => {
           <p className="bls-description">{data.description}</p>
         )}
       </div>
-
-      <div className="bls-content">{children}</div>
+        <BlogCard />
     </section>
   );
 };

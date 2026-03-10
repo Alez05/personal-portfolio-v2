@@ -3,7 +3,7 @@ import { getProjectSectionAction } from "./action";
 import { TProjectSection } from "./projects.type";
 import { ProjectCard } from "../project-card";
 
-const ProjectSection = async ({ children }: TProjectSection) => {
+const ProjectSection = async ({ }: TProjectSection) => {
   const data = await getProjectSectionAction();
 
   if (!data) {

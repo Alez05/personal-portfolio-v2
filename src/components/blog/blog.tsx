@@ -8,7 +8,7 @@ const Blog = () => {
     <div className="p-10 text-center text-2xl">
       <HeroBl />
       <BlogSection />
-      <BlogCard />
+      {/* <BlogCard /> */}
       <ContactCTA />
     </div>
   );
