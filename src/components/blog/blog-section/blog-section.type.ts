@@ -1,7 +1,5 @@
-import React from "react"
-
 export type TBlogSection = {
-  children?: React.ReactNode;
+  preTitle?: string;
   title?: string;
   description?: string;
 }
