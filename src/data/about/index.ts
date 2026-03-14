@@ -1,0 +1,10 @@
+export type { aboutHero } from "./about-me";
+export type { courses } from "./courses";
+export type { education } from "./education";
+export type { experience } from "./experience";
+export type { expertise } from "./expertise";
+export type { hobbies } from "./hobbies";
+export type { language } from "./language";
+export type { ongoingCourses } from "./ong-courses";
+export type { skills } from "./skills";
+export type {  } from "./";
