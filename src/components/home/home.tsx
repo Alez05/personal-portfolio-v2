@@ -5,6 +5,7 @@ const Home = () => {
   return (
     <main>
       <HomeHl />
+      {/* <AboutHl/> */}
       <ProjectHl />
       {/* <BlogHl /> */}
       <ContactCTA />
