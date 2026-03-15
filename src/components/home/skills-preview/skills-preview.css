@@ -1,0 +1,138 @@
+/* =========================
+   SKILLS PREVIEW - MOBILE FIRST
+========================= */
+
+.sp-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.sp-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.sp-description {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  color: #333;
+}
+
+.sp-skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Individual Skill Box */
+.sp-skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #f5f5f5;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: skill-load 0.6s forwards;
+}
+
+/* Sequential animation delay for each skill */
+.sp-skill:nth-child(1) { animation-delay: 0s; }
+.sp-skill:nth-child(2) { animation-delay: 0.4s; }
+.sp-skill:nth-child(3) { animation-delay: 0.8s; }
+.sp-skill:nth-child(4) { animation-delay: 1.2s; }
+.sp-skill:nth-child(5) { animation-delay: 1.6s; }
+.sp-skill:nth-child(6) { animation-delay: 2s; }
+/* Add more nth-child delays if you have more skills */
+
+/* Animation Keyframes */
+@keyframes skill-load {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sp-skill-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.sp-skill:hover .sp-skill-icon {
+  transform: scale(1.2);
+}
+
+.sp-skill-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* CTA Button */
+.sp-cta {
+  margin-top: 2rem;
+}
+
+.sp-cta-button {
+  text-decoration: none;
+  background-color: #1676dd;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.sp-cta-button:hover {
+  background-color: #0f4ea1;
+}
+
+/* =========================
+   RESPONSIVE BREAKPOINTS
+========================= */
+
+/* Tablet: 600px+ */
+@media (min-width: 600px) {
+  .sp-title { font-size: 2.25rem; }
+  .sp-description { font-size: 1.125rem; }
+  .sp-skill { width: 90px; }
+  .sp-skill-icon { width: 60px; height: 60px; }
+}
+
+/* Laptop / Small Desktop: 769px+ */
+@media (min-width: 769px) {
+  .sp-title { font-size: 2.5rem; }
+  .sp-description { font-size: 1.25rem; }
+  .sp-skill { width: 100px; }
+  .sp-skill-icon { width: 70px; height: 70px; }
+}
+
+/* Large Desktop: 1200px+ */
+@media (min-width: 1200px) {
+  .sp-title { font-size: 2.75rem; }
+  .sp-description { font-size: 1.35rem; }
+  .sp-skill { width: 110px; }
+  .sp-skill-icon { width: 80px; height: 80px; }
+}
+
+/* Wide Screens: 1600px+ */
+@media (min-width: 1600px) {
+  .sp-title { font-size: 3rem; }
+  .sp-description { font-size: 1.5rem; }
+  .sp-skill { width: 120px; }
+  .sp-skill-icon { width: 90px; height: 90px; }
+}
