@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { TProjectVideo } from "./project-hl.type";
-import "./project-hl.css";
+import { TProjectVideo } from "./project-preview.type";
+import "./project-preview.css";
 
 type Props = { videos?: TProjectVideo[] };
 

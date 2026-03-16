@@ -1,10 +1,10 @@
-import { TProjectHl } from "./project-hl.type";
-import { getProjectHlAction } from "./action";
-import { ProjectHlClient } from "./projecthl-client";
-import "./project-hl.css";
+import type { TProjectPreview } from "./project-preview.type";
+import { getProjectPreviewAction } from "./action";
+import { ProjectHlClient } from "./project-preview.client";
+import "./project-preview.css";
 
-const ProjectHl = async () => {
-  const data: TProjectHl | null = await getProjectHlAction();
+const ProjectPreview = async () => {
+  const data: TProjectPreview | null = await getProjectPreviewAction();
 
   if (!data) {
     return (
@@ -51,4 +51,4 @@ const ProjectHl = async () => {
   );
 };
 
-export { ProjectHl };
+export { ProjectPreview };

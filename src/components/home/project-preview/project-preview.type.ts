@@ -11,7 +11,7 @@ export type TProjectCta = {
   label: string;
 };
 
-export type TProjectHl = {
+export type TProjectPreview = {
   title?: string;
   description?: string;
   label?: string;

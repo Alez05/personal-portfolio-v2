@@ -2,15 +2,13 @@
 export { Home } from "./home";
 
 // components
-export { AboutHl } from "./about-hl";
 export { BlogHl } from './blog-hl';
-export { HomeHl } from "./home-hl";
-export { ProjectHl } from './project-hl'
+export { HomeHl } from "./home-preview";
+export { ProjectPreview } from './project-preview'
 export { SkillsPreview } from './skills-preview'
 
 // types
-export type { THero } from "./home-hl";
-export type { TAboutHl} from "./about-hl";
+export type { THero } from "./home-preview";
 export type { TSkillsPreview } from "./skills-preview";
-export type { TProjectHl } from './project-hl'
+export type { TProjectPreview } from './project-preview'
 export type { TBlogHl } from './blog-hl'
