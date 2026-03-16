@@ -1,14 +1,12 @@
 import { ContactCTA } from "../../components";
-import { AboutHl, BlogHl, HomeHl, ProjectHl, SkillsPreview} from "./index";
+import { HomeHl, ProjectPreview, SkillsPreview} from "./index";
 
 const Home = () => {
   return (
     <main>
       <HomeHl />
-      {/* <AboutHl/> */}
+      <ProjectPreview />
       <SkillsPreview />
-      <ProjectHl />
-      {/* <BlogHl /> */}
       <ContactCTA />
     </main>
   );

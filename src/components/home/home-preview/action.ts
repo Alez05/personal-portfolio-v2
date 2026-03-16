@@ -1,5 +1,5 @@
 // actions/getHeroAction.ts
-import { THero } from "./home-hl.type";
+import { THero } from "./home-preview.type";
 
 export const getHomeHl = async (): Promise<THero | null> => {
   try {

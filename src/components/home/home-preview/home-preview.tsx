@@ -1,7 +1,7 @@
 "use client";
 
 import { copyToClipboard } from "../../helpers";
-import { THero } from "./home-hl.type";
+import { THero } from "./home-preview.type";
 import { heroData } from "../../../app/api/home";
 import "./home-hl.css";
 
