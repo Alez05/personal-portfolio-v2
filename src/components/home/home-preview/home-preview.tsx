@@ -1,12 +1,19 @@
 "use client";
-
 import { copyToClipboard } from "../../helpers";
-import { THero } from "./home-preview.type";
-import { heroData } from "../../../app/api/home";
-import "./home-hl.css";
+import { THomePreview } from "./home-preview.type";
+import { getHomePreviewAction } from "./action";
+import "./home-preview.css";
 
-const HomeHl = () => {
-  const hero: THero = heroData;
+const HomePreview = async () => {
+  const hero: THomePreview | null = await getHomePreviewAction();
+
+  if (!hero) {
+    return (
+      <section className="hero-container">
+        <p>Failed to load hero</p>
+      </section>
+    );
+  }
 
   return (
     <section className="hero-container">
@@ -16,62 +23,54 @@ const HomeHl = () => {
         {hero.role && <h2 className="hero-role">{hero.role}</h2>}
         {hero.text && <p className="hero-text">{hero.text}</p>}
 
-        <div className="hero-info">
-          {hero.email && (
-            <p
-              onClick={() => copyToClipboard(hero.email!)}
-              className="cursor-pointer"
-            >
-              <i className={hero.emailIcon}></i> {hero.email}
-            </p>
-          )}
-          {hero.phone && (
-            <p
-              onClick={() => copyToClipboard(hero.phone!)}
-              className="cursor-pointer"
-            >
-              <i className={hero.phoneIcon}></i> {hero.phone}
-            </p>
-          )}
-          {hero.location && (
-            <p>
-              <i className={hero.locationIcon}></i> {hero.location}
-            </p>
-          )}
-        </div>
+        {/* Contacts */}
+        {hero.contacts && (
+          <div className="hero-info">
+            {hero.contacts.map((item, idx) => {
+              const isCopyable = item.type === "email" || item.type === "phone";
 
-        <div className="hero-buttons">
-          {hero.aboutLink && (
-            <a href={hero.aboutLink} className="hero-btn hero-btn-about">
-              Read more
-            </a>
-          )}
-          {hero.downloadLink && (
-            <a href={hero.downloadLink} className="hero-btn hero-btn-cv">
-              Download CV
-            </a>
-          )}
-        </div>
+              return (
+                <p
+                  key={idx}
+                  onClick={() =>
+                    isCopyable ? copyToClipboard(item.value) : undefined
+                  }
+                  className={isCopyable ? "cursor-pointer" : ""}
+                >
+                  <i className={item.icon}></i> {item.value}
+                </p>
+              );
+            })}
+          </div>
+        )}
 
-        {hero.socials && (
-          <div className="hero-socials">
-            {hero.socials.map((s, idx) => (
+        {/* CTA Buttons */}
+        {hero.ctas && (
+          <div className="hero-buttons">
+            {hero.ctas.primary && (
               <a
-                key={idx}
-                href={s.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hero-social-link"
+                href={hero.ctas.primary.link}
+                className="hero-btn hero-btn-primary"
               >
-                <i className={s.icon}></i>
+                {hero.ctas.primary.label}
               </a>
-            ))}
+            )}
+
+            {hero.ctas.secondary && (
+              <a
+                href={hero.ctas.secondary.link}
+                className="hero-btn hero-btn-secondary"
+              >
+                {hero.ctas.secondary.label}
+              </a>
+            )}
           </div>
         )}
       </div>
 
-      {/* Right side */}
-      {/* <div className="hero-right">
+      {/* Right side (optional) */}
+      {/*
+      <div className="hero-right">
         {hero.profile && (
           <img
             src={hero.profile}
@@ -79,9 +78,10 @@ const HomeHl = () => {
             className="hero-image"
           />
         )}
-      </div> */}
+      </div>
+      */}
     </section>
   );
 };
 
-export { HomeHl };
+export { HomePreview };

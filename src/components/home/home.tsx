@@ -1,10 +1,10 @@
 import { ContactCTA } from "../../components";
-import { HomeHl, ProjectPreview, SkillsPreview} from "./index";
+import { HomePreview, ProjectPreview, SkillsPreview} from "./index";
 
 const Home = () => {
   return (
     <main>
-      <HomeHl />
+      <HomePreview />
       <ProjectPreview />
       <SkillsPreview />
       <ContactCTA />
