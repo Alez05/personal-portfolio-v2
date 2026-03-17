@@ -1,27 +1,30 @@
 // hero.type.ts
-export type TSocialPlatform = "facebook" | "github" | "instagram" | "linkedin";
 
-export type TSocial = {
-  platform: TSocialPlatform;
-  url: string;
+// Contact item (reusable & scalable)
+export type TContactItem = {
+  type: "location" | "email" | "phone";
+  value: string;
   icon: string;
 };
 
-export type TContactIcon = {
-  locationIcon?: string;
-  emailIcon?: string;
-  phoneIcon?: string;
+// CTA buttons
+export type THomeCTA = {
+  label: string;
+  link: string;
 };
 
-export type THero = TContactIcon & {
+// Main Hero type
+export type THomePreview = {
   name?: string;
   role?: string;
   text?: string;
-  location?: string;
-  email?: string;
-  phone?: string;
-  profile?: string;
-  aboutLink?: string;
-  downloadLink?: string;
-  socials?: TSocial[];
+
+  profile?: string; // optional image/avatar if you ever want it
+
+  contacts?: TContactItem[];
+
+  ctas?: {
+    primary?: THomeCTA;
+    secondary?: THomeCTA;
+  };
 };

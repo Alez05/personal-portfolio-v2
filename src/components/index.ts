@@ -58,10 +58,10 @@ export type { TContactBody } from "./contact";
 
 // HOME FILE
 // type
-export type { THero } from "./home";
-export type { TAboutHl } from "./home";
-export type { TSkillsHl } from "./home";
-export type { TProjectHl } from "./home";
+export type { THomePreview } from "./home";
+// export type { TAboutHl } from "./home";
+// export type { TSkillsHl } from "./home";
+// export type { TProjectHl } from "./home";
 export type { TBlogHl } from "./home";
 
 // components
