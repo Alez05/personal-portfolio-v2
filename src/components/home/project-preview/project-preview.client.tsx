@@ -5,7 +5,7 @@ import "./project-preview.css";
 
 type Props = { videos?: TProjectVideo[] };
 
-export const ProjectHlClient: React.FC<Props> = ({ videos = [] }) => {
+export const ProjectPreviewClient: React.FC<Props> = ({ videos = [] }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const counterRef = useRef<HTMLDivElement | null>(null);

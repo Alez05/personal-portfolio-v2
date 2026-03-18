@@ -21,10 +21,10 @@ export type { contactHero } from "./contact";
 export type {} from "./contact";
 
 // Home page data
+export type { blogPreview } from "./home";
 export type { homePreview } from "./home";
 export type { projectPreview } from "./home";
 export type { skillsPreview } from "./home";
-export type {} from "./home";
 export type {} from "./home";
 export type {} from "./home";
 export type {} from "./home";

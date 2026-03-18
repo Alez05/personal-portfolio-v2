@@ -1,11 +1,13 @@
 import { THomePreview } from "../../components";
 
 export const homePreview: THomePreview = {
+  eyebrow: "Available for work",
+
   name: "Alexandru Cercel",
   role: "Fullstack Web Developer",
-  text: "I’m a fullstack developer with a strong passion for building performant, scalable, and user-friendly applications. I enjoy turning ideas into reliable digital products, focusing on clean code, thoughtful architecture, and smooth user experiences.",
 
-  profile: "/image/pixelrobot.png",
+  tagline:
+    "Building fast, scalable web apps with clean UX and solid architecture.",
 
   contacts: [
     {
@@ -17,22 +19,34 @@ export const homePreview: THomePreview = {
       type: "email",
       value: "cercel.alexandru436@gmail.com",
       icon: "fa-solid fa-envelope",
+      action: { type: "copy" },
     },
     {
       type: "phone",
       value: "+44 7770282405",
       icon: "fa-solid fa-phone",
+      action: { type: "copy" },
     },
+  ],
+
+  visuals: [
+    { label: "React", icon: "fa-brands fa-react" },
+    { label: "Next.js", icon: "fa-solid fa-n" },
+    { label: "TypeScript", icon: "fa-solid fa-code" },
+    { label: "Node.js", icon: "fa-brands fa-node-js" },
   ],
 
   ctas: {
     primary: {
       label: "About Me",
-      link: "/about",
+      href: "/about",
+      variant: "primary",
     },
     secondary: {
       label: "Download CV",
-      link: "/cv.pdf",
+      href: "/cv.pdf",
+      variant: "secondary",
+      download: true,
     },
   },
 };

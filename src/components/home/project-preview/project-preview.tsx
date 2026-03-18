@@ -1,6 +1,6 @@
 import type { TProjectPreview } from "./project-preview.type";
 import { getProjectPreviewAction } from "./action";
-import { ProjectHlClient } from "./project-preview.client";
+import { ProjectPreviewClient } from "./project-preview.client";
 import "./project-preview.css";
 
 const ProjectPreview = async () => {
@@ -43,7 +43,7 @@ const ProjectPreview = async () => {
           </div>
 
           <div className="ph-client-column">
-            <ProjectHlClient videos={videos} />
+            <ProjectPreviewClient videos={videos} />
           </div>
         </div>
       </div>
