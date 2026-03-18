@@ -62,9 +62,10 @@ export type { THomePreview } from "./home";
 // export type { TAboutHl } from "./home";
 // export type { TSkillsHl } from "./home";
 // export type { TProjectHl } from "./home";
-export type { TBlogHl } from "./home";
+export type { TBlogPreview } from "./home";
 
 // components
+export { BlogPreview } from "./home";
 
 // PROJECT FILE
 // type

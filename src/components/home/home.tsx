@@ -1,5 +1,5 @@
 import { ContactCTA } from "../../components";
-import { HomePreview, ProjectPreview, SkillsPreview} from "./index";
+import { BlogPreview, HomePreview, ProjectPreview, SkillsPreview} from "./index";
 
 const Home = () => {
   return (
@@ -7,6 +7,7 @@ const Home = () => {
       <HomePreview />
       <ProjectPreview />
       <SkillsPreview />
+      <BlogPreview />
       <ContactCTA />
     </main>
   );

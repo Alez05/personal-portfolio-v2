@@ -1,27 +1,46 @@
 // hero.type.ts
 
-// Contact item (reusable & scalable)
+// Contact item (data + behavior)
 export type TContactItem = {
-  type: "location" | "email" | "phone";
+  type: "location" | "email" | "phone" | "link";
+
+  label?: string;
   value: string;
-  icon: string;
+
+  icon?: string;
+
+  action?: {
+    type: "copy" | "link";
+    href?: string;
+  };
 };
 
 // CTA buttons
 export type THomeCTA = {
   label: string;
-  link: string;
+  href: string;
+
+  variant?: "primary" | "secondary";
+  download?: boolean;
+};
+
+// Visual floating items (right side)
+export type THeroVisualItem = {
+  label: string;
+  icon: string;
 };
 
 // Main Hero type
 export type THomePreview = {
+  eyebrow?: string;
+
   name?: string;
   role?: string;
-  text?: string;
-
-  profile?: string; // optional image/avatar if you ever want it
+  tagline?: string;
 
   contacts?: TContactItem[];
+
+  visuals?: THeroVisualItem[]; // 👈 floating icons
 
   ctas?: {
     primary?: THomeCTA;
