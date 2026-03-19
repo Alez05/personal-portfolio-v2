@@ -7,7 +7,7 @@ export const homePreview: THomePreview = {
   role: "Fullstack Web Developer",
 
   tagline:
-    "Building fast, scalable web apps with clean UX and solid architecture.",
+    "Empower your business with state-of-the-art digital solutions, such as websites, web applications, and digital marketing, with a focus on your specific needs, including web design, web development, and more.",
 
   contacts: [
     {

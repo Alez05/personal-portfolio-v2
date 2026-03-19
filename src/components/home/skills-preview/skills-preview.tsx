@@ -1,50 +1,92 @@
-// src/components/home/skills-preview/skills-preview.tsx
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import { getSkillHlAction } from "./action";
+import type { TSkillsPreview } from "./skills-preview.type";
 import "./skills-preview.css";
 
-const SkillsPreview = async () => {
-  // Fetch the data from your action
-  const data = await getSkillHlAction();
+const SkillsPreview = () => {
+  const sectionRef = useRef<HTMLElement | null>(null);
 
+  const [visible, setVisible] = useState(false);
+  const [data, setData] = useState<TSkillsPreview | null>(null);
+
+  // fetch data
+  useEffect(() => {
+    const loadData = async () => {
+      const res = await getSkillHlAction();
+      setData(res);
+    };
+
+    loadData();
+  }, []);
+
+  // scroll animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // loading state
   if (!data) {
     return (
       <section className="sp-section">
-        <p className="sp-error">Failed to load skills gay</p>
+        <p className="sp-error">Loading skills...</p>
       </section>
     );
   }
 
   return (
-    <section className="sp-section">
+    <section
+      ref={sectionRef}
+      className={`sp-section ${visible ? "sp-visible" : ""}`}
+    >
       <div className="sp-container">
-        {/* Header with title + optional description */}
         <header className="sp-header">
           <h2 className="sp-title">{data.title}</h2>
+
           {data.description && (
             <p className="sp-description">{data.description}</p>
           )}
         </header>
 
-        {/* Skills grid */}
-        <div className="sp-skills-grid">
-          {data.skills.map((skill) => (
-            <div key={skill.name} className="sp-skill">
-              {skill.icon && (
-                <img
-                  src={skill.icon}
-                  alt={skill.name}
-                  className="sp-skill-icon"
-                />
-              )}
-              <span className="sp-skill-name">{skill.name}</span>
+        <div className="sp-cards">
+          {data.cards.map((card) => (
+            <div key={card.title} className="sp-card">
+              <i className={`sp-card-icon ${card.icon}`} />
+
+              <h3 className="sp-card-title">{card.title}</h3>
+
+              <p className="sp-card-subtitle">{card.subtitle}</p>
+
+              <ul className="sp-card-points">
+                {card.points.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
 
-        {/* Optional CTA */}
         {data.cta && (
           <div className="sp-cta">
-            {data.cta.text && <p className="sp-cta-text">{data.cta.text}</p>}
+            {data.cta.text && (
+              <p className="sp-cta-text">{data.cta.text}</p>
+            )}
+
             <a href={data.cta.link} className="sp-cta-button">
               {data.cta.label}
             </a>

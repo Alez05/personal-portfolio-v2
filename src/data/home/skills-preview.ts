@@ -1,21 +1,43 @@
-import { TSkillsPreview } from "../../components/home";
+import type { TSkillsPreview } from "../../components/home";
 
 export const skillsPreview: TSkillsPreview = {
-  title: "Core Technologies",
-  description: "Technologies I use to build modern web applications",
+  title: "Areas of Expertise",
+  description:
+    "A snapshot of the technologies and engineering practices I use to design, build, and ship modern web applications.",
 
-  skills: [
-    { name: "JavaScript", icon: "/icon/js.svg" },
-    { name: "TypeScript", icon: "/icon/typescript.svg" },
-    { name: "React", icon: "/icon/react.svg" },
-    { name: "Next.js", icon: "/icon/nextdotjs.svg" },
-    { name: "Node.js", icon: "/icon/node-js.svg" },
-    { name: "Docker", icon: "/icon/docker.svg" },
+  cards: [
+    {
+      title: "Web Development",
+      icon: "fa-solid fa-laptop-code",
+      subtitle: "Modern, responsive front-end systems",
+      points: [
+        "React, Next.js, TypeScript",
+        "Accessible & performance-focused UI"
+      ]
+    },
+    {
+      title: "Backend & APIs",
+      icon: "fa-solid fa-server",
+      subtitle: "Reliable data and scalable services",
+      points: [
+        "Node.js & RESTful APIs",
+        "PostgreSQL, MongoDB & data modeling"
+      ]
+    },
+    {
+      title: "Engineering Practices",
+      icon: "fa-solid fa-diagram-project",
+      subtitle: "Clean architecture and maintainable code",
+      points: [
+        "Modular design & reusable components",
+        "Git workflows, CI/CD & deployments"
+      ]
+    }
   ],
 
   cta: {
-    text: "Interested in more?",
-    label: "Explore All Skills",
-    link: "/about#skills",
-  },
+    text: "Want to see a full breakdown of my technical stack?",
+    label: "View All Skills",
+    link: "/about#skills"
+  }
 };
