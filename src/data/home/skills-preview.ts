@@ -1,7 +1,7 @@
 import type { TSkillsPreview } from "../../components/home";
 
 export const skillsPreview: TSkillsPreview = {
-  title: "Areas of Expertise",
+  title: "Technical Skills",
   description:
     "A snapshot of the technologies and engineering practices I use to design, build, and ship modern web applications.",
 
@@ -12,7 +12,8 @@ export const skillsPreview: TSkillsPreview = {
       subtitle: "Modern, responsive front-end systems",
       points: [
         "React, Next.js, TypeScript",
-        "Accessible & performance-focused UI"
+        "Accessible & performance-focused UI",
+        "Responsive layouts & component-driven architecture"
       ]
     },
     {
@@ -21,7 +22,8 @@ export const skillsPreview: TSkillsPreview = {
       subtitle: "Reliable data and scalable services",
       points: [
         "Node.js & RESTful APIs",
-        "PostgreSQL, MongoDB & data modeling"
+        "PostgreSQL, MongoDB & data modeling",
+        "Authentication, security & server-side logic"
       ]
     },
     {
@@ -30,7 +32,8 @@ export const skillsPreview: TSkillsPreview = {
       subtitle: "Clean architecture and maintainable code",
       points: [
         "Modular design & reusable components",
-        "Git workflows, CI/CD & deployments"
+        "Git workflows, CI/CD & deployments",
+        "Testing, debugging & optimization"
       ]
     }
   ],

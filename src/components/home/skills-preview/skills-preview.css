@@ -1,172 +1,292 @@
-/* =========================
-SKILLS PREVIEW – MOBILE FIRST
-========================= */
+/* ============================================
+   SKILLS PREVIEW SECTION
+   Mobile First Default
+   Full Responsive Breakpoints
+============================================ */
 
+/* MOBILE DEFAULT (0–599px) */
 .sp-section {
-display: flex;
-justify-content: center;
-padding: 4rem 2rem;
-width: 100%;
+  padding: 3rem 6% 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .sp-container {
-width: 100%;
-max-width: 1200px;
-text-align: center;
+  width: 100%;
+  max-width: 1200px;
 }
 
+/* Title Wrapper */
 .sp-header {
-margin-bottom: 2rem;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .sp-title {
-font-size: 2rem;
-font-weight: 700;
-margin-bottom: 0.8rem;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  background: linear-gradient(90deg, #3696fb, #282020);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-align: left;
 }
 
 .sp-description {
-font-size: 1rem;
-max-width: 700px;
-margin-inline: auto;
-color: #333;
-line-height: 1.6;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+  /* margin: 0 auto 2rem auto; */
+  text-align: left;
 }
 
-/* =========================
-SKILLS GRID
-========================= */
-
-.sp-skills-grid {
-display: flex;
-flex-wrap: wrap;
-gap: 1.2rem;
-justify-content: center;
+/* Cards Wrapper */
+.sp-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-/* Individual skill card */
-
-.sp-skill {
-width: 90px;
-padding: 1rem;
-border-radius: 1rem;
-background: #f5f5f5;
-
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-
-/* Initial hidden state for scroll animation */
-opacity: 0;
-transform: translateY(40px);
-transition: transform 0.5s ease, opacity 0.5s ease;
+/* Individual Card */
+.sp-card {
+  width: 100%;
+  padding: 1.6rem;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fadeInUp 0.6s forwards;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Activated when section is visible */
-.sp-visible .sp-skill {
-opacity: 1;
-transform: translateY(0);
+.sp-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.sp-card:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.sp-card:nth-child(3) {
+  animation-delay: 0.5s;
 }
 
-.sp-skill-icon {
-width: 50px;
-height: 50px;
-margin-bottom: 0.5rem;
-transition: transform 0.3s ease;
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.sp-skill:hover .sp-skill-icon {
-transform: scale(1.15);
+/* Card Icon + Title Inline */
+.sp-card-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  width: 100%;
+  flex-shrink: 0;
 }
 
-.sp-skill-name {
-font-size: 0.85rem;
-font-weight: 500;
+.sp-card-icon i {
+  font-size: 1.6rem;
+  color: #007bff;
+  flex-shrink: 0;
 }
 
-/* =========================
-CTA
-========================= */
+.sp-card-icon .sp-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0;
+  color: #007bff;
+  flex: 1;
+  white-space: nowrap;
+}
 
+.sp-card-subtitle {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0;
+}
+
+.sp-card-points li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.85rem;
+  color: #333;
+  line-height: 1.5;
+  list-style: none;
+}
+
+.sp-card-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  background-color: #007bff;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+/* CTA */
 .sp-cta {
-margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+/* Optional row layout for CTA text + button */
+.sp-cta.sp-cta-row {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .sp-cta-text {
-margin-bottom: 0.6rem;
-font-size: 0.95rem;
-color: #444;
+  font-size: 0.95rem;
+  color: #444;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
+/* Main CTA button styling */
 .sp-cta-button {
-display: inline-block;
-text-decoration: none;
-background: #1676dd;
-color: #fff;
-padding: 0.75rem 1.5rem;
-border-radius: 0.5rem;
-font-weight: 600;
-transition: background 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+  color: #1676dd;
+  border: 2px solid #1676dd;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 60px; /* vertical centering */
+  transition: color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+
+  /* Mobile default size */
+  width: 220px;
+  height: 60px;
 }
 
 .sp-cta-button:hover {
-background: #0f4ea1;
-transform: translateY(-2px);
+  transform: translateY(-2px);
+  color: #0f4ea1;
+  border-color: #0f4ea1;
 }
 
-/* =========================
-ERROR / LOADING STATES
-========================= */
-
+/* Error / Loading */
 .sp-error {
-color: #b00020;
-font-size: 0.95rem;
+  text-align: center;
+  font-weight: bold;
+  color: red;
 }
 
-/* =========================
-RESPONSIVE BREAKPOINTS
-Mobile First
-========================= */
-
-/* Tablet: 600px+ */
+/* TABLET (600–768px) */
 @media (min-width: 600px) {
-.sp-title { font-size: 2.25rem; }
-.sp-description { font-size: 1.1rem; }
+  .sp-cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 
-.sp-skill { width: 95px; }
-.sp-skill-icon { width: 60px; height: 60px; }
+  .sp-card {
+    flex: 1 1 calc(50% - 1rem);
+  }
+
+  .sp-card-icon {
+    gap: 1rem;
+  }
+
+  .sp-card-icon .sp-card-title {
+    font-size: 1.2rem;
+  }
 }
 
-/* Laptop / Small Desktop: 769px+ */
+/* LAPTOP / SMALL DESKTOP (769–1199px) */
 @media (min-width: 769px) {
-.sp-title { font-size: 2.5rem; }
-.sp-description { font-size: 1.2rem; }
+  .sp-header {
+    text-align: left;
+  }
+  .sp-title {
+    font-size: 2.2rem;
+  }
+  .sp-description {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+  }
 
-.sp-skills-grid { gap: 1.5rem; }
+  .sp-cards {
+    gap: 1.5rem;
+    justify-content: flex-start;
+  }
 
-.sp-skill {
-width: 105px;
-padding: 1.2rem;
+  .sp-card {
+    flex: 1 1 calc(33.333% - 1.2rem);
+    min-width: 280px;
+    padding: 2rem;
+  }
+
+  .sp-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  /* Desktop CTA button size override */
+  .sp-cta-button {
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+  }
+
+  .sp-cta.sp-cta-row {
+    justify-content: center;
+  }
 }
 
-.sp-skill-icon { width: 70px; height: 70px; }
-}
-
-/* Large Desktop: 1200px+ */
+/* LARGE DESKTOP (1200–1599px) */
 @media (min-width: 1200px) {
-.sp-title { font-size: 2.75rem; }
-.sp-description { font-size: 1.3rem; }
+  .sp-section {
+    padding: 6rem 6% 4rem;
+  }
+  .sp-title {
+    font-size: 2.5rem;
+  }
+  .sp-description {
+    font-size: 1.2rem;
+    margin: 0;
+    width: 100%;
+  }
 
-.sp-skill { width: 115px; }
-.sp-skill-icon { width: 80px; height: 80px; }
+  .sp-card {
+    flex: 1 1 calc(33.333% - 1.2rem);
+    padding: 2.2rem;
+  }
 }
 
-/* Wide Screens: 1600px+ */
+/* WIDE SCREENS (1600px+) */
 @media (min-width: 1600px) {
-.sp-title { font-size: 3rem; }
-.sp-description { font-size: 1.4rem; }
+  .sp-section {
+    padding: 6rem 16rem 4rem;
+  }
+  .sp-title {
+    font-size: 2.8rem;
+  }
+  .sp-description {
+    font-size: 1.3rem;
+  }
 
-.sp-skill { width: 125px; }
-.sp-skill-icon { width: 90px; height: 90px; }
+  .sp-card {
+    flex: 1 1 calc(33.333% - 1.2rem);
+    padding: 2.4rem;
+  }
 }

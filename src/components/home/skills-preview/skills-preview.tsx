@@ -11,7 +11,7 @@ const SkillsPreview = () => {
   const [visible, setVisible] = useState(false);
   const [data, setData] = useState<TSkillsPreview | null>(null);
 
-  // fetch data
+  // Fetch data
   useEffect(() => {
     const loadData = async () => {
       const res = await getSkillHlAction();
@@ -21,7 +21,7 @@ const SkillsPreview = () => {
     loadData();
   }, []);
 
-  // scroll animation
+  // Scroll animation
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -30,17 +30,15 @@ const SkillsPreview = () => {
           observer.disconnect();
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    if (sectionRef.current) observer.observe(sectionRef.current);
 
     return () => observer.disconnect();
   }, []);
 
-  // loading state
+  // Loading state
   if (!data) {
     return (
       <section className="sp-section">
@@ -66,9 +64,10 @@ const SkillsPreview = () => {
         <div className="sp-cards">
           {data.cards.map((card) => (
             <div key={card.title} className="sp-card">
-              <i className={`sp-card-icon ${card.icon}`} />
-
-              <h3 className="sp-card-title">{card.title}</h3>
+              <span className="sp-card-icon">
+                <i className={card.icon}></i>
+                <h3 className="sp-card-title">{card.title}</h3>
+              </span>
 
               <p className="sp-card-subtitle">{card.subtitle}</p>
 
@@ -83,9 +82,7 @@ const SkillsPreview = () => {
 
         {data.cta && (
           <div className="sp-cta">
-            {data.cta.text && (
-              <p className="sp-cta-text">{data.cta.text}</p>
-            )}
+            {data.cta.text && <p className="sp-cta-text">{data.cta.text}</p>}
 
             <a href={data.cta.link} className="sp-cta-button">
               {data.cta.label}
