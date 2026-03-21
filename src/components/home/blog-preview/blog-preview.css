@@ -1,155 +1,232 @@
-.bh-section {
-  padding: 4rem 2rem;
-  background: #f1efec;
-  text-align: center;
-  height: 100vh;
+/* ============================================
+   BLOG PREVIEW — SPLIT LAYOUT
+   Mobile First
+============================================ */
+
+.bp-section {
+  padding: 6rem 6% 4rem;
+  /* background: #f1efec; */
   box-sizing: border-box;
 }
 
-.bh-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.bh-title {
-  font-size: 2rem;
-  color: #123458;
-  margin-bottom: 0.5rem;
-}
-
-.bh-description {
-  font-size: 1rem;
-  color: #030303;
-  margin-bottom: 2rem;
-}
-
-/* ------------------------------
-   CAROUSEL
--------------------------------- */
-.bh-carousel {
-  position: relative;
-  overflow: hidden;      /* keep slide inside */
+/* Main wrapper */
+.bp-container {
   width: 100%;
-  max-width: 360px;
-  margin: 0 auto 2rem;
+  max-width: 1200px;
+  /* margin: 0 auto; */
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-/* Slide track */
-.bh-carousel-inner {
+/* =============================
+   LEFT / RIGHT CONTAINERS
+============================= */
+
+.bp-left {
+  width: 100%;
+}
+
+.bp-right {
+  width: 100%;
+}
+
+/* =============================
+   TEXT
+============================= */
+
+.bp-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  color: #123458;
+}
+
+.bp-description {
+  font-size: 0.95rem;
+  margin-bottom: 1.8rem;
+  line-height: 1.6;
+  color: #030303;
+}
+
+/* =============================
+   CAROUSEL
+============================= */
+
+.bp-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* sliding track */
+.bp-carousel-track {
   display: flex;
   transition: transform 0.5s ease;
-  will-change: transform;
-  gap: 1.5rem;
 }
 
-/* One slide */
-.bh-blog-card {
+/* slide */
+.bp-card {
   flex: 0 0 100%;
-  border-radius: 0.75rem;
-  overflow: hidden;
-  background: #d4c9be;
+  position: relative;
 }
 
-.bh-blog-image {
+.bp-card-image {
   width: 100%;
-  height: 220px;
+  height: 240px;
   object-fit: cover;
   display: block;
+  pointer-events: none;
 }
 
-/* ------------------------------
-   NAV BUTTONS — fully visible
--------------------------------- */
-.bh-carousel-button {
+/* overlay title */
+.bp-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.8rem;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.bp-card-title {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* =============================
+   NAV BUTTONS
+============================= */
+
+.bp-carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 36px;
-  height: 36px;
-  background: #123458;
-  color: #f1efec;
-  border: none;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  font-size: 1.3rem;
+  border: none;
+  background: rgba(18, 52, 88, 0.85);
+  color: white;
+  font-size: 1.4rem;
   cursor: pointer;
-  z-index: 15;
+  z-index: 10;
 
   display: flex;
   align-items: center;
   justify-content: center;
+  user-select: none;
 }
 
-/* ❗ These sit INSIDE the carousel, not outside */
-.bh-carousel-button.prev {
-  left: 10px;
+.bp-carousel-btn.prev {
+  left: 8px;
 }
 
-.bh-carousel-button.next {
-  right: 10px;
+.bp-carousel-btn.next {
+  right: 8px;
 }
 
-.bh-carousel-button:hover {
+.bp-carousel-btn:hover {
   background: #030303;
 }
 
-/* CTA */
-.bh-cta {
-  margin-top: 1.5rem;
+/* =============================
+   CTA
+============================= */
+
+.bp-cta {
+  margin-top: 1rem;
 }
 
-.bh-cta-button {
-  padding: 0.75rem 1.5rem;
-  background: #123458;
-  color: #f1efec;
-  border-radius: 0.5rem;
+.bp-cta-button {
+  width: 220px;
+  height: 60px;
+  line-height: 60px;
+  border: 2px solid #123458;
+  color: #123458;
   text-decoration: none;
-  font-weight: 500;
-  transition: background 0.3s ease;
+  display: inline-block;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-align: center;
 }
 
-.bh-cta-button:hover {
-  background: #030303;
+.bp-cta-button:hover {
+  transform: translateY(-2px);
 }
 
-/* ------------------------------
-   RESPONSIVE
--------------------------------- */
+/* ============================================
+   TABLET ≥600px
+============================================ */
 
-/* Mobile */
-@media (max-width: 767px) {
-  .bh-carousel {
-    max-width: 280px;
+@media (min-width: 600px) {
+  .bp-card-image {
+    height: 280px;
+  }
+}
+
+/* ============================================
+   DESKTOP ≥769px
+============================================ */
+
+@media (min-width: 769px) {
+  .bp-container {
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
   }
 
-  .bh-carousel-button {
-    width: 30px;
-    height: 30px;
+  .bp-left {
+    flex: 1.2;
+  }
+
+  .bp-right {
+    flex: 1;
+    gap: 3rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bp-title {
+    font-size: 2.2rem;
+  }
+
+  .bp-description {
     font-size: 1.1rem;
   }
 
-  .bh-carousel-button.prev {
-    left: 6px;
+  .bp-card-image {
+    height: 320px;
   }
 
-  .bh-carousel-button.next {
-    right: 6px;
-  }
-}
-
-/* Tablet */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .bh-carousel {
-    max-width: 320px;
+  .bp-cta-button {
+    width: 200px;
   }
 }
 
-/* Large screens */
-@media (min-width: 1400px) {
-  .bh-carousel {
-    max-width: 420px;
-  }
+/* ============================================
+   LARGE ≥1200px
+============================================ */
 
-  .bh-blog-image {
-    height: 260px;
+@media (min-width: 1200px) {
+  .bp-card-image {
+    height: 360px;
+  }
+}
+
+/* ============================================
+   WIDE ≥1600px
+============================================ */
+
+@media (min-width: 1600px) {
+  .bp-section {
+    padding: 6rem 16rem 4rem;
   }
 }
