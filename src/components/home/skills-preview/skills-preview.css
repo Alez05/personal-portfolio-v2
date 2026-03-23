@@ -12,11 +12,12 @@
   gap: 2rem;
   width: 100%;
   box-sizing: border-box;
+  background: var(--color-bg);
 }
 
 .sp-container {
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--container-max);
 }
 
 /* Title Wrapper */
@@ -30,18 +31,14 @@
   font-size: 2rem;
   font-weight: 700;
   margin: 0 0 1rem 0;
-  background: linear-gradient(90deg, #3696fb, #282020);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  color: var(--text-dark-main);
   text-align: left;
 }
 
 .sp-description {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #333;
-  /* margin: 0 auto 2rem auto; */
+  color: var(--text-muted);
   text-align: left;
 }
 
@@ -56,7 +53,7 @@
 .sp-card {
   width: 100%;
   padding: 1.6rem;
-  border-radius: 14px;
+  border-radius: var(--btn-radius-md);
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -65,17 +62,13 @@
   animation: fadeInUp 0.6s forwards;
   box-sizing: border-box;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #f9f9f9;
+  border: 1px solid var(--border-light);
 }
 
-.sp-card:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.sp-card:nth-child(2) {
-  animation-delay: 0.3s;
-}
-.sp-card:nth-child(3) {
-  animation-delay: 0.5s;
-}
+.sp-card:nth-child(1) { animation-delay: 0.1s; }
+.sp-card:nth-child(2) { animation-delay: 0.3s; }
+.sp-card:nth-child(3) { animation-delay: 0.5s; }
 
 @keyframes fadeInUp {
   to {
@@ -84,42 +77,41 @@
   }
 }
 
-/* Card Icon + Title Inline */
+/* Card Icon + Title */
 .sp-card-icon {
   display: flex;
   align-items: center;
   gap: 0.85rem;
   width: 100%;
-  flex-shrink: 0;
 }
 
 .sp-card-icon i {
   font-size: 1.6rem;
-  color: #007bff;
-  flex-shrink: 0;
+  color: var(--accent);
 }
 
 .sp-card-icon .sp-card-title {
   font-size: 1.15rem;
   font-weight: 700;
   margin: 0;
-  color: #007bff;
+  color: var(--accent);
   flex: 1;
   white-space: nowrap;
 }
 
 .sp-card-subtitle {
   font-size: 0.9rem;
-  color: #555;
+  color: var(--text-muted);
   margin: 0;
 }
 
+/* Bullet Points */
 .sp-card-points li {
   position: relative;
   padding-left: 1.2rem;
   margin-bottom: 0.6rem;
   font-size: 0.85rem;
-  color: #333;
+  color: var(--text-main);
   line-height: 1.5;
   list-style: none;
 }
@@ -131,7 +123,7 @@
   top: 0.55em;
   width: 6px;
   height: 6px;
-  background-color: #007bff;
+  background-color: var(--accent);
   border-radius: 50%;
   transform: translateY(-50%);
 }
@@ -145,7 +137,6 @@
   margin-top: 2rem;
 }
 
-/* Optional row layout for CTA text + button */
 .sp-cta.sp-cta-row {
   flex-direction: row;
   justify-content: center;
@@ -155,31 +146,30 @@
 
 .sp-cta-text {
   font-size: 0.95rem;
-  color: #444;
+  color: var(--text-muted);
   text-align: center;
   margin-bottom: 1rem;
 }
 
-/* Main CTA button styling */
+/* Primary CTA Button */
 .sp-cta-button {
   text-decoration: none;
-  color: #1676dd;
-  border: 2px solid #1676dd;
-  border-radius: 0.5rem;
+  background: var(--primary);
+  color: var(--text-inverse);
+  border-radius: var(--btn-radius-md);
   font-weight: 600;
   text-align: center;
-  line-height: 60px; /* vertical centering */
-  transition: color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
-
-  /* Mobile default size */
+  line-height: 60px;
   width: 220px;
   height: 60px;
+  transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .sp-cta-button:hover {
+  background: var(--primary-hover);
+  color: var(--text-inverse);
   transform: translateY(-2px);
-  color: #0f4ea1;
-  border-color: #0f4ea1;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
 
 /* Error / Loading */
@@ -201,10 +191,6 @@
     flex: 1 1 calc(50% - 1rem);
   }
 
-  .sp-card-icon {
-    gap: 1rem;
-  }
-
   .sp-card-icon .sp-card-title {
     font-size: 1.2rem;
   }
@@ -215,9 +201,11 @@
   .sp-header {
     text-align: left;
   }
+
   .sp-title {
     font-size: 2.2rem;
   }
+
   .sp-description {
     font-size: 1.1rem;
     margin-bottom: 2.5rem;
@@ -225,7 +213,6 @@
 
   .sp-cards {
     gap: 1.5rem;
-    justify-content: flex-start;
   }
 
   .sp-card {
@@ -238,18 +225,12 @@
     transform: translateY(-6px);
     box-shadow: 0 12px 22px rgba(0, 0, 0, 0.12);
     cursor: pointer;
-    transition: 0.3s ease;
   }
 
-  /* Desktop CTA button size override */
   .sp-cta-button {
     width: 200px;
     height: 60px;
     line-height: 60px;
-  }
-
-  .sp-cta.sp-cta-row {
-    justify-content: center;
   }
 }
 
@@ -258,17 +239,16 @@
   .sp-section {
     padding: 6rem 6% 4rem;
   }
+
   .sp-title {
     font-size: 2.5rem;
   }
+
   .sp-description {
     font-size: 1.2rem;
-    margin: 0;
-    width: 100%;
   }
 
   .sp-card {
-    flex: 1 1 calc(33.333% - 1.2rem);
     padding: 2.2rem;
   }
 }
@@ -278,15 +258,16 @@
   .sp-section {
     padding: 6rem 16rem 4rem;
   }
+
   .sp-title {
     font-size: 2.8rem;
   }
+
   .sp-description {
     font-size: 1.3rem;
   }
 
   .sp-card {
-    flex: 1 1 calc(33.333% - 1.2rem);
     padding: 2.4rem;
   }
 }
