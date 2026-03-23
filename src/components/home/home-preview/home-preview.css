@@ -8,9 +8,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 6rem 6% 4rem;
+  padding: 6rem 5.5% 4rem;
   min-height: 100vh;
-  background: #fff;
+  background: var(--color-bg);
   box-sizing: border-box;
 }
 
@@ -18,9 +18,9 @@
 .hero-eyebrow {
   position: absolute;
   top: 6rem;
-  left: 6%;
+  /* left: 6%; */
   font-size: 0.85rem;
-  color: rgba(0, 0, 0, 0.5);
+  color: var(--text-muted);
   letter-spacing: 0.08em;
 }
 
@@ -38,24 +38,21 @@
   font-size: 2.6rem;
   font-weight: 800;
   line-height: 1.1;
-  background: linear-gradient(90deg, var(--blueish), var(--blackish));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--text-dark-main); /* black main name */
 }
 
 .hero-role {
   font-size: 1.4rem;
   font-weight: 600;
-  color: var(--blueish);
+  color: var(--accent); /* orange job title */
   margin-top: -0.2rem;
 }
 
-/* ===== Tagline ===== */
+/* ===== Tagline / Description ===== */
 .hero-tagline {
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--blackish);
-  opacity: 0.85;
+  color: var(--text-muted); /* faded description */
   max-width: 100%;
   margin-top: 0.5rem;
 }
@@ -95,42 +92,52 @@
 }
 
 .hero-btn {
-  width: 260px;
-  height: 60px;
-  border-radius: 10px;
-  text-decoration: none;
+  height: var(--btn-primary-height);
+  border-radius: var(--btn-radius-md);
   font-weight: 500;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
+  padding: var(--btn-padding-y) var(--btn-padding-x);
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
+/* Primary Blue Button */
 .hero-btn-primary {
-  background: var(--blueish);
-  color: #fff;
+  background: var(--primary);
+  color: var(--text-inverse);
+  min-width: var(--btn-primary-min-width-desktop);
 }
-
 .hero-btn-primary:hover {
-  transform: translateY(-2px);
+  background: #0056CC; /* darker hover blue */
+  color: var(--text-inverse);
 }
 
+/* Secondary Orange Button */
 .hero-btn-secondary {
-  border: 2px solid var(--blueish);
-  color: var(--blueish);
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  min-width: var(--btn-secondary-min-width-desktop);
 }
-
 .hero-btn-secondary:hover {
-  background: var(--blueish);
-  color: #fff;
-  transform: translateY(-2px);
+  background: var(--accent);
+  color: var(--text-inverse);
 }
 
-/* ===== Floating Visuals (RIGHT DIAGONAL) ===== */
+/* ===== Mobile width adjustments ===== */
+@media (max-width: 599px) {
+  .hero-btn-primary { min-width: var(--btn-primary-min-width-mobile); }
+  .hero-btn-secondary { min-width: var(--btn-secondary-min-width-mobile); }
+}
+
+/* ===== Floating Visuals ===== */
 .hero-visuals {
   display: none;
   width: 40%;
-  height: 56vh; /* updated height */
+  height: 56vh;
   position: relative;
 }
 
@@ -144,35 +151,27 @@
 /* =========================
    MEDIA QUERIES – MOBILE FIRST
 ========================= */
-
-/* ===== Tablet (600px+) ===== */
 @media (min-width: 600px) {
   .hero-name { font-size: 3rem; }
   .hero-role { font-size: 1.6rem; }
   .hero-tagline { font-size: 1.05rem; }
 }
 
-/* ===== Laptop / Small Desktop (769px+) ===== */
 @media (min-width: 769px) {
   .hero-container {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
   }
-
   .hero-left { width: 55%; max-width: 650px; }
-
-  /* Floating visuals visible */
   .hero-visuals { display: block; }
 
-  /* Arrange diagonally with custom left positions */
   .hero-visual-item:nth-child(1) { top: 0%; left: 10%; transform: translate(-50%,0); animation-delay: 0s; }
   .hero-visual-item:nth-child(2) { top: 25%; left: 30%; transform: translate(-50%,0); animation-delay: 1s; }
   .hero-visual-item:nth-child(3) { top: 50%; left: 20%; transform: translate(-50%,0); animation-delay: 2s; }
   .hero-visual-item:nth-child(4) { top: 75%; left: 45%; transform: translate(-50%,0); animation-delay: 3s; }
 }
 
-/* ===== Large Desktop (1200px+) ===== */
 @media (min-width: 1200px) {
   .hero-name { font-size: 4rem; }
   .hero-role { font-size: 2rem; }
@@ -181,9 +180,8 @@
   .hero-visual-item { font-size: 3rem; }
 }
 
-/* ===== Wide Screens (1600px+) ===== */
 @media (min-width: 1600px) {
-  .hero-container { padding: 9rem 10% 5rem; }
+  .hero-container { padding: 6rem var(--space-hero-wide) 4rem; }
   .hero-name { font-size: 4.5rem; }
   .hero-tagline { font-size: 1.25rem; }
 }

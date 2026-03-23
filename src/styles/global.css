@@ -6,45 +6,111 @@
 /* ========== ROOT VARIABLES ========== */
 /* LIGHT THEME */
 :root {
-  --primary-light: #295bf0;
-  --primary-light-hover: #66B1D3;
-  --accent-light: #D94F4F;
-  --accent-light-hover: #E05A5A;
-  --bg-light: #ffffff;
-  --surface-light: #FFFFFF;
-  --text-primary-light: #1A1A1A;
-  --text-secondary-light: #5A5A5A;
-  --border-light: #E0E0E0;
+  /* ===== BUTTON SIZING ===== */
+  --btn-primary-height: 60px;
+  --btn-primary-min-width-desktop: 200px;
+  --btn-primary-min-width-mobile: 220px;
 
+  --btn-secondary-height: 60px;
+  --btn-secondary-min-width-desktop: 180px;
+  --btn-secondary-min-width-mobile: 200px;
+
+  --btn-padding-x: 28px;
+  --btn-padding-y: 0px;
+  --btn-radius-sm: 6px;
+  --btn-radius-md: 14px;
+  --btn-radius-lg: 20px;
+
+  /* ===== COLOR SYSTEM ===== */
+  --bg-main:        #FFFFFF;      /* white background */
+  --bg-section:     #EAEFEF;      /* subtle sections */
+  --bg-surface:     #f4f4f4;      /* cards / surfaces */
+
+  --primary:        #006eff;      /* primary buttons / headings blue */
+  --primary-hover:  #1255b3;      /* slightly darker hover */
+  --secondary:      #25343F;      /* dark accent / roles / secondary headings */
+
+  --accent:         #FF9B51;      /* orange highlight */
+  --accent-hover:   #FF7A2B;      /* deeper orange hover */
+  --accent-soft:    #EAEFEF;      /* subtle borders / backgrounds */
+
+  --text-main:      #25343F;      /* main body text */
+  --text-dark-main: #000000;      /* main name */
+  --text-muted:     #333333;      /* faded / description text */
+  --text-inverse:   #FFFFFF;      /* text on colored buttons */
+
+  --border-light:   #EAEFEF;      /* subtle borders */
+  --border-strong:  #25343F;      /* strong / accent borders */
+
+  /* Typography */
   --font-sans: 'Inter', sans-serif;
+  --fs-h1: 3.2rem;
+  --fs-h2: 2.6rem;
+  --fs-h3: 1.8rem;
+  --fs-h4: 1.4rem;
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
 
-  --blueish: var(--primary-light);
-  --redish: var(--accent-light);
-  --whiteish: var(--bg-light);
-  --creamish: var(--surface-light);
-  --blackish: var(--text-primary-light);
-  --grayish: var(--text-secondary-light);
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+  --space-hero-wide: 16rem;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 6px rgba(0,0,0,0.05);
+  --shadow-md: 0 6px 18px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.12);
+
+  /* Container */
+  --container-max: 1200px;
+  --container-padding: 6%;
+
+  /* Semantic aliases */
+  --color-bg:        var(--bg-main);
+  --color-surface:   var(--bg-surface);
+  --color-text:      var(--text-main);
+  --color-text-dim:  var(--text-muted);
+  --color-text-dark: var(--text-dark-main);
+  --color-border:    var(--border-light);
 }
 
 /* DARK THEME */
 [data-theme='dark'] {
-  --primary-dark: #66B1D3;
-  --accent-dark: #E05A5A;
-  --bg-dark: #0D1117;
-  --surface-dark: #161B22;
-  --text-primary-dark: #E6EDF3;
-  --text-secondary-dark: #9DA5B4;
-  --border-dark: #30363D;
+  --bg-main:        #25343F;
+  --bg-section:     #2D4059;
+  --bg-surface:     #000000;
 
-  --blueish: var(--primary-dark);
-  --redish: var(--accent-dark);
-  --whiteish: var(--bg-dark);
-  --creamish: var(--surface-dark);
-  --blackish: var(--text-primary-dark);
-  --grayish: var(--text-secondary-dark);
+  --primary:        #FF9B51;
+  --primary-hover:  #FF7A2B;
+  --secondary:      #EAEFEF;
+
+  --accent:         #FF9B51;
+  --accent-hover:   #FF7A2B;
+  --accent-soft:    #BFC9D1;
+
+  --text-main:      #EAEFEF;
+  --text-dark-main: #FFFFFF;
+  --text-muted:     #BFC9D1;
+  --text-inverse:   #000000;
+
+  --border-light:   #EAEFEF;
+  --border-strong:  #FF9B51;
+
+  --color-bg:        var(--bg-main);
+  --color-surface:   var(--bg-surface);
+  --color-text:      var(--text-main);
+  --color-text-dim:  var(--text-muted);
+  --color-text-dark: var(--text-dark-main);
+  --color-border:    var(--border-light);
 }
 
-/* ========== RESET ========== */
+/* ===== RESET ===== */
 *,
 *::before,
 *::after {
@@ -60,43 +126,80 @@ html {
 html,
 body {
   font-family: var(--font-sans);
-  background-color: var(--whiteish);
-  color: var(--blackish);
+  background-color: var(--color-bg);
+  color: var(--color-text);
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* ========== TYPOGRAPHY ========== */
-h1 { letter-spacing: -0.03em; font-weight: 800; font-family: var(--font-sans); }
-h2 { letter-spacing: -0.02em; font-weight: 700; font-family: var(--font-sans); }
-h3 { letter-spacing: -0.01em; font-weight: 600; font-family: var(--font-sans); }
-h4,h5,h6 { letter-spacing: 0; font-weight: 600; font-family: var(--font-sans); }
-p { font-family: var(--font-sans); line-height: 1.6; color: var(--grayish); }
+/* ===== BASE TYPOGRAPHY ===== */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text-dark);
+}
 
-/* ========== LINKS ========== */
+p, span, li {
+  color: var(--color-text-dim);
+}
+
+small, .text-dim {
+  color: var(--color-text-dim);
+}
+
+/* ===== BUTTON CLASSES ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--btn-radius-md);
+  font-weight: 600;
+  padding: var(--btn-padding-y) var(--btn-padding-x);
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  height: var(--btn-primary-height);
+  min-width: var(--btn-primary-min-width-desktop);
+  background: var(--primary);
+  color: var(--text-inverse);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  height: var(--btn-secondary-height);
+  min-width: var(--btn-secondary-min-width-desktop);
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+.btn-secondary:hover {
+  background: var(--accent);
+  color: var(--text-inverse);
+  transform: translateY(-1px);
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* ===== LINKS ===== */
 a {
-  color: var(--redish);
+  color: var(--accent);
   text-decoration: none;
-  position: relative;
   transition: color 0.2s ease;
 }
+a:hover { color: var(--accent-hover); }
 
-/* ========== NEXT.JS CLEANUP ========== */
-.nextjs-portal,
-#nextjs__container,
-#__next-route-announcer {
-  display: none !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-  z-index: -9999 !important;
-}
-
-/* ========== MEDIA QUERIES FOR HYDRATION SAFE RESPONSIVE COMPONENTS ========== */
-
-/* Mobile only ≤599px */
+/* ===== RESPONSIVE HELPERS ===== */
 .mobile-only { display: block; }
 .desktop-only { display: none; }
-
 @media (min-width: 600px) {
   .mobile-only { display: none; }
   .desktop-only { display: block; }
