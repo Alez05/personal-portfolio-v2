@@ -3,7 +3,7 @@ export type TProjectVideo = {
   name?: string;
   field?: string;
   year?: string;
-  tag?: string;
+  tags?: string[];   // changed from tag?: string
 };
 
 export type TProjectCta = {
@@ -17,5 +17,5 @@ export type TProjectPreview = {
   label?: string;
   counter?: string;
   videos?: TProjectVideo[];
-  cta?: TProjectCta[]
+  cta?: TProjectCta[];
 };

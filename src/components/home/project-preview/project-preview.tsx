@@ -16,7 +16,7 @@ const ProjectPreview = async () => {
     );
   }
 
-  const { title, description, videos, cta, label } = data;
+  const { title, description, videos } = data;
 
   return (
     <section className="ph-section">
@@ -39,7 +39,7 @@ const ProjectPreview = async () => {
                     {item.label}
                   </a>
                 </div>
-              ))}  Might add this back later*/}
+              ))}  Might add this back later */}
           </div>
 
           <div className="ph-client-column">

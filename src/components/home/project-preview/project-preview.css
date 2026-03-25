@@ -1,207 +1,77 @@
 /* =========================================
-   SECTION WRAPPER
+   PROJECT PREVIEW — MOBILE FIRST
 ========================================= */
+
+/* =========================================
+   1. SECTION
+========================================= */
+
 .ph-section {
-  min-height: 100vh;
-  padding: 7rem 8% 5rem;
-  background-color: #f1efec;
-  box-sizing: border-box;
+  background: var(--bg-section);
+  padding: 2rem 1rem;
+  position: relative;
 }
 
 /* =========================================
-   DESKTOP LAYOUT (default ≥1024px)
+   2. MAIN LAYOUT
 ========================================= */
-.ph-layout {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 3rem;
-}
-
-/* LEFT SIDE */
-.ph-left {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  margin-bottom: 3rem;
-}
 
 .ph-client-container {
   display: flex;
+  flex-direction: column;
   gap: 2rem;
-  align-items: flex-start;
-  position: relative; /* ensures sticky works */
 }
 
-.ph-counter-wrapper {
-  position: fixed;
-  top: 120px; /* distance from top */
-  left: 8%; /* distance from left of viewport */
-  width: 65px;
-  height: 400px;
-  z-index: 10;
+/* =========================================
+   3. COUNTER (MOBILE HIDDEN)
+========================================= */
+
+.ph-counter-col {
+  display: none;
 }
 
-.ph-counter {
-  font-size: 9.2rem;
-  font-weight: 700;
-  color: #123458;
-}
+/* =========================================
+   4. PROJECT LIST
+========================================= */
 
-.ph-counter span {
-  display: inline-block;
-  min-width: 1ch;
-  text-align: right;
-}
-
-.ph-title {
-  font-size: 4rem;
-  color: #123458;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-/* RIGHT SIDE */
-.ph-right {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end; /* right alignment */
-  text-align: right;
-  gap: 3rem;
-}
-
-/* DESCRIPTION + CTA */
-.ph-text-description {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end; /* keeps right alignment */
-  font-size: 1.1rem;
-  color: #333;
-  line-height: 1.6;
-  width: 700px;
-  gap: 0.75rem;
-}
-
-.ph-label-container {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.ph-label {
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: #123458;
-}
-
-.ph-description {
-  text-align: start;
-  margin-right: 2rem;
-}
-
-.ph-cta {
-  margin-top: 1rem;
-  display: flex;
-  text-align: start;
-}
-
-.ph-cta-button {
-  display: inline-block;
-  background-color: #123458;
-  color: #f1efec;
-  font-weight: 600;
-  font-size: 1rem;
-  text-decoration: none;
-  padding: 0.6rem 1.4rem;
-  border-radius: 8px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.ph-cta-button:hover {
-  background-color: #1a4f84;
-  transform: translateY(-2px);
-}
-
-/* CLIENT PROJECT COLUMN */
-.ph-client-column {
-  flex: 1;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end; /* ensures project stack is right aligned */
-}
-
-/* PROJECT STACK */
 .ph-projects-column {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
-  width: 100%;
-  align-items: flex-end; /* right align */
-  flex: 1;
+  gap: 2rem;
 }
 
-/* PROJECT CARD */
+/* =========================================
+   5. PROJECT CARD
+========================================= */
+
 .ph-project {
-  width: 100%;
-  max-width: 900px;
-  background-color: #fff;
-  border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  padding: 5rem;
+  background: var(--color-surface);
+  border-radius: var(--btn-radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 1.6rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .ph-project:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-lg);
 }
 
-/* INSIDE PROJECT CARD */
-.ph-project-layout {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
-  text-align: start;
-  gap: 2rem;
+.ph-title {
+  color: var(--text-dark-main);
 }
 
-/* LEFT PROJECT INFO */
-.ph-project-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  position: static;
-}
+/* ---------- VIDEO ---------- */
 
-.ph-project-name {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #123458;
-}
-
-.ph-project-field {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #444;
-}
-
-/* VIDEO SECTION */
 .ph-video-wrap {
-  flex: 1;
-  max-width: 600px;
+  width: 100%;
   aspect-ratio: 16/9;
-  border-radius: 12px;
+  border-radius: var(--btn-radius-md);
   overflow: hidden;
-  background: #e8e7e6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: var(--bg-surface);
 }
 
 .ph-video {
@@ -210,128 +80,170 @@
   object-fit: cover;
 }
 
-/* PROJECT META */
+/* ---------- TEXT CONTENT ---------- */
+
+.ph-project-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ph-project-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.ph-project-field {
+  font-size: var(--fs-small);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.ph-project-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-dark-main);
+}
+
+/* =========================================
+   6. TAGS + YEAR
+========================================= */
+
 .ph-project-meta {
   display: flex;
-  flex-direction: row;
-  gap: 0.8rem;
-  align-items: center;
-  position: static;
+  flex-wrap: wrap;
+  gap: 0.4rem;
 }
 
-.ph-tag {
-  color: #000000;
-  font-size: 0.85rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  line-height: 1.2;
-}
-
+.ph-tag,
 .ph-year {
-  color: #123458;
-  font-size: 0.9rem;
+  font-size: var(--fs-small);
   font-weight: 600;
-  line-height: 1.2;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  line-height: 1;
+  background: var(--pill-bg-neutral);
+  color: var(--pill-text-neutral);
+  border: 1px solid var(--pill-border-neutral);
 }
 
-/* =====================================================
-  RESPONSIVE
-===================================================== */
+/* =========================================
+   7. TABLET (≥600px)
+========================================= */
 
-/* ===== MOBILE ≤ 767px ===== */
-@media (max-width: 767px) {
-  .ph-layout {
-    flex-direction: column;
-    gap: 3rem;
-  }
-
-  .ph-left {
-    flex: none;
-    width: 100%;
-    text-align: center;
-  }
-
-  .ph-title {
-    font-size: 2.2rem;
-    white-space: normal;
-  }
-
-  .ph-right {
-    align-items: center; /* stop right-align on mobile */
-    text-align: center;
-  }
-
-  .ph-text-description {
-    margin-left: 0;
-    text-align: center;
-  }
-
-  .ph-client-column {
-    justify-content: center;
+@media (min-width: 600px) {
+  .ph-section {
+    padding: 2.5rem 6% 3rem;
   }
 
   .ph-project {
-    padding: 2.5rem;
+    padding: 2rem;
+  }
+}
+
+/* =========================================
+   8. DESKTOP (≥769px)
+========================================= */
+
+@media (min-width: 769px) {
+  .ph-client-container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .ph-counter-col {
+    display: block;
+    flex: 0 0 100px;
+    position: relative;
+  }
+
+  /*
+    Fixed to viewport, but hidden by default (opacity: 0, pointer-events: none).
+    Only becomes visible when .ph-counter-visible is added — i.e. when the
+    section is intersecting the viewport. Fades in/out smoothly.
+  */
+  .ph-counter-wrapper {
+    position: fixed;
+    left: 6%;
+    top: 40vh;
+    transform: translateY(-50%);
+    width: 80px;
+    z-index: 5;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .ph-counter-wrapper.ph-counter-visible {
+    opacity: 1;
+  }
+
+  .ph-counter {
+    font-size: 4rem;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1;
+    color: var(--primary);
+  }
+
+  .ph-counter-total {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark-main);
+    opacity: 0.4;
+    text-align: center;
+  }
+
+  .ph-projects-column {
+    flex: 1;
   }
 
   .ph-project-layout {
-    flex-direction: column;
-    gap: 1.5rem;
-    text-align: center;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
-/* ===== TABLET 768–1023px ===== */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .ph-layout {
-    gap: 2rem;
-  }
+/* =========================================
+   9. LARGE DESKTOP (≥1200px)
+========================================= */
 
-  .ph-left {
-    flex: 0 0 260px;
-  }
-
-  .ph-right {
-    align-items: flex-end;
-    text-align: right;
-  }
-
-  .ph-text-description {
-    max-width: 500px;
-  }
-
-  .ph-project {
-    padding: 3.5rem;
-  }
-}
-
-/* ===== LARGE DESKTOP ≥1400px ===== */
-@media (min-width: 1400px) {
+@media (min-width: 1200px) {
   .ph-section {
-    padding: 7rem 12%;
-  }
-
-  .ph-title {
-    font-size: 3.2rem;
+    padding: 6rem 6% 6rem;
   }
 
   .ph-project {
     max-width: 1000px;
   }
+
+  .ph-counter {
+    font-size: 4.5rem;
+  }
 }
 
-/* ===== ULTRA-WIDE ≥1920px ===== */
-@media (min-width: 1920px) {
-  .ph-section {
-    padding: 8rem 14%;
-  }
+/* =========================================
+   10. ULTRA WIDE (≥1600px)
+========================================= */
 
-  .ph-title {
-    font-size: 3.4rem;
+@media (min-width: 1600px) {
+  .ph-section {
+    padding: 7rem 8% 7rem;
   }
 
   .ph-project {
     max-width: 1200px;
-    padding: 6rem;
+  }
+
+  .ph-counter {
+    font-size: 5rem;
   }
 }
