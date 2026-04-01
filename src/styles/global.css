@@ -22,50 +22,28 @@
   --btn-radius-lg: 20px;
 
   /* ===== COLOR SYSTEM ===== */
-  --bg-main: #ffffff;
-  --bg-section: #eaefef;
-  --bg-surface: #f4f4f4;
+  --bg-main:        #FFFFFF;      /* white background */
+  --bg-section:     #EAEFEF;      /* subtle sections */
+  --bg-surface:     #f4f4f4;      /* cards / surfaces */
 
-  --primary: #006eff;
-  --primary-hover: #1255b3;
-  --secondary: #25343f;
+  --primary:        #25343F;      /* primary buttons / headings blue */
+  --primary-hover:  #1255b3;      /* slightly darker hover */
+  --secondary:      #25343F;      /* dark accent / roles / secondary headings */
 
-  --accent: #ff9b51;
-  --accent-light: #e8c2a4;
-  --accent-hover: #ff7a2b;
-  --accent-soft: #eaefef;
+  --accent:         #FF9B51;      /* orange highlight */
+  --accent-hover:   #FF7A2B;      /* deeper orange hover */
+  --accent-soft:    #EAEFEF;      /* subtle borders / backgrounds */
 
-  --text-main: #25343f;
-  --text-dark-main: #000000;
-  --text-muted: #333333;
-  --text-inverse: #ffffff;
+  --text-main:      #25343F;      /* main body text */
+  --text-dark-main: #000000;      /* main name */
+  --text-muted:     #333333;      /* faded / description text */
+  --text-inverse:   #FFFFFF;      /* text on colored buttons */
 
-  --border-light: #eaefef;
-  --border-strong: #25343f;
-
-  /* ===== PILL / TAG COLORS ===== */
-  /* Primary tech (frontend / main stack) */
-  --pill-bg: #eef3ff;
-  --pill-text: #006eff;
-  --pill-border: #cfe0ff;
-
-  /* Secondary tech (backend / services) */
-  --pill-bg-2: #f3f8f6;
-  --pill-text-2: #2f7a5f;
-  --pill-border-2: #c9e3d8;
-
-  /* Infrastructure / tools */
-  --pill-bg-3: #fff4ec;
-  --pill-text-3: #b55a1f;
-  --pill-border-3: #ffd7bf;
-
-  /* Neutral pill (fallback) */
-  --pill-bg-neutral: #f2f4f7;
-  --pill-text-neutral: #25343f;
-  --pill-border-neutral: #e1e5ea;
+  --border-light:   #EAEFEF;      /* subtle borders */
+  --border-strong:  #25343F;      /* strong / accent borders */
 
   /* Typography */
-  --font-sans: "Inter", sans-serif;
+  --font-sans: 'Inter', sans-serif;
   --fs-h1: 3.2rem;
   --fs-h2: 2.6rem;
   --fs-h3: 1.8rem;
@@ -85,68 +63,51 @@
   --space-hero-wide: 16rem;
 
   /* Shadows */
-  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
+  --shadow-sm: 0 2px 6px rgba(0,0,0,0.05);
+  --shadow-md: 0 6px 18px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.12);
 
   /* Container */
   --container-max: 1200px;
   --container-padding: 6%;
 
   /* Semantic aliases */
-  --color-bg: var(--bg-main);
-  --color-surface: var(--bg-surface);
-  --color-text: var(--text-main);
-  --color-text-dim: var(--text-muted);
+  --color-bg:        var(--bg-main);
+  --color-surface:   var(--bg-surface);
+  --color-text:      var(--text-main);
+  --color-text-dim:  var(--text-muted);
   --color-text-dark: var(--text-dark-main);
-  --color-border: var(--border-light);
+  --color-border:    var(--border-light);
 }
 
 /* DARK THEME */
-[data-theme="dark"] {
-  --bg-main: #25343f;
-  --bg-section: #2d4059;
-  --bg-surface: #000000;
+[data-theme='dark'] {
+  --bg-main:        #25343F;
+  --bg-section:     #2D4059;
+  --bg-surface:     #000000;
 
-  --primary: #ff9b51;
-  --primary-hover: #ff7a2b;
-  --secondary: #eaefef;
+  --primary:        #FF9B51;
+  --primary-hover:  #FF7A2B;
+  --secondary:      #EAEFEF;
 
-  --accent: #ff9b51;
-  --accent-hover: #ff7a2b;
-  --accent-soft: #bfc9d1;
+  --accent:         #FF9B51;
+  --accent-hover:   #FF7A2B;
+  --accent-soft:    #BFC9D1;
 
-  --text-main: #eaefef;
-  --text-dark-main: #ffffff;
-  --text-muted: #bfc9d1;
-  --text-inverse: #000000;
+  --text-main:      #EAEFEF;
+  --text-dark-main: #FFFFFF;
+  --text-muted:     #BFC9D1;
+  --text-inverse:   #000000;
 
-  --border-light: #eaefef;
-  --border-strong: #ff9b51;
+  --border-light:   #EAEFEF;
+  --border-strong:  #FF9B51;
 
-  /* ===== PILL COLORS — DARK ===== */
-  --pill-bg: #1f2a3a;
-  --pill-text: #7fb0ff;
-  --pill-border: #2c3e5c;
-
-  --pill-bg-2: #1f2f2a;
-  --pill-text-2: #6dd3a8;
-  --pill-border-2: #2f4d44;
-
-  --pill-bg-3: #3a2418;
-  --pill-text-3: #ffb27a;
-  --pill-border-3: #5a3a29;
-
-  --pill-bg-neutral: #2a2f36;
-  --pill-text-neutral: #e5e7eb;
-  --pill-border-neutral: #3a4048;
-
-  --color-bg: var(--bg-main);
-  --color-surface: var(--bg-surface);
-  --color-text: var(--text-main);
-  --color-text-dim: var(--text-muted);
+  --color-bg:        var(--bg-main);
+  --color-surface:   var(--bg-surface);
+  --color-text:      var(--text-main);
+  --color-text-dim:  var(--text-muted);
   --color-text-dark: var(--text-dark-main);
-  --color-border: var(--border-light);
+  --color-border:    var(--border-light);
 }
 
 /* ===== RESET ===== */
@@ -168,29 +129,19 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   overflow-x: hidden;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* ===== BASE TYPOGRAPHY ===== */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   color: var(--color-text-dark);
 }
 
-p,
-span,
-li {
+p, span, li {
   color: var(--color-text-dim);
 }
 
-small,
-.text-dim {
+small, .text-dim {
   color: var(--color-text-dim);
 }
 
@@ -210,9 +161,7 @@ small,
   min-width: var(--btn-primary-min-width-desktop);
   background: var(--primary);
   color: var(--text-inverse);
-  transition:
-    background 0.3s ease,
-    transform 0.2s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 .btn-primary:hover {
   background: var(--primary-hover);
@@ -225,10 +174,7 @@ small,
   background: transparent;
   border: 2px solid var(--accent);
   color: var(--accent);
-  transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    transform 0.2s ease;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 .btn-secondary:hover {
   background: var(--accent);
@@ -249,22 +195,12 @@ a {
   text-decoration: none;
   transition: color 0.2s ease;
 }
-a:hover {
-  color: var(--accent-hover);
-}
+a:hover { color: var(--accent-hover); }
 
 /* ===== RESPONSIVE HELPERS ===== */
-.mobile-only {
-  display: block;
-}
-.desktop-only {
-  display: none;
-}
+.mobile-only { display: block; }
+.desktop-only { display: none; }
 @media (min-width: 600px) {
-  .mobile-only {
-    display: none;
-  }
-  .desktop-only {
-    display: block;
-  }
+  .mobile-only { display: none; }
+  .desktop-only { display: block; }
 }

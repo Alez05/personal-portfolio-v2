@@ -8,7 +8,7 @@ const ProjectPreview = async () => {
 
   if (!data) {
     return (
-      <section className="ph-section">
+      <section className="ph-section-parent">
         <div className="ph-container">
           <p className="ph-error">Failed to load projects</p>
         </div>
@@ -19,29 +19,16 @@ const ProjectPreview = async () => {
   const { title, description, videos } = data;
 
   return (
-    <section className="ph-section">
-        <div className="ph-left">
-          {title && <h2 className="ph-title">{title}</h2>}
-        </div>
+    <section className="ph-section-parent">
+      <div className="ph-left">
+        {title && <h2 className="ph-title">{title}</h2>}
+        {description && <p className="ph-description">{description}</p>}
+      </div>
       <div className="ph-layout">
         {/* LEFT COLUMN */}
 
         {/* RIGHT COLUMN */}
         <div className="ph-right">
-          <div className="ph-text-description">
-            {/* <div className="ph-label-container">{label && <p className="ph-label">{label}</p>}</div> */}
-            {description && <p className="ph-description">{description}</p>}
-
-            {/* {cta &&
-              cta.map((item, idx) => (
-                <div key={idx} className="ph-cta">
-                  <a href={item.href} className="ph-cta-button">
-                    {item.label}
-                  </a>
-                </div>
-              ))}  Might add this back later */}
-          </div>
-
           <div className="ph-client-column">
             <ProjectPreviewClient videos={videos} />
           </div>
