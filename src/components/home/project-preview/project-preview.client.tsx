@@ -69,7 +69,7 @@ export const ProjectPreviewClient: React.FC<Props> = ({ videos = [] }) => {
             className={`ph-counter-wrapper${isInSection ? " ph-counter-visible" : ""}`}
           >
             <div className="ph-counter">{padNumber(activeIndex + 1)}</div>
-            <div className="ph-counter-total">/ {padNumber(videos.length)}</div>
+            {/* <div className="ph-counter-total">/ {padNumber(videos.length)}</div> */}
           </div>
         </div>
 

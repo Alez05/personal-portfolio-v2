@@ -1,29 +1,85 @@
 /* =========================================
    PROJECT PREVIEW — MOBILE FIRST
+   Spacing scale:
+     mobile  → section: 3rem 5%
+     tablet  → section: 4rem 6%
+     desktop → section: 6rem 6%
+     xl      → section: 7rem 8%
 ========================================= */
 
 /* =========================================
-   1. SECTION
+   1. OUTER SECTION
 ========================================= */
 
-.ph-section {
-  background: var(--bg-section);
-  padding: 2rem 1rem;
+.ph-section-parent {
+  background: var(--bg-main);
   position: relative;
+  padding: 3rem 5%;
 }
 
 /* =========================================
-   2. MAIN LAYOUT
+   2. TWO-COLUMN LAYOUT (title left | projects right)
+========================================= */
+
+.ph-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* LEFT — title + description */
+.ph-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ph-title {
+  font-size: var(--fs-h2);
+  font-weight: 800;
+  color: var(--text-dark-main);
+  line-height: 1.15;
+}
+
+.ph-description {
+  font-size: var(--fs-body);
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* RIGHT — contains the client component */
+.ph-right {
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================================
+   3. ERROR / EMPTY STATE
+========================================= */
+
+.ph-container {
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.ph-error {
+  font-size: var(--fs-body);
+  color: var(--text-dark-sub);
+  opacity: 0.6;
+}
+
+/* =========================================
+   4. CLIENT LAYOUT (counter left | cards right)
 ========================================= */
 
 .ph-client-container {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 /* =========================================
-   3. COUNTER (MOBILE HIDDEN)
+   5. COUNTER (mobile hidden)
 ========================================= */
 
 .ph-counter-col {
@@ -31,24 +87,24 @@
 }
 
 /* =========================================
-   4. PROJECT LIST
+   6. PROJECT LIST
 ========================================= */
 
 .ph-projects-column {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 /* =========================================
-   5. PROJECT CARD
+   7. PROJECT CARD
 ========================================= */
 
 .ph-project {
   background: var(--color-surface);
   border-radius: var(--btn-radius-lg);
   box-shadow: var(--shadow-md);
-  padding: 1.6rem;
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -60,15 +116,12 @@
   box-shadow: var(--shadow-lg);
 }
 
-.ph-title {
-  color: var(--text-dark-main);
-}
-
 /* ---------- VIDEO ---------- */
 
+/* Let aspect-ratio drive the height — no fixed vh on mobile */
 .ph-video-wrap {
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 16 / 9;
   border-radius: var(--btn-radius-md);
   overflow: hidden;
   background: var(--bg-surface);
@@ -80,18 +133,29 @@
   object-fit: cover;
 }
 
+.ph-client-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-small);
+  color: var(--text-dark-sub);
+  opacity: 0.5;
+}
+
 /* ---------- TEXT CONTENT ---------- */
 
 .ph-project-layout {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .ph-project-info {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.4rem;
 }
 
 .ph-project-field {
@@ -102,13 +166,13 @@
 }
 
 .ph-project-name {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--text-dark-main);
 }
 
 /* =========================================
-   6. TAGS + YEAR
+   8. TAGS + YEAR
 ========================================= */
 
 .ph-project-meta {
@@ -117,7 +181,17 @@
   gap: 0.4rem;
 }
 
-.ph-tag,
+.ph-tag {
+  font-size: var(--fs-small);
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  line-height: 1;
+  background: var(--pill-bg);
+  color: var(--pill-text);
+  border: 1px solid var(--pill-border);
+}
+
 .ph-year {
   font-size: var(--fs-small);
   font-weight: 600;
@@ -130,44 +204,75 @@
 }
 
 /* =========================================
-   7. TABLET (≥600px)
+   9. TABLET (≥600px)
 ========================================= */
 
 @media (min-width: 600px) {
-  .ph-section {
-    padding: 2.5rem 6% 3rem;
+  .ph-section-parent {
+    padding: 4rem 6%;
+  }
+
+  .ph-layout {
+    gap: 3rem;
   }
 
   .ph-project {
-    padding: 2rem;
+    padding: 1.5rem;
+  }
+
+  .ph-project-name {
+    font-size: 1.2rem;
+  }
+
+  /* Slightly taller video on larger phones / small tablets */
+  .ph-video-wrap {
+    aspect-ratio: 16 / 8;
   }
 }
 
 /* =========================================
-   8. DESKTOP (≥769px)
+   10. DESKTOP (≥769px)
 ========================================= */
 
 @media (min-width: 769px) {
+  /* Outer: sticky title left, projects right */
+  .ph-layout {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 4rem;
+  }
+
+  .ph-left {
+    flex: 0 0 220px;
+    position: sticky;
+    top: 120px;
+    /* let it scroll with the page bottom so it doesn't overlap the footer */
+    align-self: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .ph-right {
+    flex: 1;
+    min-width: 0; /* prevent flex blowout */
+  }
+
+  /* Inner: fixed counter left, cards right */
   .ph-client-container {
     flex-direction: row;
     align-items: flex-start;
+    gap: 2rem;
   }
 
   .ph-counter-col {
     display: block;
-    flex: 0 0 100px;
+    flex: 0 0 80px;
     position: relative;
   }
 
-  /*
-    Fixed to viewport, but hidden by default (opacity: 0, pointer-events: none).
-    Only becomes visible when .ph-counter-visible is added — i.e. when the
-    section is intersecting the viewport. Fades in/out smoothly.
-  */
   .ph-counter-wrapper {
     position: fixed;
     left: 6%;
-    top: 40vh;
+    top: 50vh;
     transform: translateY(-50%);
     width: 80px;
     z-index: 5;
@@ -176,7 +281,6 @@
     flex-direction: column;
     align-items: center;
     gap: 0.25rem;
-
     opacity: 0;
     transition: opacity 0.3s ease;
   }
@@ -186,7 +290,7 @@
   }
 
   .ph-counter {
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 800;
     text-align: center;
     line-height: 1;
@@ -194,7 +298,7 @@
   }
 
   .ph-counter-total {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     color: var(--text-dark-main);
     opacity: 0.4;
@@ -203,47 +307,93 @@
 
   .ph-projects-column {
     flex: 1;
+    min-width: 0;
+    gap: 2rem;
+  }
+
+  .ph-project {
+    padding: 2rem;
   }
 
   .ph-project-layout {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap: 1.5rem;
+  }
+
+  /* Video gets a proper taller presence on desktop */
+  .ph-video-wrap {
+    aspect-ratio: 16 / 7;
+  }
+
+  .ph-project-name {
+    font-size: 1.3rem;
   }
 }
 
 /* =========================================
-   9. LARGE DESKTOP (≥1200px)
+   11. LARGE DESKTOP (≥1200px)
 ========================================= */
 
 @media (min-width: 1200px) {
-  .ph-section {
-    padding: 6rem 6% 6rem;
+  .ph-section-parent {
+    padding: 6rem 6%;
+  }
+
+  .ph-left {
+    flex: 0 0 260px;
+    top: 130px;
   }
 
   .ph-project {
+    padding: 2.5rem;
     max-width: 1000px;
   }
 
   .ph-counter {
     font-size: 4.5rem;
   }
+
+  /* Wide enough — let the video breathe with a min-height floor */
+  .ph-video-wrap {
+    aspect-ratio: 16 / 6;
+    min-height: 480px;
+  }
+
+  .ph-project-name {
+    font-size: 1.4rem;
+  }
 }
 
 /* =========================================
-   10. ULTRA WIDE (≥1600px)
+   12. ULTRA WIDE (≥1600px)
 ========================================= */
 
 @media (min-width: 1600px) {
-  .ph-section {
-    padding: 7rem 8% 7rem;
+  .ph-section-parent {
+    padding: 7rem 8%;
+  }
+
+  .ph-left {
+    flex: 0 0 300px;
   }
 
   .ph-project {
+    padding: 3rem;
     max-width: 1200px;
   }
 
   .ph-counter {
     font-size: 5rem;
+  }
+
+  .ph-video-wrap {
+    aspect-ratio: 16 / 6;
+    min-height: 340px;
+  }
+
+  .ph-project-name {
+    font-size: 1.5rem;
   }
 }
