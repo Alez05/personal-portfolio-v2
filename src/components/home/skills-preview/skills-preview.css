@@ -237,7 +237,7 @@
 /* LARGE DESKTOP (1200–1599px) */
 @media (min-width: 1200px) {
   .sp-section {
-    padding: 6rem 6% 4rem;
+    padding: 0 6% 4rem;
   }
 
   .sp-title {
@@ -256,7 +256,7 @@
 /* WIDE SCREENS (1600px+) */
 @media (min-width: 1600px) {
   .sp-section {
-    padding: 6rem 16rem 4rem;
+    padding: 0 16rem 4rem;
   }
 
   .sp-title {
