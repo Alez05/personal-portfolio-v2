@@ -151,15 +151,10 @@
 
 /* ---------- TEXT CONTENT ---------- */
 
-/*
-  On mobile: info (field + name) sits on the left, tags+year row
-  sits on the right — both in one flex row so tags never drop
-  into a separate column below the name.
-*/
 .ph-project-layout {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start; /* ← was space-between, which pushed meta to the far right */
   align-items: flex-end;
   gap: 1rem;
   flex-wrap: wrap;
@@ -195,17 +190,13 @@
    8. TAGS + YEAR
 ========================================= */
 
-/*
-  Always a single row — no wrapping so tags + year stay together
-  on the same line beside the project info.
-*/
 .ph-project-meta {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   gap: 0.4rem;
   flex-shrink: 0;
-  align-items: center;
+  text-align: left;
 }
 
 .ph-tag {
