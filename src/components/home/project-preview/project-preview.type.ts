@@ -4,6 +4,7 @@ export type TProjectVideo = {
   field?: string;
   year?: string;
   tags?: string[];   // changed from tag?: string
+  bgcImage?: string;
 };
 
 export type TProjectCta = {

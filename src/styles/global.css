@@ -22,30 +22,37 @@
   --btn-radius-lg: 20px;
 
   /* ===== COLOR SYSTEM ===== */
-  --bg-main:        #FFFFFF;      /* white background */
-  --bg-section:     #EAEFEF;      /* subtle sections */
-  --bg-surface:     #f4f4f4;      /* cards / surfaces */
+  --bg-main:        #F7F8FB;      /* cool off-white, not stark */
+  --bg-section:     #EDF0F5;      /* blue-tinted section bg */
+  --bg-surface:     #FFFFFF;      /* cards / surfaces */
+  --bg-video-1: url("/image/bgcimage.jpg");
 
-  --primary:        #25343F;      /* primary buttons / headings blue */
-  --primary-hover:  #1255b3;      /* slightly darker hover */
-  --secondary:      #25343F;      /* dark accent / roles / secondary headings */
+  --primary:        #333A73;      /* deep navy — main CTAs, headings */
+  --primary-hover:  #252B5C;      /* darker navy hover */
 
-  --accent:         #FF9B51;      /* orange highlight */
-  --accent-hover:   #FF7A2B;      /* deeper orange hover */
-  --accent-soft:    #EAEFEF;      /* subtle borders / backgrounds */
+  --secondary:      #387ADF;      /* bright blue — interactive, links */
+  --secondary-hover:#1255B3;      /* deeper blue hover */
 
-  --text-main:      #25343F;      /* main body text */
-  --text-dark-main: #000000;      /* main name */
-  --text-muted:     #333333;      /* faded / description text */
-  --text-inverse:   #FFFFFF;      /* text on colored buttons */
+  --accent:         #FBA834;      /* amber — highlights, badges, accents */
+  --accent-hover:   #E08A10;      /* deeper amber hover */
+  --accent-soft:    #FEF3E2;      /* warm tint for bg highlights */
 
-  --border-light:   #EAEFEF;      /* subtle borders */
-  --border-strong:  #25343F;      /* strong / accent borders */
+  --highlight:      #50C4ED;      /* cyan — tags, pills, subtle pops */
+  --highlight-hover:#27AED8;      /* deeper cyan hover */
+  --highlight-soft: #E8F8FD;      /* cyan tint for backgrounds */
+
+  --text-main:      #1E2340;      /* near-navy body text */
+  --text-dark-main: #0D1021;      /* headings / names */
+  --text-muted:     #5A6580;      /* blue-grey muted text */
+  --text-inverse:   #FFFFFF;      /* text on dark/colored buttons */
+
+  --border-light:   #DDE3EE;      /* cool subtle borders */
+  --border-strong:  #333A73;      /* navy strong borders */
 
   /* Typography */
   --font-sans: 'Inter', sans-serif;
   --fs-h1: 3.2rem;
-  --fs-h2: 2.6rem;
+  --fs-h2: 2.4rem;
   --fs-h3: 1.8rem;
   --fs-h4: 1.4rem;
   --fs-body: 1rem;
@@ -63,9 +70,9 @@
   --space-hero-wide: 16rem;
 
   /* Shadows */
-  --shadow-sm: 0 2px 6px rgba(0,0,0,0.05);
-  --shadow-md: 0 6px 18px rgba(0,0,0,0.08);
-  --shadow-lg: 0 12px 32px rgba(0,0,0,0.12);
+  --shadow-sm: 0 2px 6px rgba(51,58,115,0.06);
+  --shadow-md: 0 6px 18px rgba(51,58,115,0.10);
+  --shadow-lg: 0 12px 32px rgba(51,58,115,0.14);
 
   /* Container */
   --container-max: 1200px;
@@ -82,25 +89,31 @@
 
 /* DARK THEME */
 [data-theme='dark'] {
-  --bg-main:        #25343F;
-  --bg-section:     #2D4059;
-  --bg-surface:     #000000;
+  --bg-main:        #1A2035;      /* deep navy-dark base */
+  --bg-section:     #252B5C;      /* slightly lighter navy layer */
+  --bg-surface:     #131726;      /* darkest — cards on dark */
 
-  --primary:        #FF9B51;
-  --primary-hover:  #FF7A2B;
-  --secondary:      #EAEFEF;
+  --primary:        #50C4ED;      /* cyan becomes primary on dark (pops on navy) */
+  --primary-hover:  #27AED8;
 
-  --accent:         #FF9B51;
-  --accent-hover:   #FF7A2B;
-  --accent-soft:    #BFC9D1;
+  --secondary:      #387ADF;      /* blue stays */
+  --secondary-hover:#5B94E8;      /* lighter hover on dark bg */
 
-  --text-main:      #EAEFEF;
+  --accent:         #FBA834;      /* amber stays as accent */
+  --accent-hover:   #FFBC5A;      /* lighter amber hover on dark */
+  --accent-soft:    #3A2A0A;      /* dark warm surface */
+
+  --highlight:      #50C4ED;
+  --highlight-hover:#27AED8;
+  --highlight-soft: #0A2535;
+
+  --text-main:      #D8DDF0;      /* cool light text */
   --text-dark-main: #FFFFFF;
-  --text-muted:     #BFC9D1;
-  --text-inverse:   #000000;
+  --text-muted:     #8A94B8;      /* muted blue-grey */
+  --text-inverse:   #0D1021;      /* dark text on light buttons */
 
-  --border-light:   #EAEFEF;
-  --border-strong:  #FF9B51;
+  --border-light:   #2E3660;      /* subtle navy border */
+  --border-strong:  #50C4ED;      /* cyan strong border */
 
   --color-bg:        var(--bg-main);
   --color-surface:   var(--bg-surface);
@@ -156,6 +169,7 @@ small, .text-dim {
   transition: all 0.2s ease;
 }
 
+/* Navy — main call-to-action */
 .btn-primary {
   height: var(--btn-primary-height);
   min-width: var(--btn-primary-min-width-desktop);
@@ -168,17 +182,31 @@ small, .text-dim {
   transform: translateY(-1px);
 }
 
+/* Blue — secondary action */
 .btn-secondary {
   height: var(--btn-secondary-height);
   min-width: var(--btn-secondary-min-width-desktop);
   background: transparent;
-  border: 2px solid var(--accent);
-  color: var(--accent);
+  border: 2px solid var(--secondary);
+  color: var(--secondary);
   transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 .btn-secondary:hover {
-  background: var(--accent);
+  background: var(--secondary);
   color: var(--text-inverse);
+  transform: translateY(-1px);
+}
+
+/* Amber — accent / highlight action */
+.btn-accent {
+  height: var(--btn-primary-height);
+  min-width: var(--btn-primary-min-width-desktop);
+  background: var(--accent);
+  color: var(--text-dark-main);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.btn-accent:hover {
+  background: var(--accent-hover);
   transform: translateY(-1px);
 }
 
@@ -191,11 +219,11 @@ small, .text-dim {
 
 /* ===== LINKS ===== */
 a {
-  color: var(--accent);
+  color: var(--secondary);
   text-decoration: none;
   transition: color 0.2s ease;
 }
-a:hover { color: var(--accent-hover); }
+a:hover { color: var(--secondary-hover); }
 
 /* ===== RESPONSIVE HELPERS ===== */
 .mobile-only { display: block; }

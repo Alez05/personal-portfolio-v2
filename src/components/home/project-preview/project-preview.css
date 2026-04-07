@@ -34,6 +34,7 @@
   flex-direction: column;
   gap: 1.25rem;
   letter-spacing: 0.04rem;
+  margin-bottom: 2rem;
 }
 
 .ph-title {
@@ -46,7 +47,7 @@
 
 .ph-description {
   font-size: var(--fs-body);
-  color: #6b7280;
+  color: var(--text-muted);        /* was hardcoded #6b7280 — now uses blue-grey muted */
   line-height: 1.6;
   letter-spacing: 0.04rem;
 }
@@ -64,11 +65,15 @@
 .ph-container {
   width: 100%;
   padding: 2.5rem 0;
+  background-image: var(--bg-video-1);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .ph-error {
   font-size: var(--fs-body);
-  color: var(--text-dark-sub);
+  color: var(--text-muted);        /* was --text-dark-sub (undefined) */
   letter-spacing: 0.04rem;
   opacity: 0.6;
 }
@@ -106,29 +111,32 @@
 ========================================= */
 
 .ph-project {
-  background: var(--color-surface);
+  background: var(--bg-surface);   /* white card on off-white page = clean lift */
   border-radius: var(--btn-radius-lg);
+  border: 1px solid var(--border-light);
   box-shadow: var(--shadow-md);
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .ph-project:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
+  border-color: var(--secondary);  /* bright blue border pop on hover */
 }
 
 /* ---------- VIDEO ---------- */
 
 .ph-video-wrap {
   width: 100%;
+  height: 30vh;
   aspect-ratio: 16 / 9;
   border-radius: var(--btn-radius-md);
   overflow: hidden;
-  background: var(--bg-surface);
+  background: var(--bg-section);   /* cool off-white placeholder */
 }
 
 .ph-video {
@@ -144,7 +152,7 @@
   align-items: center;
   justify-content: center;
   font-size: var(--fs-small);
-  color: var(--text-dark-sub);
+  color: var(--text-muted);        /* was --text-dark-sub (undefined) */
   letter-spacing: 0.04rem;
   opacity: 0.5;
 }
@@ -154,7 +162,7 @@
 .ph-project-layout {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start; /* ← was space-between, which pushed meta to the far right */
+  justify-content: flex-start;
   align-items: flex-end;
   gap: 1rem;
   flex-wrap: wrap;
@@ -173,7 +181,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04rem;
-  color: var(--accent);
+  color: var(--accent);            /* amber — field label stays as accent pop */
 }
 
 .ph-project-name {
@@ -199,6 +207,7 @@
   text-align: left;
 }
 
+/* Tech / category tag — navy filled, high contrast */
 .ph-tag {
   font-size: var(--fs-small);
   font-weight: 600;
@@ -206,12 +215,13 @@
   border-radius: 999px;
   line-height: 1;
   letter-spacing: 0.04rem;
-  background: var(--pill-bg);
-  color: var(--pill-text);
-  border: 1px solid var(--pill-border);
+  background: var(--primary);      /* deep navy fill */
+  color: #FFFFFF;                  /* white text — max contrast on navy */
+  border: 1px solid var(--primary);
   white-space: nowrap;
 }
 
+/* Year pill — cyan tinted, lighter */
 .ph-year {
   font-size: var(--fs-small);
   font-weight: 600;
@@ -219,9 +229,9 @@
   border-radius: 999px;
   line-height: 1;
   letter-spacing: 0.04rem;
-  background: var(--pill-bg-neutral);
-  color: var(--pill-text-neutral);
-  border: 1px solid var(--pill-border-neutral);
+  background: var(--highlight-soft); /* light cyan tint */
+  color: #0A3A50;                    /* dark cyan text — readable on light cyan */
+  border: 1px solid var(--highlight);
   white-space: nowrap;
 }
 
@@ -278,6 +288,13 @@
     min-width: 0;
   }
 
+  .ph-client-container {
+  background-image: var(--bg-video-1);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  }
+
   /* Inner: fixed counter left, cards right */
   .ph-client-container {
     flex-direction: row;
@@ -317,15 +334,15 @@
     text-align: center;
     line-height: 1;
     letter-spacing: 0.04rem;
-    color: var(--primary);
+    color: var(--primary);         /* deep navy counter */
   }
 
   .ph-counter-total {
     font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: 0.04rem;
-    color: var(--text-dark-main);
-    opacity: 0.4;
+    color: var(--text-muted);      /* blue-grey, softer than heading */
+    opacity: 0.6;
     text-align: center;
   }
 
@@ -347,7 +364,7 @@
 
   .ph-project-name {
     font-size: 1.3rem;
-    white-space: normal; /* allow wrap on desktop where there's more room */
+    white-space: normal;
   }
 }
 
@@ -364,6 +381,7 @@
     flex: 0 0 260px;
     top: 130px;
   }
+
   .ph-client-container {
     gap: 7rem;
   }
