@@ -1,12 +1,3 @@
-// Data files
-
-// Home Page
-export { abouthlData } from "./home";
-export { bloghlData } from "./home";
-export { heroData } from "./home";
-export { projecthlData } from "./home";
-export { skillhlData } from "./home";
-
 // Contact Page
 export { contactBodyData } from "./contact";
 export { contactHeroData } from "./contact";
