@@ -16,15 +16,15 @@ export const homePreview: THomePreview = {
       icon: "fa-solid fa-location-dot",
     },
     {
-      type: "email",
-      value: "cercel.alexandru436@gmail.com",
-      icon: "fa-solid fa-envelope",
-      action: { type: "copy" },
-    },
-    {
       type: "phone",
       value: "+44 7770282405",
       icon: "fa-solid fa-phone",
+      action: { type: "copy" },
+    },
+    {
+      type: "email",
+      value: "cercel.alexandru436@gmail.com",
+      icon: "fa-solid fa-envelope",
       action: { type: "copy" },
     },
   ],

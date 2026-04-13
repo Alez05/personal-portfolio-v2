@@ -9,11 +9,11 @@
   /* ===== BUTTON SIZING ===== */
   --btn-primary-height: 60px;
   --btn-primary-min-width-desktop: 200px;
-  --btn-primary-min-width-mobile: 220px;
+  --btn-primary-min-width-mobile: 100%;
 
   --btn-secondary-height: 60px;
   --btn-secondary-min-width-desktop: 180px;
-  --btn-secondary-min-width-mobile: 200px;
+  --btn-secondary-min-width-mobile: 100%;
 
   --btn-padding-x: 28px;
   --btn-padding-y: 0px;
@@ -26,6 +26,8 @@
   --bg-section:     #EDF0F5;      /* blue-tinted section bg */
   --bg-surface:     #FFFFFF;      /* cards / surfaces */
   --bg-video-1: url("/image/bgcimage.jpg");
+  --bg-video-2: url("/image/bgcimgtwo.jpg");
+  --bg-video-3: url("/image/bgcimage.jpg");
 
   --primary:        #333A73;      /* deep navy — main CTAs, headings */
   --primary-hover:  #252B5C;      /* darker navy hover */
