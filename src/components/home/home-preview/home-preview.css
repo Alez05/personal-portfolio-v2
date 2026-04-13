@@ -8,53 +8,74 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   padding: 6rem 5.5% 4rem;
-  min-height: 100vh;
-  background: var(--color-bg);
+  height: 100vh;
+
+  background: var(--bg-main);
   box-sizing: border-box;
 }
 
-/* ===== Eyebrow TOP-LEFT ===== */
-.hero-eyebrow {
+/* subtle background glow */
+.hero-container::before {
+  content: "";
   position: absolute;
-  top: 6rem;
-  /* left: 6%; */
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(80,196,237,0.10), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(251,168,52,0.08), transparent 45%);
+  pointer-events: none;
+}
+
+/* ===== Eyebrow ===== */
+.hero-eyebrow {
+  position: relative;
+  top: 8rem;
   font-size: 0.85rem;
   color: var(--text-muted);
   letter-spacing: 0.08em;
+  z-index: 2;
+  /* margin-bottom: 0.5rem; */
 }
 
 /* ===== Left Content ===== */
 .hero-left {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 2rem;
+  gap: 1.5rem;
   max-width: 100%;
+  position: relative;
+  z-index: 2;
+  margin-top: 10rem;
 }
 
-/* ===== Name & Role ===== */
+/* ===== Name ===== */
 .hero-name {
-  font-size: 2.6rem;
+  font-size: 2.3rem;
   font-weight: 800;
   line-height: 1.1;
-  color: var(--text-dark-main); /* black main name */
+  color: var(--text-dark-main);
+  letter-spacing: 0.02rem;
+  text-align: center;
 }
 
+/* ===== Role ===== */
 .hero-role {
   font-size: 1.4rem;
   font-weight: 600;
-  color: var(--accent); /* orange job title */
+  color: var(--accent);
   margin-top: -0.2rem;
+  text-align: center;
 }
 
-/* ===== Tagline / Description ===== */
+/* ===== Tagline ===== */
 .hero-tagline {
-  font-size: 1rem;
+  font-size: var(--fs-body);
   line-height: 1.6;
-  color: var(--text-muted); /* faded description */
+  color: var(--text-muted);
   max-width: 100%;
   margin-top: 0.5rem;
+  text-align: center;
 }
 
 /* ===== Badges ===== */
@@ -63,77 +84,96 @@
   flex-wrap: wrap;
   gap: 0.6rem;
   margin-top: 1rem;
+  justify-content: center;
 }
 
 .hero-badge {
   display: flex;
   align-items: center;
   gap: 0.4rem;
+
   padding: 0.45rem 0.8rem;
   border-radius: 999px;
-  font-size: 0.85rem;
-  background: rgba(0,0,0,0.05);
-  border: none;
+  font-size: var(--fs-small);
+
+  background: var(--highlight-soft);
+  color: var(--text-main);
+  border: 1px solid var(--highlight);
+
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
 }
 
 .hero-badge:hover {
-  background: rgba(0,0,0,0.1);
-  transform: translateY(-1px);
+  background: var(--highlight);
+  color: var(--text-inverse);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
 }
 
 /* ===== CTA Buttons ===== */
 .hero-buttons {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
   gap: 1rem;
   margin-top: 1.8rem;
+  justify-content: center;
 }
 
+/* base button */
 .hero-btn {
   height: var(--btn-primary-height);
   border-radius: var(--btn-radius-md);
-  font-weight: 500;
-  display: flex;
+  font-weight: 600;
+
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none;
+
   padding: var(--btn-padding-y) var(--btn-padding-x);
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   cursor: pointer;
+
+  text-decoration: none;
 }
 
-/* Primary Blue Button */
+/* kill global anchor interference */
+.hero-btn,
+.hero-btn:hover,
+.hero-btn:focus {
+  color: inherit;
+}
+
+/* ===== PRIMARY ===== */
 .hero-btn-primary {
   background: var(--primary);
   color: var(--text-inverse);
-  min-width: var(--btn-primary-min-width-desktop);
-}
-.hero-btn-primary:hover {
-  background: #0056CC; /* darker hover blue */
-  color: var(--text-inverse);
+  min-width: var(--btn-primary-min-width-mobile);
 }
 
-/* Secondary Orange Button */
+.hero-btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ===== SECONDARY ===== */
 .hero-btn-secondary {
   background: transparent;
   border: 2px solid var(--accent);
   color: var(--accent);
-  min-width: var(--btn-secondary-min-width-desktop);
+  min-width: var(--btn-secondary-min-width-mobile);
 }
+
 .hero-btn-secondary:hover {
   background: var(--accent);
-  color: var(--text-inverse);
+  color: var(--text-dark-main);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
 }
 
-/* ===== Mobile width adjustments ===== */
-@media (max-width: 599px) {
-  .hero-btn-primary { min-width: var(--btn-primary-min-width-mobile); }
-  .hero-btn-secondary { min-width: var(--btn-secondary-min-width-mobile); }
-}
-
-/* ===== Floating Visuals ===== */
+/* ===== Visual Side ===== */
 .hero-visuals {
   display: none;
   width: 40%;
@@ -143,45 +183,136 @@
 
 .hero-visual-item {
   font-size: 2.5rem;
-  opacity: 0.08;
+  opacity: 0.06;
   position: absolute;
+  color: var(--primary);
   animation: float 5s ease-in-out infinite;
 }
 
 /* =========================
-   MEDIA QUERIES – MOBILE FIRST
+   MEDIA QUERIES
 ========================= */
+
+/* ===== TABLET ===== */
 @media (min-width: 600px) {
   .hero-name { font-size: 3rem; }
   .hero-role { font-size: 1.6rem; }
   .hero-tagline { font-size: 1.05rem; }
 }
 
+/* ===== LAPTOP ===== */
 @media (min-width: 769px) {
+
   .hero-container {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    min-height: 90vh; /* 🔥 reduces empty space */
   }
-  .hero-left { width: 55%; max-width: 650px; }
-  .hero-visuals { display: block; }
 
-  .hero-visual-item:nth-child(1) { top: 0%; left: 10%; transform: translate(-50%,0); animation-delay: 0s; }
-  .hero-visual-item:nth-child(2) { top: 25%; left: 30%; transform: translate(-50%,0); animation-delay: 1s; }
-  .hero-visual-item:nth-child(3) { top: 50%; left: 20%; transform: translate(-50%,0); animation-delay: 2s; }
-  .hero-visual-item:nth-child(4) { top: 75%; left: 45%; transform: translate(-50%,0); animation-delay: 3s; }
+  .hero-eyebrow {
+    position: absolute;
+    /* bottom: 10rem; */
+    top: 6rem;
+  }
+
+  .hero-left {
+    width: 55%;
+    width: 750px;
+    margin: 0;
+    align-items: flex-start;
+    gap: 1.5rem; /* tighter rhythm */
+  }
+
+  .hero-info {
+    width: 100%;
+    /* flex-direction: row; */
+    justify-content: start;
+  }
+
+  .hero-buttons {
+    flex-direction: row;
+    width: auto;
+  }
+
+  .hero-btn-primary {
+    min-width: var(--btn-primary-min-width-desktop);
+  }
+
+  .hero-btn-secondary {
+    min-width: var(--btn-secondary-min-width-desktop);
+  }
+
+  .hero-visuals {
+    display: block;
+  }
+
+  .hero-visual-item:nth-child(1) {
+    top: 0%; left: 10%;
+    animation-delay: 0s;
+  }
+  .hero-visual-item:nth-child(2) {
+    top: 25%; left: 30%;
+    animation-delay: 1s;
+  }
+  .hero-visual-item:nth-child(3) {
+    top: 50%; left: 20%;
+    animation-delay: 2s;
+  }
+  .hero-visual-item:nth-child(4) {
+    top: 75%; left: 45%;
+    animation-delay: 3s;
+  }
+
+  .hero-tagline {
+    text-align: left;
+  }
 }
 
+/* ===== LARGE DESKTOP ===== */
 @media (min-width: 1200px) {
+
+  .hero-container {
+    height: 95vh;
+  }
+
   .hero-name { font-size: 4rem; }
   .hero-role { font-size: 2rem; }
-  .hero-tagline { font-size: 1.2rem; }
-  .hero-left { max-width: 700px; }
-  .hero-visual-item { font-size: 3rem; }
+  .hero-tagline {
+    font-size: 1.2rem;
+    text-align: left;
+  }
+
+  .hero-left {
+    width: 1200px;
+    gap: 2rem; /* tighter + more premium */
+  }
+
+.hero-info {
+  width: 100%;
+  justify-content: start;
 }
 
+  /* 🔥 FIX: eyebrow spacing consistency */
+  .hero-eyebrow {
+    position: absolute;
+    margin-bottom: 1rem;
+    top: 6rem;
+  }
+
+  .hero-visual-item {
+    font-size: 3rem;
+  }
+}
+
+/* ===== WIDE SCREENS ===== */
 @media (min-width: 1600px) {
-  .hero-container { padding: 6rem var(--space-hero-wide) 4rem; }
+
+  .hero-container {
+    padding: 5rem 13% 4rem;
+    min-height: 80vh; /* 🔥 prevents huge empty space */
+  }
+
   .hero-name { font-size: 4.5rem; }
   .hero-tagline { font-size: 1.25rem; }
 }

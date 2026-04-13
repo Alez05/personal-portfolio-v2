@@ -1,11 +1,5 @@
 /* =========================================
    PROJECT PREVIEW — MOBILE FIRST
-   Spacing scale:
-     mobile  → section: 4rem 5%
-     tablet  → section: 5rem 6%
-     desktop → section: 6rem 6%
-     xl      → section: 7rem 8%
-   Letter spacing: 0.04rem on all text
 ========================================= */
 
 /* =========================================
@@ -19,7 +13,7 @@
 }
 
 /* =========================================
-   2. TWO-COLUMN LAYOUT (title left | projects right)
+   2. LAYOUT
 ========================================= */
 
 .ph-layout {
@@ -28,7 +22,6 @@
   gap: 3rem;
 }
 
-/* LEFT — title + description */
 .ph-left {
   display: flex;
   flex-direction: column;
@@ -42,44 +35,36 @@
   font-weight: 800;
   color: var(--text-dark-main);
   line-height: 1.15;
-  letter-spacing: 0.04rem;
 }
 
 .ph-description {
   font-size: var(--fs-body);
-  color: var(--text-muted);        /* was hardcoded #6b7280 — now uses blue-grey muted */
+  color: var(--text-muted);
   line-height: 1.6;
-  letter-spacing: 0.04rem;
 }
 
-/* RIGHT — contains the client component */
 .ph-right {
   display: flex;
   flex-direction: column;
 }
 
 /* =========================================
-   3. ERROR / EMPTY STATE
+   3. CONTAINER
 ========================================= */
 
 .ph-container {
   width: 100%;
   padding: 2.5rem 0;
-  background-image: var(--bg-video-1);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .ph-error {
   font-size: var(--fs-body);
-  color: var(--text-muted);        /* was --text-dark-sub (undefined) */
-  letter-spacing: 0.04rem;
+  color: var(--text-muted);
   opacity: 0.6;
 }
 
 /* =========================================
-   4. CLIENT LAYOUT (counter left | cards right)
+   4. CLIENT LAYOUT
 ========================================= */
 
 .ph-client-container {
@@ -89,7 +74,7 @@
 }
 
 /* =========================================
-   5. COUNTER (mobile hidden)
+   5. COUNTER
 ========================================= */
 
 .ph-counter-col {
@@ -107,28 +92,62 @@
 }
 
 /* =========================================
-   7. PROJECT CARD
+   7. PROJECT CARD (🔥 BACKGROUND HERE)
 ========================================= */
 
 .ph-project {
-  background: var(--bg-surface);   /* white card on off-white page = clean lift */
+  position: relative;
+  overflow: hidden;
   border-radius: var(--btn-radius-lg);
+
+  /* ✅ background image */
+  background-image: var(--bg-video-2);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   border: 1px solid var(--border-light);
   box-shadow: var(--shadow-md);
+
   padding: 1.5rem;
+
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+/* 🔥 overlay */
+.ph-project::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 15, 30, 0.65);
+  z-index: 0;
+  transition: background 0.3s ease;
+}
+
+/* hover effect (subtle lighten) */
+.ph-project:hover::before {
+  background: rgba(10, 15, 30, 0.55);
 }
 
 .ph-project:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
-  border-color: var(--secondary);  /* bright blue border pop on hover */
+  border-color: var(--secondary);
 }
 
-/* ---------- VIDEO ---------- */
+/* ensure content stays above overlay */
+.ph-project > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================
+   8. VIDEO WRAPPER
+========================================= */
 
 .ph-video-wrap {
   width: 100%;
@@ -136,7 +155,7 @@
   aspect-ratio: 16 / 9;
   border-radius: var(--btn-radius-md);
   overflow: hidden;
-  background: var(--bg-section);   /* cool off-white placeholder */
+  background: var(--bg-section);
 }
 
 .ph-video {
@@ -152,20 +171,18 @@
   align-items: center;
   justify-content: center;
   font-size: var(--fs-small);
-  color: var(--text-muted);        /* was --text-dark-sub (undefined) */
-  letter-spacing: 0.04rem;
-  opacity: 0.5;
+  color: rgba(255,255,255,0.8);
 }
 
-/* ---------- TEXT CONTENT ---------- */
+/* =========================================
+   9. TEXT CONTENT
+========================================= */
 
 .ph-project-layout {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-wrap: wrap;
   align-items: flex-end;
   gap: 1rem;
-  flex-wrap: wrap;
 }
 
 .ph-project-info {
@@ -180,63 +197,53 @@
   font-size: var(--fs-small);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.04rem;
-  color: var(--accent);            /* amber — field label stays as accent pop */
+  color: var(--accent);
 }
 
 .ph-project-name {
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--text-dark-main);
-  letter-spacing: 0.04rem;
+  color: #FFFFFF; /* 🔥 important for contrast */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 /* =========================================
-   8. TAGS + YEAR
+   10. TAGS
 ========================================= */
 
 .ph-project-meta {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
   gap: 0.4rem;
   flex-shrink: 0;
-  text-align: left;
 }
 
-/* Tech / category tag — navy filled, high contrast */
+/* 🔥 glass-style tags */
 .ph-tag {
   font-size: var(--fs-small);
   font-weight: 600;
   padding: 0.25rem 0.65rem;
   border-radius: 999px;
-  line-height: 1;
-  letter-spacing: 0.04rem;
-  background: var(--primary);      /* deep navy fill */
-  color: #FFFFFF;                  /* white text — max contrast on navy */
-  border: 1px solid var(--primary);
-  white-space: nowrap;
+
+  background: rgba(255,255,255,0.1);
+  color: #FFFFFF;
+  border: 1px solid rgba(255,255,255,0.2);
 }
 
-/* Year pill — cyan tinted, lighter */
 .ph-year {
   font-size: var(--fs-small);
   font-weight: 600;
   padding: 0.25rem 0.65rem;
   border-radius: 999px;
-  line-height: 1;
-  letter-spacing: 0.04rem;
-  background: var(--highlight-soft); /* light cyan tint */
-  color: #0A3A50;                    /* dark cyan text — readable on light cyan */
-  border: 1px solid var(--highlight);
-  white-space: nowrap;
+
+  background: rgba(255,255,255,0.15);
+  color: #FFFFFF;
+  border: 1px solid rgba(255,255,255,0.25);
 }
 
 /* =========================================
-   9. TABLET (≥600px)
+   11. TABLET
 ========================================= */
 
 @media (min-width: 600px) {
@@ -250,7 +257,6 @@
 
   .ph-project {
     padding: 1.75rem;
-    gap: 1.5rem;
   }
 
   .ph-project-name {
@@ -263,14 +269,12 @@
 }
 
 /* =========================================
-   10. DESKTOP (≥769px)
+   12. DESKTOP
 ========================================= */
 
 @media (min-width: 769px) {
-  /* Outer: sticky title left, projects right */
   .ph-layout {
     flex-direction: row;
-    align-items: flex-start;
     gap: 4rem;
   }
 
@@ -278,34 +282,20 @@
     flex: 0 0 220px;
     position: sticky;
     top: 120px;
-    align-self: flex-start;
-    gap: 1.5rem;
-    margin-bottom: 4rem;
   }
 
   .ph-right {
     flex: 1;
-    min-width: 0;
   }
 
-  .ph-client-container {
-  background-image: var(--bg-video-1);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  }
-
-  /* Inner: fixed counter left, cards right */
   .ph-client-container {
     flex-direction: row;
-    align-items: flex-start;
     gap: 2rem;
   }
 
   .ph-counter-col {
     display: block;
     flex: 0 0 80px;
-    position: relative;
   }
 
   .ph-counter-wrapper {
@@ -314,12 +304,6 @@
     top: 50vh;
     transform: translateY(-50%);
     width: 80px;
-    z-index: 5;
-    pointer-events: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.25rem;
     opacity: 0;
     transition: opacity 0.3s ease;
   }
@@ -330,36 +314,22 @@
 
   .ph-counter {
     font-size: 3.5rem;
-    font-weight: 800;
-    text-align: center;
-    line-height: 1;
-    letter-spacing: 0.04rem;
-    color: var(--primary);         /* deep navy counter */
-  }
-
-  .ph-counter-total {
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 0.04rem;
-    color: var(--text-muted);      /* blue-grey, softer than heading */
-    opacity: 0.6;
-    text-align: center;
+    font-weight: 900;
+    color: var(--text-main);
   }
 
   .ph-projects-column {
     flex: 1;
-    min-width: 0;
     gap: 2.5rem;
   }
 
   .ph-project {
     padding: 2rem;
-    gap: 1.5rem;
   }
 
   .ph-video-wrap {
-    aspect-ratio: 16 / 7;
     height: 70vh;
+    aspect-ratio: 16 / 7;
   }
 
   .ph-project-name {
@@ -369,7 +339,7 @@
 }
 
 /* =========================================
-   11. LARGE DESKTOP (≥1200px)
+   13. LARGE DESKTOP
 ========================================= */
 
 @media (min-width: 1200px) {
@@ -379,37 +349,21 @@
 
   .ph-left {
     flex: 0 0 260px;
-    top: 130px;
-  }
-
-  .ph-client-container {
-    gap: 7rem;
   }
 
   .ph-project {
     padding: 2.5rem;
     max-width: 1000px;
-    gap: 1.75rem;
-  }
-
-  .ph-counter {
-    font-size: 6.5rem;
-    font-weight: 500;
-    letter-spacing: .15rem;
   }
 
   .ph-video-wrap {
     aspect-ratio: 16 / 6;
     min-height: 280px;
   }
-
-  .ph-project-name {
-    font-size: 1.4rem;
-  }
 }
 
 /* =========================================
-   12. ULTRA WIDE (≥1600px)
+   14. ULTRA WIDE
 ========================================= */
 
 @media (min-width: 1600px) {
@@ -424,15 +378,9 @@
   .ph-project {
     padding: 3rem;
     max-width: 1200px;
-    gap: 2rem;
-  }
-
-  .ph-counter {
-    font-size: 5rem;
   }
 
   .ph-video-wrap {
-    aspect-ratio: 16 / 6;
     min-height: 340px;
   }
 
