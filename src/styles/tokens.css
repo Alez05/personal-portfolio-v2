@@ -1,0 +1,92 @@
+/* =========================================
+   DESIGN TOKENS (RAW VALUES ONLY)
+========================================= */
+
+:root {
+
+  /* ========== COLORS ========== */
+  --color-primary: #333A73;
+  --color-primary-hover: #252B5C;
+
+  --color-secondary: #387ADF;
+  --color-secondary-hover: #1255B3;
+
+  --color-accent: #FBA834;
+  --color-accent-hover: #E08A10;
+  --color-accent-soft: #FEF3E2;
+
+  --color-highlight: #50C4ED;
+  --color-highlight-hover: #27AED8;
+  --color-highlight-soft: #E8F8FD;
+
+  /* Backgrounds */
+  --color-bg: #F7F8FB;
+  --color-bg-section: #EDF0F5;
+  --color-surface: #FFFFFF;
+
+  /* Text */
+  --color-text: #1E2340;
+  --color-text-muted: #5A6580;
+  --color-text-inverse: #FFFFFF;
+
+  /* Borders */
+  --color-border: #DDE3EE;
+  --color-border-strong: #333A73;
+
+
+  /* ========== TYPOGRAPHY ========== */
+  --font-sans: 'Inter', sans-serif;
+
+  --text-xs: 0.875rem;
+  --text-sm: 1rem;
+  --text-md: 1.125rem;
+
+  --text-h4: 1.4rem;
+  --text-h3: 1.8rem;
+  --text-h2: 2.4rem;
+  --text-h1: 3.2rem;
+
+
+  /* ========== SPACING ========== */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+  --space-8: 96px;
+
+
+  /* ========== LAYOUT ========== */
+  --container-max: 1200px;
+  --container-padding: 5%;
+
+  --section-padding-y: 6rem;
+
+
+  /* ========== RADIUS ========== */
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 999px;
+
+
+  /* ========== SHADOWS ========== */
+  --shadow-sm: 0 2px 6px rgba(51,58,115,0.06);
+  --shadow-md: 0 6px 18px rgba(51,58,115,0.10);
+  --shadow-lg: 0 12px 32px rgba(51,58,115,0.14);
+
+
+  /* ========== BUTTON TOKENS (IMPORTANT CHANGE) ========== */
+
+  /* Instead of height/min-width → use scale system */
+  --btn-padding-y: 0.9rem;
+  --btn-padding-x: 1.4rem;
+
+  --btn-padding-y-lg: 1.1rem;
+  --btn-padding-x-lg: 1.8rem;
+
+  --btn-text-sm: var(--text-sm);
+  --btn-text-md: var(--text-md);
+}
