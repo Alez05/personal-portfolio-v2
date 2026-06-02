@@ -9,11 +9,12 @@
   flex-direction: column;
   justify-content: center;
 
-  padding: 6rem 5.5% 4rem;
+  padding: 6rem 5.8% 4rem; /* slightly increased */
   height: 100vh;
 
   background: var(--bg-main);
   box-sizing: border-box;
+  margin-bottom: 5rem;
 }
 
 /* subtle background glow */
@@ -30,19 +31,18 @@
 /* ===== Eyebrow ===== */
 .hero-eyebrow {
   position: relative;
-  top: 8rem;
+  top: 8.9rem;
   font-size: 0.85rem;
   color: var(--text-muted);
   letter-spacing: 0.08em;
   z-index: 2;
-  /* margin-bottom: 0.5rem; */
 }
 
 /* ===== Left Content ===== */
 .hero-left {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.6rem; /* slightly more consistent */
   max-width: 100%;
   position: relative;
   z-index: 2;
@@ -64,7 +64,7 @@
   font-size: 1.4rem;
   font-weight: 600;
   color: var(--accent);
-  margin-top: -0.2rem;
+  margin-top: -0.15rem; /* slight tweak */
   text-align: center;
 }
 
@@ -74,7 +74,7 @@
   line-height: 1.6;
   color: var(--text-muted);
   max-width: 100%;
-  margin-top: 0.5rem;
+  margin-top: 0.6rem; /* slightly more breathing */
   text-align: center;
 }
 
@@ -82,17 +82,21 @@
 .hero-info {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-top: 1rem;
+  gap: 0.7rem; /* more consistent spacing */
+  margin-top: 1.2rem;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
 .hero-badge {
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.4rem;
 
-  padding: 0.45rem 0.8rem;
+  padding: 0.5rem 0.85rem; /* slightly balanced */
   border-radius: 999px;
   font-size: var(--fs-small);
 
@@ -102,6 +106,7 @@
 
   cursor: pointer;
   transition: all 0.25s ease;
+  width: 100%;
 }
 
 .hero-badge:hover {
@@ -116,8 +121,8 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 1rem;
-  margin-top: 1.8rem;
+  gap: 1.1rem; /* slightly more consistent */
+  margin-top: 2rem; /* small spacing improvement */
   justify-content: center;
 }
 
@@ -198,6 +203,10 @@
   .hero-name { font-size: 3rem; }
   .hero-role { font-size: 1.6rem; }
   .hero-tagline { font-size: 1.05rem; }
+
+  .hero-container {
+    padding: 6rem 6.5% 4rem; /* slight increase */
+  }
 }
 
 /* ===== LAPTOP ===== */
@@ -207,27 +216,30 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    min-height: 90vh; /* 🔥 reduces empty space */
+    min-height: 90vh;
+    padding: 6rem 7.5% 4rem; /* increased slightly */
   }
 
   .hero-eyebrow {
     position: absolute;
-    /* bottom: 10rem; */
     top: 6rem;
   }
 
   .hero-left {
     width: 55%;
-    width: 750px;
+    max-width: 750px;
     margin: 0;
     align-items: flex-start;
-    gap: 1.5rem; /* tighter rhythm */
+    gap: 1.6rem; /* small consistency fix */
+    top: 2rem;
   }
 
   .hero-info {
     width: 100%;
-    /* flex-direction: row; */
-    justify-content: start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
   }
 
   .hero-buttons {
@@ -267,33 +279,41 @@
   .hero-tagline {
     text-align: left;
   }
+
+  .hero-badge {
+    width: auto;
+  }
 }
 
 /* ===== LARGE DESKTOP ===== */
 @media (min-width: 1200px) {
 
   .hero-container {
-    height: 95vh;
+    padding: 6rem 5% 4rem; /* +1% feel */
   }
 
-  .hero-name { font-size: 4rem; }
+  .hero-name { font-size: 4rem;}
   .hero-role { font-size: 2rem; }
+
   .hero-tagline {
     font-size: 1.2rem;
     text-align: left;
   }
 
   .hero-left {
-    width: 1200px;
-    gap: 2rem; /* tighter + more premium */
+    max-width: 1200px;
+    gap: 1.75rem; /* refined */
+    padding-bottom: 3rem;
   }
 
-.hero-info {
-  width: 100%;
-  justify-content: start;
-}
+  .hero-info {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+  }
 
-  /* 🔥 FIX: eyebrow spacing consistency */
   .hero-eyebrow {
     position: absolute;
     margin-bottom: 1rem;
@@ -309,8 +329,8 @@
 @media (min-width: 1600px) {
 
   .hero-container {
-    padding: 5rem 13% 4rem;
-    min-height: 80vh; /* 🔥 prevents huge empty space */
+    padding: 5rem 14% 4rem; /* increased from 13% */
+    min-height: 80vh;
   }
 
   .hero-name { font-size: 4.5rem; }

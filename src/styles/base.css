@@ -1,0 +1,70 @@
+/* base style */
+
+/* =========================================
+   RESET
+========================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================
+   DOCUMENT
+========================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  overflow-x: hidden;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* =========================================
+   TYPOGRAPHY DEFAULTS
+========================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-text-dark);
+}
+
+p,
+span,
+li {
+  color: var(--color-text-dim);
+}
+
+small,
+.text-dim {
+  color: var(--color-text-dim);
+}
+
+/* =========================================
+   LINKS
+========================================= */
+
+a {
+  color: var(--secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--secondary-hover);
+}
