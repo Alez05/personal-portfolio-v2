@@ -349,6 +349,7 @@
 
   .ph-left {
     flex: 0 0 260px;
+    flex-wrap: wrap;
   }
 
   .ph-project {
