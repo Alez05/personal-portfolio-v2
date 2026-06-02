@@ -89,41 +89,7 @@
   --color-border:    var(--border-light);
 }
 
-/* DARK THEME */
-[data-theme='dark'] {
-  --bg-main:        #1A2035;      /* deep navy-dark base */
-  --bg-section:     #252B5C;      /* slightly lighter navy layer */
-  --bg-surface:     #131726;      /* darkest — cards on dark */
 
-  --primary:        #50C4ED;      /* cyan becomes primary on dark (pops on navy) */
-  --primary-hover:  #27AED8;
-
-  --secondary:      #387ADF;      /* blue stays */
-  --secondary-hover:#5B94E8;      /* lighter hover on dark bg */
-
-  --accent:         #FBA834;      /* amber stays as accent */
-  --accent-hover:   #FFBC5A;      /* lighter amber hover on dark */
-  --accent-soft:    #3A2A0A;      /* dark warm surface */
-
-  --highlight:      #50C4ED;
-  --highlight-hover:#27AED8;
-  --highlight-soft: #0A2535;
-
-  --text-main:      #D8DDF0;      /* cool light text */
-  --text-dark-main: #FFFFFF;
-  --text-muted:     #8A94B8;      /* muted blue-grey */
-  --text-inverse:   #0D1021;      /* dark text on light buttons */
-
-  --border-light:   #2E3660;      /* subtle navy border */
-  --border-strong:  #50C4ED;      /* cyan strong border */
-
-  --color-bg:        var(--bg-main);
-  --color-surface:   var(--bg-surface);
-  --color-text:      var(--text-main);
-  --color-text-dim:  var(--text-muted);
-  --color-text-dark: var(--text-dark-main);
-  --color-border:    var(--border-light);
-}
 
 /* ===== RESET ===== */
 *,
